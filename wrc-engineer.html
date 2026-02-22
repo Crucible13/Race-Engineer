@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>EA WRC Race Engineer</title>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: 20px auto; }
+    label { display: block; margin-top: 8px; font-weight: 600; }
+    textarea, input, select { width: 100%; padding: 6px; margin-top: 4px; }
+    button { margin-top: 12px; padding: 8px 16px; }
+    #response { white-space: pre-wrap; margin-top: 20px; border: 1px solid #ccc; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h1>EA WRC Race Engineer</h1>
+
+  <form id="engineer-form">
+    <label>Car</label>
+    <input type="text" id="car" placeholder="Fiesta Rally3 Evo, Kadett C GT/E, …">
+
+    <label>Rally & Stage</label>
+    <input type="text" id="stage" placeholder="Portugal – Fridão, 7.32 km">
+
+    <label>Surface & Weather</label>
+    <input type="text" id="surface" placeholder="Wet gravel, dry tarmac, heavy snow…">
+
+    <label>Assist level</label>
+    <input type="text" id="assists" placeholder="ABS off, TC off, manual gears…">
+
+    <label>Current issues (bullet style)</label>
+    <textarea id="issues" rows="5"
+      placeholder="- Pushes mid-corner
+- Snappy on downhill hairpins
+- Too soft on big jumps"></textarea>
+
+    <button type="submit">Send to Race Engineer</button>
+  </form>
+
+  <div id="response"></div>
+
+  <script>
+    const form = document.getElementById('engineer-form');
+    const responseDiv = document.getElementById('response');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      responseDiv.textContent = 'Working…';
+
+      const payload = {
+        car: document.getElementById('car').value,
+        stage: document.getElementById('stage').value,
+        surface: document.getElementById('surface').value,
+        assists: document.getElementById('assists').value,
+        issues: document.getElementById('issues').value
+      };
+
+      try {
+        const res = await fetch('http://localhost:5000/engineer', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        responseDiv.textContent = data.reply || 'No reply';
+      } catch (err) {
+        responseDiv.textContent = 'Error: ' + err.message;
+      }
+    });
+  </script>
+</body>
+</html>
