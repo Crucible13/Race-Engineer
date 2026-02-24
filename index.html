@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EA WRC Race Engineer</title>
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --panel: #151926;
+      --panel-alt: #181d2b;
+      --accent: #00c6b3;
+      --accent-soft: rgba(0, 198, 179, 0.15);
+      --text: #e5e9f0;
+      --muted: #8f97aa;
+      --border: #262b3a;
+      --danger: #ff4f5e;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: "Fira Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top left, #1b2135 0, #05070b 55%);
+      color: var(--text);
+      font-family: var(--font-main);
+    }
+
+    .app-shell {
+      max-width: 1200px;
+      margin: 20px auto 40px;
+      padding: 0 20px;
+    }
+
+    /* Top bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, rgba(0, 198, 179, 0.10), rgba(0, 0, 0, 0.35));
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      margin-bottom: 18px;
+    }
+
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent) 0, #007f77 55%, #021210 100%);
+      box-shadow: 0 0 12px rgba(0, 198, 179, 0.6);
+    }
+
+    .top-title {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .top-subtitle {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(0, 198, 179, 0.12);
+      border: 1px solid rgba(0, 198, 179, 0.45);
+      color: var(--accent);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 6px rgba(0, 198, 179, 0.8);
+    }
+
+    .top-meta {
+      color: var(--muted);
+    }
+
+    /* Two-column layout (desktop only) */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    /* Panels */
+    .panel {
+      background: linear-gradient(145deg, var(--panel) 0, #0f1320 100%);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+      padding: 14px 16px 16px;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .panel-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b7c0d8;
+    }
+
+    .panel-subtitle {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* Form controls */
+    .field-group {
+      margin-bottom: 12px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .field-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 7px 8px;
+      border-radius: 6px;
+      border: 1px solid #272d3f;
+      background: #111420;
+      color: var(--text);
+      font-size: 13px;
+      font-family: var(--font-main);
+      outline: none;
+      transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    input[type="text"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(0, 198, 179, 0.45);
+      background: #090b11;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .pill-toggle {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid #2b3145;
+      background: #121521;
+      color: var(--muted);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.12s ease;
+    }
+
+    .pill-toggle.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+      box-shadow: 0 0 10px rgba(0, 198, 179, 0.45);
+    }
+
+    .pill-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Generate button */
+    .run-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .btn-primary {
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #00f5d4);
+      color: #021210;
+      font-weight: 600;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow:
+        0 8px 18px rgba(0, 198, 179, 0.6),
+        0 0 0 1px rgba(0, 0, 0, 0.6);
+      transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.1s ease;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      box-shadow:
+        0 10px 22px rgba(0, 198, 179, 0.7),
+        0 0 0 1px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+      box-shadow:
+        0 4px 12px rgba(0, 198, 179, 0.5),
+        0 0 0 1px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Output side: tabs + table */
+    .tab-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #202537;
+      padding-bottom: 4px;
+    }
+
+    .tab-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: all 0.12s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      box-shadow: 0 0 8px rgba(0, 198, 179, 0.45);
+    }
+
+    .tab-btn:hover {
+      color: var(--accent);
+    }
+
+    .setup-table-wrapper {
+      background: var(--panel-alt);
+      border-radius: 9px;
+      border: 1px solid #252b3b;
+      padding: 8px 10px 10px;
+      overflow: hidden;
+    }
+
+    table.setup-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #d5d9e6;
+    }
+
+    table.setup-table thead {
+      background: #1e2435;
+    }
+
+    table.setup-table th,
+    table.setup-table td {
+      padding: 4px 6px;
+      border-bottom: 1px solid #23293b;
+    }
+
+    table.setup-table th {
+      text-align: left;
+      font-weight: 500;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #a7b1ca;
+    }
+
+    table.setup-table tr:nth-child(odd) td {
+      background: rgba(11, 15, 26, 0.55);
+    }
+
+    table.setup-table tr.section-row td {
+      background: #161b2a;
+      color: #9fa8c5;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+    }
+
+    .section-badge {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 999px;
+      border: 1px solid #3a425b;
+      background: #101421;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: #868fb0;
+    }
+
+    .value-soft {
+      color: #9bdcf0;
+    }
+
+    .value-warn {
+      color: #ffcf5b;
+    }
+
+    .value-danger {
+      color: #ff8f8f;
+    }
+
+    .tweak-pack {
+      margin-top: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px dashed #343b4e;
+      font-size: 12px;
+      color: #c8cedf;
+    }
+
+    .tweak-pack-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9fa8c5;
+      margin-bottom: 4px;
+    }
+
+    .tweak-list {
+      margin: 0;
+      padding-left: 16px;
+    }
+
+    .tweak-list li {
+      margin-bottom: 2px;
+    }
+
+    /* Desktop-only hint (no full responsive) */
+    @media (max-width: 900px) {
+      body {
+        padding: 20px;
+      }
+      .app-shell {
+        max-width: 100%;
+      }
+      .main-grid {
+        display: block;
+      }
+      .panel {
+        margin-bottom: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="app-shell">
+  <!-- Top bar -->
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <div class="logo-dot"></div>
+      <div>
+        <div class="top-title">EA WRC Race Engineer</div>
+        <div class="top-subtitle">Desktop cockpit · Engineering view</div>
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>Connected</span>
+      </div>
+      <div class="top-meta">
+        Last stage: <span id="last-stage-label">–</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main grid -->
+  <main class="main-grid">
+    <!-- Left: job card -->
+    <section class="panel">
+      <div class="panel-header">
+        <div class="panel-title">Job card</div>
+        <div class="panel-subtitle">Driver input</div>
+      </div>
+
+      <form id="job-form">
+        <div class="field-group">
+          <label class="field-label" for="car">Car</label>
+          <select id="car" name="car" required>
+            <option value="">Select car…</option>
+            <option value="Fiesta Rally3 Evo">Ford Fiesta Rally3 Evo</option>
+            <option value="Fiesta H2 RWD">Ford Fiesta H2 RWD</option>
+            <option value="Escort MK2 H2 RWD">Ford Escort MK2 H2 RWD</option>
+            <option value="Golf GTI H2 FWD">VW Golf GTI H2 FWD</option>
+            <option value="Polo FWD">VW Polo FWD</option>
+            <!-- Add more as you like -->
+          </select>
+        </div>
+
+        <div class="field-group">
+          <div class="field-row">
+            <div style="flex: 1;">
+              <label class="field-label" for="rally">Rally</label>
+              <select id="rally" name="rally">
+                <option value="">Select rally…</option>
+                <option value="Secto Finland">Secto Finland</option>
+                <option value="Rally Pacifico">Rally Pacifico</option>
+                <option value="Mediterraneo">Mediterraneo</option>
+                <option value="Monte Carlo">Monte Carlo</option>
+                <option value="Greece">Greece</option>
+                <option value="Sweden">Sweden</option>
+              </select>
+            </div>
+            <div style="flex: 1;">
+              <label class="field-label" for="stage">Stage</label>
+              <input id="stage" name="stage" type="text" placeholder="e.g. Lahdenkylä, Gunung, Karoutes…">
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <span class="field-label">Surface</span>
+          <div class="pill-row" id="surface-group">
+            <div class="pill-toggle active" data-value="gravel">Gravel</div>
+            <div class="pill-toggle" data-value="tarmac">Tarmac</div>
+            <div class="pill-toggle" data-value="snow">Snow</div>
+            <div class="pill-toggle" data-value="mixed">Mixed</div>
+          </div>
+          <input type="hidden" name="surface" id="surface-input" value="gravel">
+        </div>
+
+        <div class="field-group">
+          <span class="field-label">Weather</span>
+          <div class="pill-row" id="weather-group">
+            <div class="pill-toggle active" data-value="dry">Dry</div>
+            <div class="pill-toggle" data-value="damp">Damp</div>
+            <div class="pill-toggle" data-value="wet">Wet</div>
+            <div class="pill-toggle" data-value="flooded">Flooded</div>
+          </div>
+          <input type="hidden" name="weather" id="weather-input" value="dry">
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="issues">Handling notes</label>
+          <textarea id="issues" name="issues" placeholder="Pushes mid‑corner, nervous over crests, boggy in 2nd, locks fronts on downhill braking…"></textarea>
+        </div>
+
+        <div class="run-row">
+          <button type="submit" class="btn-primary">Generate Setup</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Right: setup output -->
+    <section class="panel">
+      <div class="panel-header">
+        <div class="panel-title">Setup sheet</div>
+        <div class="panel-subtitle" id="setup-meta">Awaiting run…</div>
+      </div>
+
+      <div class="tab-row">
+        <button class="tab-btn active" type="button" data-tab="grid">Setup grid</button>
+        <button class="tab-btn" type="button" data-tab="tweaks">Tweak pack</button>
+      </div>
+
+      <!-- Setup grid -->
+      <div id="tab-grid">
+        <div class="setup-table-wrapper">
+          <table class="setup-table" id="setup-table">
+            <thead>
+            <tr>
+              <th style="width: 28%;">Section</th>
+              <th style="width: 44%;">Item</th>
+              <th style="width: 28%;">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Example placeholder rows; your JS will overwrite these with AI output -->
+            <tr class="section-row">
+              <td colspan="3">
+                <span class="section-badge">Tyres</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Tyres</td>
+              <td>Compound (front / rear)</td>
+              <td class="value-soft">Soft / Soft</td>
+            </tr>
+            <tr>
+              <td>Tyres</td>
+              <td>Pressures (front / rear)</td>
+              <td>1.90 / 1.95 bar</td>
+            </tr>
+            <tr class="section-row">
+              <td colspan="3">
+                <span class="section-badge">Brakes</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Brakes</td>
+              <td>Brake force</td>
+              <td>70%</td>
+            </tr>
+            <tr>
+              <td>Brakes</td>
+              <td>Brake bias</td>
+              <td>62% front</td>
+            </tr>
+            <!-- Add sections: Diff, Suspension, Alignment, Aero, Gearing -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tweak pack -->
+      <div id="tab-tweaks" style="display:none;">
+        <div class="tweak-pack" id="tweak-pack">
+          <div class="tweak-pack-title">Service tweaks</div>
+          <ul class="tweak-list">
+            <li>Waiting for a run. You’ll see targeted “+/− clicks from current” notes here.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  // pill toggles
+  function setupPillGroup(groupId, hiddenInputId) {
+    const group = document.getElementById(groupId);
+    const hidden = document.getElementById(hiddenInputId);
+    group.addEventListener('click', (e) => {
+      const pill = e.target.closest('.pill-toggle');
+      if (!pill) return;
+      [...group.querySelectorAll('.pill-toggle')].forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      hidden.value = pill.dataset.value;
+    });
+  }
+
+  setupPillGroup('surface-group', 'surface-input');
+  setupPillGroup('weather-group', 'weather-input');
+
+  // tabs
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabGrid = document.getElementById('tab-grid');
+  const tabTweaks = document.getElementById('tab-tweaks');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+      if (tab === 'grid') {
+        tabGrid.style.display = '';
+        tabTweaks.style.display = 'none';
+      } else {
+        tabGrid.style.display = 'none';
+        tabTweaks.style.display = '';
+      }
+    });
+  });
+
+  // form submit -> POST to your Flask route
+  const form = document.getElementById('job-form');
+  const setupMeta = document.getElementById('setup-meta');
+  const lastStageLabel = document.getElementById('last-stage-label');
+  const setupTableBody = document.querySelector('#setup-table tbody');
+  const tweakPack = document.getElementById('tweak-pack');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    // Update header label
+    const rally = payload.rally || '—';
+    const stage = payload.stage || '—';
+    lastStageLabel.textContent = `${rally} · ${stage}`;
+
+    setupMeta.textContent = 'Working up setup…';
+
+    try {
+      const res = await fetch('/api/generate_setup', { // adjust route name if needed
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error('HTTP ' + res.status);
+      }
+
+      const data = await res.json();
+      // Expect your Flask backend to return something like:
+      // { setup_rows: [{section, item, value}], tweaks: ["+2 clicks rear ARB", …], meta: "Golf Karoutes dry, a little pushy" }
+
+      // Update meta
+      setupMeta.textContent = data.meta || 'Setup ready';
+
+      // Rebuild table body
+      if (Array.isArray(data.setup_rows) && data.setup_rows.length) {
+        setupTableBody.innerHTML = '';
+
+        let lastSection = null;
+        data.setup_rows.forEach(row => {
+          if (row.section && row.section !== lastSection) {
+            const sTr = document.createElement('tr');
+            sTr.className = 'section-row';
+            const sTd = document.createElement('td');
+            sTd.colSpan = 3;
+            sTd.innerHTML = `<span class="section-badge">${row.section}</span>`;
+            sTr.appendChild(sTd);
+            setupTableBody.appendChild(sTr);
+            lastSection = row.section;
+          }
+
+          const tr = document.createElement('tr');
+          const tdSection = document.createElement('td');
+          const tdItem = document.createElement('td');
+          const tdValue = document.createElement('td');
+
+          tdSection.textContent = row.section || '';
+          tdItem.textContent = row.item || '';
+
+          // allow simple styling hints from backend: "value_class": "value-soft" / "value-warn" / "value-danger"
+          if (row.value_class) {
+            tdValue.classList.add(row.value_class);
+          }
+          tdValue.textContent = row.value || '';
+
+          tr.appendChild(tdSection);
+          tr.appendChild(tdItem);
+          tr.appendChild(tdValue);
+          setupTableBody.appendChild(tr);
+        });
+      }
+
+      // Update tweak pack
+      if (Array.isArray(data.tweaks) && data.tweaks.length) {
+        tweakPack.innerHTML = '<div class="tweak-pack-title">Service tweaks</div>';
+        const ul = document.createElement('ul');
+        ul.className = 'tweak-list';
+        data.tweaks.forEach(t => {
+          const li = document.createElement('li');
+          li.textContent = t;
+          ul.appendChild(li);
+        });
+        tweakPack.appendChild(ul);
+      } else {
+        tweakPack.innerHTML = '<div class="tweak-pack-title">Service tweaks</div><ul class="tweak-list"><li>No extra tweaks returned.</li></ul>';
+      }
+
+    } catch (err) {
+      console.error(err);
+      setupMeta.textContent = 'Error generating setup';
+      tweakPack.innerHTML = '<div class="tweak-pack-title">Service tweaks</div><ul class="tweak-list"><li>Request failed. Check backend or network.</li></ul>';
+    }
+  });
+</script>
+</body>
+</html>
