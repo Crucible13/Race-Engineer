@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EA SPORTS WRC — Car Setup</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/creationForm.css') }}">
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="logo-dot"></div>
+      <div>
+        <div class="top-title">EA SPORTS WRC</div>
+        <div class="top-subtitle">Car Setup Configuration</div>
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <span class="status-pill">
+        <span class="status-dot"></span> Setup Editor
+      </span>
+      <span class="top-meta">Rally1 · Season 2025</span>
+    </div>
+  </div>
+
+  <form>
+    <div class="section-grid">
+
+      <!-- TRANSMISSION -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Transmission</span>
+          <span class="panel-subtitle">Ratios</span>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Final Drive Ratio</label>
+          <input type="number" name="final_drive" step="0.01" placeholder="3.70">
+        </div>
+
+        <div class="sub-header">Gear Ratios</div>
+
+        <div class="gear-grid">
+          <div class="field">
+            <label class="field-label">1st</label>
+            <input type="number" name="gear1" step="0.01" placeholder="3.50">
+          </div>
+          <div class="field">
+            <label class="field-label">2nd</label>
+            <input type="number" name="gear2" step="0.01" placeholder="2.80">
+          </div>
+          <div class="field">
+            <label class="field-label">3rd</label>
+            <input type="number" name="gear3" step="0.01" placeholder="2.20">
+          </div>
+          <div class="field">
+            <label class="field-label">4th</label>
+            <input type="number" name="gear4" step="0.01" placeholder="1.75">
+          </div>
+          <div class="field">
+            <label class="field-label">5th</label>
+            <input type="number" name="gear5" step="0.01" placeholder="1.38">
+          </div>
+          <div class="field">
+            <label class="field-label">6th</label>
+            <input type="number" name="gear6" step="0.01" placeholder="1.10">
+          </div>
+        </div>
+      </div>
+
+      <!-- DIFFERENTIAL -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Differential</span>
+          <span class="panel-subtitle">Front / Center / Rear</span>
+        </div>
+
+        <div class="sub-header">Front</div>
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label">Preload</label>
+            <input type="number" name="front_diff_preload" step="0.1" placeholder="50.0">
+          </div>
+          <div class="field">
+            <label class="field-label">Accel</label>
+            <input type="number" name="front_diff_accel" step="0.1" placeholder="30.0">
+          </div>
+          <div class="field">
+            <label class="field-label">Brake</label>
+            <input type="number" name="front_diff_brake" step="0.1" placeholder="20.0">
+          </div>
+        </div>
+
+        <div class="sub-header">Center</div>
+        <div class="field">
+          <label class="field-label">Torque Distribution (% Front)</label>
+          <input type="number" name="center_diff_torque" step="1" placeholder="50">
+        </div>
+
+        <div class="sub-header">Rear</div>
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label">Preload</label>
+            <input type="number" name="rear_diff_preload" step="0.1" placeholder="50.0">
+          </div>
+          <div class="field">
+            <label class="field-label">Accel</label>
+            <input type="number" name="rear_diff_accel" step="0.1" placeholder="30.0">
+          </div>
+          <div class="field">
+            <label class="field-label">Brake</label>
+            <input type="number" name="rear_diff_brake" step="0.1" placeholder="20.0">
+          </div>
+        </div>
+      </div>
+
+      <!-- SUSPENSION -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Suspension</span>
+          <span class="panel-subtitle">Springs, Ride Height, Dampers, ARB</span>
+        </div>
+
+        <div class="sub-header">Springs</div>
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label">Front Rate</label>
+            <input type="number" name="front_spring" step="0.1" placeholder="18.0">
+          </div>
+          <div class="field">
+            <label class="field-label">Rear Rate</label>
+            <input type="number" name="rear_spring" step="0.1" placeholder="20.0">
+          </div>
+        </div>
+
+        <div class="sub-header">Ride Height</div>
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label">Front (mm)</label>
+            <input type="number" name="front_ride_height" step="1" placeholder="145">
+          </div>
+          <div class="field">
+            <label class="field-label">Rear (mm)</label>
+            <input type="number" name="rear_ride_height" step="1" placeholder="150">
+          </div>
+        </div>
+
+        <div class="sub-header">Dampers</div>
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label">F. Bump</label>
+            <input type="number" name="front_bump" step="0.1" placeholder="4.0">
+          </div>
+          <div class="field">
+            <label class="field-label">F. Rebound</label>
+            <input type="number" name="front_rebound" step="0.1" placeholder="6.0">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label">R. Bump</label>
+            <input type="number" name="rear_bump" step="0.1" placeholder="4.5">
+          </div>
+          <div class="field">
+            <label class="field-label">R. Rebound</label>
+            <input type="number" name="rear_rebound" step="0.1" placeholder="6.5">
+          </div>
+        </div>
+
+        <div class="sub-header">Anti-Roll Bars</div>
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label">Front ARB</label>
+            <input type="number" name="front_arb" step="0.1" placeholder="5.0">
+          </div>
+          <div class="field">
+            <label class="field-label">Rear ARB</label>
+            <input type="number" name="rear_arb" step="0.1" placeholder="4.0">
+          </div>
+        </div>
+      </div>
+
+      <!-- GEOMETRY -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Geometry</span>
+          <span class="panel-subtitle">Alignment &amp; Steering</span>
+        </div>
+
+        <div class="sub-header">Camber</div>
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label">Front (°)</label>
+            <input type="number" name="front_camber" step="0.1" placeholder="-2.0">
+          </div>
+          <div class="field">
+            <label class="field-label">Rear (°)</label>
+            <input type="number" name="rear_camber" step="0.1" placeholder="-1.5">
+          </div>
+        </div>
+
+        <div class="sub-header">Toe</div>
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label">Front (°)</label>
+            <input type="number" name="front_toe" step="0.1" placeholder="0.0">
+          </div>
+          <div class="field">
+            <label class="field-label">Rear (°)</label>
+            <input type="number" name="rear_toe" step="0.1" placeholder="0.2">
+          </div>
+        </div>
+
+        <div class="sub-header">Steering</div>
+        <div class="field">
+          <label class="field-label">Steering Lock (°)</label>
+          <input type="number" name="steering_lock" step="1" placeholder="26">
+        </div>
+      </div>
+
+      <!-- BRAKES + TYRES (full-width) -->
+      <div class="panel panel-wide">
+        <div class="wide-inner">
+
+          <!-- Brakes -->
+          <div>
+            <div class="panel-header">
+              <span class="panel-title">Brakes</span>
+              <span class="panel-subtitle">Bias &amp; Pressure</span>
+            </div>
+            <div class="field">
+              <label class="field-label">Brake Bias (% Front)</label>
+              <input type="number" name="brake_bias" step="1" placeholder="58">
+            </div>
+            <div class="field">
+              <label class="field-label">Brake Pressure (%)</label>
+              <input type="number" name="brake_pressure" step="1" placeholder="90">
+            </div>
+          </div>
+
+          <!-- Tyres -->
+          <div>
+            <div class="panel-header">
+              <span class="panel-title">Tyres</span>
+              <span class="panel-subtitle">Compound &amp; Pressure</span>
+            </div>
+            <div class="field">
+              <label class="field-label">Compound</label>
+              <select name="tyre_compound">
+                <option value="soft">Soft</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+                <option value="wet">Wet</option>
+                <option value="snow">Snow</option>
+              </select>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label class="field-label">Front Pressure (psi)</label>
+                <input type="number" name="front_tyre_pressure" step="0.1" placeholder="26.0">
+              </div>
+              <div class="field">
+                <label class="field-label">Rear Pressure (psi)</label>
+                <input type="number" name="rear_tyre_pressure" step="0.1" placeholder="25.5">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /section-grid -->
+
+    <div class="action-row">
+      <button type="reset" class="btn-ghost">Reset</button>
+      <button type="submit" class="btn-primary">Save Setup</button>
+    </div>
+
+  </form>
+</div>
+</body>
+</html>
