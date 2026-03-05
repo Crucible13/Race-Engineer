@@ -127,6 +127,7 @@ Differential
 
 Gearing
 - Gear Ratios (1st–6th): 0.200–1.200, step 0.02
+- Adjust length of gears based on technicality of courses longer straight aways use longer gears and vice versa
 - Final Drive: 0.100–0.300, step 0.005
 
 Damping
@@ -147,6 +148,9 @@ STRICT RULES:
 5. Output ONLY the categories and items that exist for the detected car.
 6. If the user requests only specific items, output ONLY those items.
 7. If the user does NOT specify categories, output a full setup with values for EVERY category that improves handling on that stage.
+8. Make sure slider values fall with in the categories ranges.
+9. Make sure to format the output exactly to the format rules.
+10. Gear ratios range from 0.200 to 1.200 and can not exceed 1.200 and final drive can at a minimum be .100 and at a maximum .300
 
 OUTPUT FORMAT RULES (MANDATORY)
 You must output the setup in a format that the frontend parser can read.
