@@ -9,7 +9,8 @@ __pycache__/
 *.pkl
 *.db
 *.sqlite3
-
+# Chroma langchain ollama
+chroma_langchain_db
 # Virtual environments
 venv/
 .env/
