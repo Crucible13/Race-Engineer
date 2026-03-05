@@ -21,7 +21,7 @@ Here is car information (for reference on what changes can be made and what limi
 #build prompt and response chain
 prompt=ChatPromptTemplate.from_template(template)
 chain = prompt | model
-
+print("Welcome back. I’m your Race Engineer, here to give you clear, actionable information for the stage ahead. My job is to translate the data into decisions—surface grip, stage length, elevation, corner density, and expected pace—so you can focus entirely on driving.")
 while True:
     print("\n\n--------------------------------------")
     question = input("Enter input (q to quit): ")
