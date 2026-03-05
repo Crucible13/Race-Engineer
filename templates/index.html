@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EA WRC Race Engineer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+  <!-- Top bar -->
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <div class="logo-dot"></div>
+      <div>
+        <div class="top-title">EA WRC Race Engineer</div>
+        <div class="top-subtitle">Desktop cockpit · Engineering view</div>
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <a type="submit" class="btn-primary" href="/setupCreation" style="text-decoration:none;">Create Setup</a>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>Connected</span>
+      </div>
+      <div class="top-meta">
+        Last stage: <span id="last-stage-label">–</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main grid -->
+  <main class="main-grid">
+    <!-- Left: job card -->
+    <section class="panel">
+      <div class="panel-header">
+        <div class="panel-title">Job card</div>
+        <div class="panel-subtitle">Driver input</div>
+      </div>
+
+      <form id="job-form">
+        <div class="field-group">
+          <label class="field-label" for="car">Car</label>
+          <select id="car" name="car" required>
+            <option value="">Select car…</option>
+            <option value="Fiesta Rally3 Evo">Ford Fiesta Rally3 Evo</option>
+            <option value="Fiesta H2 RWD">Ford Fiesta H2 RWD</option>
+            <option value="Escort MK2 H2 RWD">Ford Escort MK2 H2 RWD</option>
+            <option value="Golf GTI H2 FWD">VW Golf GTI H2 FWD</option>
+            <option value="Polo FWD">VW Polo FWD</option>
+            <!-- Add more as you like -->
+          </select>
+        </div>
+
+        <div class="field-group">
+          <div class="field-row">
+            <div style="flex: 1;">
+              <label class="field-label" for="rally">Rally</label>
+              <select id="rally" name="rally">
+                <option value="">Select rally…</option>
+                <option value="Secto Finland">Secto Finland</option>
+                <option value="Rally Pacifico">Rally Pacifico</option>
+                <option value="Mediterraneo">Mediterraneo</option>
+                <option value="Monte Carlo">Monte Carlo</option>
+                <option value="Greece">Greece</option>
+                <option value="Sweden">Sweden</option>
+              </select>
+            </div>
+            <div style="flex: 1;">
+              <label class="field-label" for="stage">Stage</label>
+              <input id="stage" name="stage" type="text" placeholder="e.g. Lahdenkylä, Gunung, Karoutes…">
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <span class="field-label">Surface</span>
+          <div class="pill-row" id="surface-group">
+            <div class="pill-toggle active" data-value="gravel">Gravel</div>
+            <div class="pill-toggle" data-value="tarmac">Tarmac</div>
+            <div class="pill-toggle" data-value="snow">Snow</div>
+            <div class="pill-toggle" data-value="mixed">Mixed</div>
+          </div>
+          <input type="hidden" name="surface" id="surface-input" value="gravel">
+        </div>
+
+        <div class="field-group">
+          <span class="field-label">Weather</span>
+          <div class="pill-row" id="weather-group">
+            <div class="pill-toggle active" data-value="dry">Dry</div>
+            <div class="pill-toggle" data-value="damp">Damp</div>
+            <div class="pill-toggle" data-value="wet">Wet</div>
+            <div class="pill-toggle" data-value="flooded">Flooded</div>
+          </div>
+          <input type="hidden" name="weather" id="weather-input" value="dry">
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="issues">Handling notes</label>
+          <textarea id="issues" name="issues" placeholder="Pushes mid‑corner, nervous over crests, boggy in 2nd, locks fronts on downhill braking…"></textarea>
+        </div>
+
+        <div class="run-row">
+          <button type="submit" class="btn-primary">Generate Setup</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Right: setup output -->
+    <section class="panel">
+      <div class="panel-header">
+        <div class="panel-title">Setup sheet</div>
+        <div class="panel-subtitle" id="setup-meta">Awaiting run…</div>
+      </div>
+
+      <div class="tab-row">
+        <button class="tab-btn active" type="button" data-tab="grid">Setup grid</button>
+        <button class="tab-btn" type="button" data-tab="tweaks">Tweak pack</button>
+      </div>
+
+      <!-- Setup grid -->
+      <div id="tab-grid">
+        <div class="setup-table-wrapper">
+          <table class="setup-table" id="setup-table">
+            <thead>
+            <tr>
+              <th style="width: 28%;">Section</th>
+              <th style="width: 44%;">Item</th>
+              <th style="width: 28%;">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Example placeholder rows; your JS will overwrite these with AI output -->
+            <tr class="section-row">
+              <td colspan="3">
+                <span class="section-badge">Tyres</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Tyres</td>
+              <td>Compound (front / rear)</td>
+              <td class="value-soft">Soft / Soft</td>
+            </tr>
+            <tr>
+              <td>Tyres</td>
+              <td>Pressures (front / rear)</td>
+              <td>1.90 / 1.95 bar</td>
+            </tr>
+            <tr class="section-row">
+              <td colspan="3">
+                <span class="section-badge">Brakes</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Brakes</td>
+              <td>Brake force</td>
+              <td>70%</td>
+            </tr>
+            <tr>
+              <td>Brakes</td>
+              <td>Brake bias</td>
+              <td>62% front</td>
+            </tr>
+            <!-- Add sections: Diff, Suspension, Alignment, Aero, Gearing -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tweak pack -->
+      <div id="tab-tweaks" style="display:none;">
+        <div class="tweak-pack" id="tweak-pack">
+          <div class="tweak-pack-title">Service tweaks</div>
+          <ul class="tweak-list">
+            <li>Waiting for a run. You’ll see targeted “+/− clicks from current” notes here.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  // pill toggles
+  function setupPillGroup(groupId, hiddenInputId) {
+    const group = document.getElementById(groupId);
+    const hidden = document.getElementById(hiddenInputId);
+    group.addEventListener('click', (e) => {
+      const pill = e.target.closest('.pill-toggle');
+      if (!pill) return;
+      [...group.querySelectorAll('.pill-toggle')].forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      hidden.value = pill.dataset.value;
+    });
+  }
+
+  setupPillGroup('surface-group', 'surface-input');
+  setupPillGroup('weather-group', 'weather-input');
+
+  // tabs
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabGrid = document.getElementById('tab-grid');
+  const tabTweaks = document.getElementById('tab-tweaks');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+      if (tab === 'grid') {
+        tabGrid.style.display = '';
+        tabTweaks.style.display = 'none';
+      } else {
+        tabGrid.style.display = 'none';
+        tabTweaks.style.display = '';
+      }
+    });
+  });
+
+  // form submit -> POST to your Flask route
+  const form = document.getElementById('job-form');
+  const setupMeta = document.getElementById('setup-meta');
+  const lastStageLabel = document.getElementById('last-stage-label');
+  const setupTableBody = document.querySelector('#setup-table tbody');
+  const tweakPack = document.getElementById('tweak-pack');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    // Update header label
+    const rally = payload.rally || '—';
+    const stage = payload.stage || '—';
+    lastStageLabel.textContent = `${rally} · ${stage}`;
+
+    setupMeta.textContent = 'Working up setup…';
+
+    try {
+      const res = await fetch('/api/generate_setup', { // adjust route name if needed
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error('HTTP ' + res.status);
+      }
+
+      const data = await res.json();
+      // Expect your Flask backend to return something like:
+      // { setup_rows: [{section, item, value}], tweaks: ["+2 clicks rear ARB", …], meta: "Golf Karoutes dry, a little pushy" }
+
+      // Update meta
+      setupMeta.textContent = data.meta || 'Setup ready';
+
+      // Rebuild table body
+      if (Array.isArray(data.setup_rows) && data.setup_rows.length) {
+        setupTableBody.innerHTML = '';
+
+        let lastSection = null;
+        data.setup_rows.forEach(row => {
+          if (row.section && row.section !== lastSection) {
+            const sTr = document.createElement('tr');
+            sTr.className = 'section-row';
+            const sTd = document.createElement('td');
+            sTd.colSpan = 3;
+            sTd.innerHTML = `<span class="section-badge">${row.section}</span>`;
+            sTr.appendChild(sTd);
+            setupTableBody.appendChild(sTr);
+            lastSection = row.section;
+          }
+
+          const tr = document.createElement('tr');
+          const tdSection = document.createElement('td');
+          const tdItem = document.createElement('td');
+          const tdValue = document.createElement('td');
+
+          tdSection.textContent = row.section || '';
+          tdItem.textContent = row.item || '';
+
+          // allow simple styling hints from backend: "value_class": "value-soft" / "value-warn" / "value-danger"
+          if (row.value_class) {
+            tdValue.classList.add(row.value_class);
+          }
+          tdValue.textContent = row.value || '';
+
+          tr.appendChild(tdSection);
+          tr.appendChild(tdItem);
+          tr.appendChild(tdValue);
+          setupTableBody.appendChild(tr);
+        });
+      }
+
+      // Update tweak pack
+      if (Array.isArray(data.tweaks) && data.tweaks.length) {
+        tweakPack.innerHTML = '<div class="tweak-pack-title">Service tweaks</div>';
+        const ul = document.createElement('ul');
+        ul.className = 'tweak-list';
+        data.tweaks.forEach(t => {
+          const li = document.createElement('li');
+          li.textContent = t;
+          ul.appendChild(li);
+        });
+        tweakPack.appendChild(ul);
+      } else {
+        tweakPack.innerHTML = '<div class="tweak-pack-title">Service tweaks</div><ul class="tweak-list"><li>No extra tweaks returned.</li></ul>';
+      }
+
+    } catch (err) {
+      console.error(err);
+      setupMeta.textContent = 'Error generating setup';
+      tweakPack.innerHTML = '<div class="tweak-pack-title">Service tweaks</div><ul class="tweak-list"><li>Request failed. Check backend or network.</li></ul>';
+    }
+  });
+</script>
+</body>
+</html>
