@@ -1,0 +1,1709 @@
+car_name,slider_name,min_value,max_value,has_slider
+Ford Puma Rally1,Front Toe,-1.0,1.0,1
+Ford Puma Rally1,Front Camber,-3.0,1.5,1
+Ford Puma Rally1,Rear Toe,-1.0,1.0,1
+Ford Puma Rally1,Rear Camber,-3.0,1.5,1
+Ford Puma Rally1,Braking Force,2000,3500,1
+Ford Puma Rally1,Brake Bias,45,65,1
+Ford Puma Rally1,Handbrake Force,1500,3500,1
+Ford Puma Rally1,Front LSD Driving Lock,10,80,1
+Ford Puma Rally1,Front LSD Braking Lock,5,60,1
+Ford Puma Rally1,Front LSD Preload,5,80,1
+Ford Puma Rally1,Center Diff Torque Split,30,50,1
+Ford Puma Rally1,Rear LSD Driving Lock,10,80,1
+Ford Puma Rally1,Rear LSD Braking Lock,5,60,1
+Ford Puma Rally1,Rear LSD Preload,5,80,1
+Ford Puma Rally1,Gear 1,short,long,1
+Ford Puma Rally1,Gear 2,short,long,1
+Ford Puma Rally1,Gear 3,short,long,1
+Ford Puma Rally1,Gear 4,short,long,1
+Ford Puma Rally1,Gear 5,short,long,1
+Ford Puma Rally1,Gear 6,short,long,1
+Ford Puma Rally1,Final Drive,0.100,0.300,1
+Ford Puma Rally1,Front Slow Bump,-5,5,1
+Ford Puma Rally1,Front Fast Bump,-5,5,1
+Ford Puma Rally1,Front Bump Division,0.20,0.40,1
+Ford Puma Rally1,Front Slow Rebound,-5,5,1
+Ford Puma Rally1,Rear Slow Bump,-5,5,1
+Ford Puma Rally1,Rear Fast Bump,-5,5,1
+Ford Puma Rally1,Rear Bump Division,0.20,0.40,1
+Ford Puma Rally1,Rear Slow Rebound,-5,5,1
+Ford Puma Rally1,Front Ride Height,50,120,1
+Ford Puma Rally1,Front Spring Rate,60,160,1
+Ford Puma Rally1,Front Anti-Roll Bar,5,25,1
+Ford Puma Rally1,Rear Ride Height,50,120,1
+Ford Puma Rally1,Rear Spring Rate,60,160,1
+Ford Puma Rally1,Rear Anti-Roll Bar,5,25,1
+
+Toyota GR Yaris Rally1,Front Toe,-1.0,1.0,1
+Toyota GR Yaris Rally1,Front Camber,-3.0,1.5,1
+Toyota GR Yaris Rally1,Rear Toe,-1.0,1.0,1
+Toyota GR Yaris Rally1,Rear Camber,-3.0,1.5,1
+Toyota GR Yaris Rally1,Braking Force,2000,3500,1
+Toyota GR Yaris Rally1,Brake Bias,45,65,1
+Toyota GR Yaris Rally1,Handbrake Force,1500,3500,1
+Toyota GR Yaris Rally1,Front LSD Driving Lock,10,80,1
+Toyota GR Yaris Rally1,Front LSD Braking Lock,5,60,1
+Toyota GR Yaris Rally1,Front LSD Preload,5,80,1
+Toyota GR Yaris Rally1,Center Diff Torque Split,30,50,1
+Toyota GR Yaris Rally1,Rear LSD Driving Lock,10,80,1
+Toyota GR Yaris Rally1,Rear LSD Braking Lock,5,60,1
+Toyota GR Yaris Rally1,Rear LSD Preload,5,80,1
+Toyota GR Yaris Rally1,Gear 1,short,long,1
+Toyota GR Yaris Rally1,Gear 2,short,long,1
+Toyota GR Yaris Rally1,Gear 3,short,long,1
+Toyota GR Yaris Rally1,Gear 4,short,long,1
+Toyota GR Yaris Rally1,Gear 5,short,long,1
+Toyota GR Yaris Rally1,Gear 6,short,long,1
+Toyota GR Yaris Rally1,Final Drive,0.100,0.300,1
+Toyota GR Yaris Rally1,Front Slow Bump,-5,5,1
+Toyota GR Yaris Rally1,Front Fast Bump,-5,5,1
+Toyota GR Yaris Rally1,Front Bump Division,0.20,0.40,1
+Toyota GR Yaris Rally1,Front Slow Rebound,-5,5,1
+Toyota GR Yaris Rally1,Rear Slow Bump,-5,5,1
+Toyota GR Yaris Rally1,Rear Fast Bump,-5,5,1
+Toyota GR Yaris Rally1,Rear Bump Division,0.20,0.40,1
+Toyota GR Yaris Rally1,Rear Slow Rebound,-5,5,1
+Toyota GR Yaris Rally1,Front Ride Height,50,120,1
+Toyota GR Yaris Rally1,Front Spring Rate,60,160,1
+Toyota GR Yaris Rally1,Front Anti-Roll Bar,5,25,1
+Toyota GR Yaris Rally1,Rear Ride Height,50,120,1
+Toyota GR Yaris Rally1,Rear Spring Rate,60,160,1
+Toyota GR Yaris Rally1,Rear Anti-Roll Bar,5,25,1
+
+Hyundai i20 N Rally1,Front Toe,-1.0,1.0,1
+Hyundai i20 N Rally1,Front Camber,-3.0,1.5,1
+Hyundai i20 N Rally1,Rear Toe,-1.0,1.0,1
+Hyundai i20 N Rally1,Rear Camber,-3.0,1.5,1
+Hyundai i20 N Rally1,Braking Force,2000,3500,1
+Hyundai i20 N Rally1,Brake Bias,45,65,1
+Hyundai i20 N Rally1,Handbrake Force,1500,3500,1
+Hyundai i20 N Rally1,Front LSD Driving Lock,10,80,1
+Hyundai i20 N Rally1,Front LSD Braking Lock,5,60,1
+Hyundai i20 N Rally1,Front LSD Preload,5,80,1
+Hyundai i20 N Rally1,Center Diff Torque Split,30,50,1
+Hyundai i20 N Rally1,Rear LSD Driving Lock,10,80,1
+Hyundai i20 N Rally1,Rear LSD Braking Lock,5,60,1
+Hyundai i20 N Rally1,Rear LSD Preload,5,80,1
+Hyundai i20 N Rally1,Gear 1,short,long,1
+Hyundai i20 N Rally1,Gear 2,short,long,1
+Hyundai i20 N Rally1,Gear 3,short,long,1
+Hyundai i20 N Rally1,Gear 4,short,long,1
+Hyundai i20 N Rally1,Gear 5,short,long,1
+Hyundai i20 N Rally1,Gear 6,short,long,1
+Hyundai i20 N Rally1,Final Drive,0.100,0.300,1
+Hyundai i20 N Rally1,Front Slow Bump,-5,5,1
+Hyundai i20 N Rally1,Front Fast Bump,-5,5,1
+Hyundai i20 N Rally1,Front Bump Division,0.20,0.40,1
+Hyundai i20 N Rally1,Front Slow Rebound,-5,5,1
+Hyundai i20 N Rally1,Rear Slow Bump,-5,5,1
+Hyundai i20 N Rally1,Rear Fast Bump,-5,5,1
+Hyundai i20 N Rally1,Rear Bump Division,0.20,0.40,1
+Hyundai i20 N Rally1,Rear Slow Rebound,-5,5,1
+Hyundai i20 N Rally1,Front Ride Height,50,120,1
+Hyundai i20 N Rally1,Front Spring Rate,60,160,1
+Hyundai i20 N Rally1,Front Anti-Roll Bar,5,25,1
+Hyundai i20 N Rally1,Rear Ride Height,50,120,1
+Hyundai i20 N Rally1,Rear Spring Rate,60,160,1
+Hyundai i20 N Rally1,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Škoda Fabia RS Rally2,Front Toe,-1.0,1.0,1
+Škoda Fabia RS Rally2,Front Camber,-3.0,1.5,1
+Škoda Fabia RS Rally2,Rear Toe,-1.0,1.0,1
+Škoda Fabia RS Rally2,Rear Camber,-3.0,1.5,1
+Škoda Fabia RS Rally2,Braking Force,2000,3500,1
+Škoda Fabia RS Rally2,Brake Bias,45,65,1
+Škoda Fabia RS Rally2,Handbrake Force,1500,3500,1
+Škoda Fabia RS Rally2,Front LSD Driving Lock,10,80,1
+Škoda Fabia RS Rally2,Front LSD Braking Lock,5,60,1
+Škoda Fabia RS Rally2,Front LSD Preload,5,80,1
+Škoda Fabia RS Rally2,Center Diff Torque Split,30,50,0
+Škoda Fabia RS Rally2,Rear LSD Driving Lock,10,80,1
+Škoda Fabia RS Rally2,Rear LSD Braking Lock,5,60,1
+Škoda Fabia RS Rally2,Rear LSD Preload,5,80,1
+Škoda Fabia RS Rally2,Gear 1,short,long,1
+Škoda Fabia RS Rally2,Gear 2,short,long,1
+Škoda Fabia RS Rally2,Gear 3,short,long,1
+Škoda Fabia RS Rally2,Gear 4,short,long,1
+Škoda Fabia RS Rally2,Gear 5,short,long,1
+Škoda Fabia RS Rally2,Gear 6,short,long,1
+Škoda Fabia RS Rally2,Final Drive,0.100,0.300,1
+Škoda Fabia RS Rally2,Front Slow Bump,-5,5,1
+Škoda Fabia RS Rally2,Front Fast Bump,-5,5,1
+Škoda Fabia RS Rally2,Front Bump Division,0.20,0.40,1
+Škoda Fabia RS Rally2,Front Slow Rebound,-5,5,1
+Škoda Fabia RS Rally2,Rear Slow Bump,-5,5,1
+Škoda Fabia RS Rally2,Rear Fast Bump,-5,5,1
+Škoda Fabia RS Rally2,Rear Bump Division,0.20,0.40,1
+Škoda Fabia RS Rally2,Rear Slow Rebound,-5,5,1
+Škoda Fabia RS Rally2,Front Ride Height,50,120,1
+Škoda Fabia RS Rally2,Front Spring Rate,60,160,1
+Škoda Fabia RS Rally2,Front Anti-Roll Bar,5,25,1
+Škoda Fabia RS Rally2,Rear Ride Height,50,120,1
+Škoda Fabia RS Rally2,Rear Spring Rate,60,160,1
+Škoda Fabia RS Rally2,Rear Anti-Roll Bar,5,25,1
+
+Ford Fiesta Rally2,Front Toe,-1.0,1.0,1
+Ford Fiesta Rally2,Front Camber,-3.0,1.5,1
+Ford Fiesta Rally2,Rear Toe,-1.0,1.0,1
+Ford Fiesta Rally2,Rear Camber,-3.0,1.5,1
+Ford Fiesta Rally2,Braking Force,2000,3500,1
+Ford Fiesta Rally2,Brake Bias,45,65,1
+Ford Fiesta Rally2,Handbrake Force,1500,3500,1
+Ford Fiesta Rally2,Front LSD Driving Lock,10,80,1
+Ford Fiesta Rally2,Front LSD Braking Lock,5,60,1
+Ford Fiesta Rally2,Front LSD Preload,5,80,1
+Ford Fiesta Rally2,Center Diff Torque Split,30,50,0
+Ford Fiesta Rally2,Rear LSD Driving Lock,10,80,1
+Ford Fiesta Rally2,Rear LSD Braking Lock,5,60,1
+Ford Fiesta Rally2,Rear LSD Preload,5,80,1
+Ford Fiesta Rally2,Gear 1,short,long,1
+Ford Fiesta Rally2,Gear 2,short,long,1
+Ford Fiesta Rally2,Gear 3,short,long,1
+Ford Fiesta Rally2,Gear 4,short,long,1
+Ford Fiesta Rally2,Gear 5,short,long,1
+Ford Fiesta Rally2,Gear 6,short,long,1
+Ford Fiesta Rally2,Final Drive,0.100,0.300,1
+Ford Fiesta Rally2,Front Slow Bump,-5,5,1
+Ford Fiesta Rally2,Front Fast Bump,-5,5,1
+Ford Fiesta Rally2,Front Bump Division,0.20,0.40,1
+Ford Fiesta Rally2,Front Slow Rebound,-5,5,1
+Ford Fiesta Rally2,Rear Slow Bump,-5,5,1
+Ford Fiesta Rally2,Rear Fast Bump,-5,5,1
+Ford Fiesta Rally2,Rear Bump Division,0.20,0.40,1
+Ford Fiesta Rally2,Rear Slow Rebound,-5,5,1
+Ford Fiesta Rally2,Front Ride Height,50,120,1
+Ford Fiesta Rally2,Front Spring Rate,60,160,1
+Ford Fiesta Rally2,Front Anti-Roll Bar,5,25,1
+Ford Fiesta Rally2,Rear Ride Height,50,120,1
+Ford Fiesta Rally2,Rear Spring Rate,60,160,1
+Ford Fiesta Rally2,Rear Anti-Roll Bar,5,25,1
+
+Citroën C3 Rally2,Front Toe,-1.0,1.0,1
+Citroën C3 Rally2,Front Camber,-3.0,1.5,1
+Citroën C3 Rally2,Rear Toe,-1.0,1.0,1
+Citroën C3 Rally2,Rear Camber,-3.0,1.5,1
+Citroën C3 Rally2,Braking Force,2000,3500,1
+Citroën C3 Rally2,Brake Bias,45,65,1
+Citroën C3 Rally2,Handbrake Force,1500,3500,1
+Citroën C3 Rally2,Front LSD Driving Lock,10,80,1
+Citroën C3 Rally2,Front LSD Braking Lock,5,60,1
+Citroën C3 Rally2,Front LSD Preload,5,80,1
+Citroën C3 Rally2,Center Diff Torque Split,30,50,0
+Citroën C3 Rally2,Rear LSD Driving Lock,10,80,1
+Citroën C3 Rally2,Rear LSD Braking Lock,5,60,1
+Citroën C3 Rally2,Rear LSD Preload,5,80,1
+Citroën C3 Rally2,Gear 1,short,long,1
+Citroën C3 Rally2,Gear 2,short,long,1
+Citroën C3 Rally2,Gear 3,short,long,1
+Citroën C3 Rally2,Gear 4,short,long,1
+Citroën C3 Rally2,Gear 5,short,long,1
+Citroën C3 Rally2,Gear 6,short,long,1
+Citroën C3 Rally2,Final Drive,0.100,0.300,1
+Citroën C3 Rally2,Front Slow Bump,-5,5,1
+Citroën C3 Rally2,Front Fast Bump,-5,5,1
+Citroën C3 Rally2,Front Bump Division,0.20,0.40,1
+Citroën C3 Rally2,Front Slow Rebound,-5,5,1
+Citroën C3 Rally2,Rear Slow Bump,-5,5,1
+Citroën C3 Rally2,Rear Fast Bump,-5,5,1
+Citroën C3 Rally2,Rear Bump Division,0.20,0.40,1
+Citroën C3 Rally2,Rear Slow Rebound,-5,5,1
+Citroën C3 Rally2,Front Ride Height,50,120,1
+Citroën C3 Rally2,Front Spring Rate,60,160,1
+Citroën C3 Rally2,Front Anti-Roll Bar,5,25,1
+Citroën C3 Rally2,Rear Ride Height,50,120,1
+Citroën C3 Rally2,Rear Spring Rate,60,160,1
+Citroën C3 Rally2,Rear Anti-Roll Bar,5,25,1
+
+Hyundai i20 N Rally2,Front Toe,-1.0,1.0,1
+Hyundai i20 N Rally2,Front Camber,-3.0,1.5,1
+Hyundai i20 N Rally2,Rear Toe,-1.0,1.0,1
+Hyundai i20 N Rally2,Rear Camber,-3.0,1.5,1
+Hyundai i20 N Rally2,Braking Force,2000,3500,1
+Hyundai i20 N Rally2,Brake Bias,45,65,1
+Hyundai i20 N Rally2,Handbrake Force,1500,3500,1
+Hyundai i20 N Rally2,Front LSD Driving Lock,10,80,1
+Hyundai i20 N Rally2,Front LSD Braking Lock,5,60,1
+Hyundai i20 N Rally2,Front LSD Preload,5,80,1
+Hyundai i20 N Rally2,Center Diff Torque Split,30,50,0
+Hyundai i20 N Rally2,Rear LSD Driving Lock,10,80,1
+Hyundai i20 N Rally2,Rear LSD Braking Lock,5,60,1
+Hyundai i20 N Rally2,Rear LSD Preload,5,80,1
+Hyundai i20 N Rally2,Gear 1,short,long,1
+Hyundai i20 N Rally2,Gear 2,short,long,1
+Hyundai i20 N Rally2,Gear 3,short,long,1
+Hyundai i20 N Rally2,Gear 4,short,long,1
+Hyundai i20 N Rally2,Gear 5,short,long,1
+Hyundai i20 N Rally2,Gear 6,short,long,1
+Hyundai i20 N Rally2,Final Drive,0.100,0.300,1
+Hyundai i20 N Rally2,Front Slow Bump,-5,5,1
+Hyundai i20 N Rally2,Front Fast Bump,-5,5,1
+Hyundai i20 N Rally2,Front Bump Division,0.20,0.40,1
+Hyundai i20 N Rally2,Front Slow Rebound,-5,5,1
+Hyundai i20 N Rally2,Rear Slow Bump,-5,5,1
+Hyundai i20 N Rally2,Rear Fast Bump,-5,5,1
+Hyundai i20 N Rally2,Rear Bump Division,0.20,0.40,1
+Hyundai i20 N Rally2,Rear Slow Rebound,-5,5,1
+Hyundai i20 N Rally2,Front Ride Height,50,120,1
+Hyundai i20 N Rally2,Front Spring Rate,60,160,1
+Hyundai i20 N Rally2,Front Anti-Roll Bar,5,25,1
+Hyundai i20 N Rally2,Rear Ride Height,50,120,1
+Hyundai i20 N Rally2,Rear Spring Rate,60,160,1
+Hyundai i20 N Rally2,Rear Anti-Roll Bar,5,25,1
+
+Volkswagen Polo GTI R5,Front Toe,-1.0,1.0,1
+Volkswagen Polo GTI R5,Front Camber,-3.0,1.5,1
+Volkswagen Polo GTI R5,Rear Toe,-1.0,1.0,1
+Volkswagen Polo GTI R5,Rear Camber,-3.0,1.5,1
+Volkswagen Polo GTI R5,Braking Force,2000,3500,1
+Volkswagen Polo GTI R5,Brake Bias,45,65,1
+Volkswagen Polo GTI R5,Handbrake Force,1500,3500,1
+Volkswagen Polo GTI R5,Front LSD Driving Lock,10,80,1
+Volkswagen Polo GTI R5,Front LSD Braking Lock,5,60,1
+Volkswagen Polo GTI R5,Front LSD Preload,5,80,1
+Volkswagen Polo GTI R5,Center Diff Torque Split,30,50,0
+Volkswagen Polo GTI R5,Rear LSD Driving Lock,10,80,1
+Volkswagen Polo GTI R5,Rear LSD Braking Lock,5,60,1
+Volkswagen Polo GTI R5,Rear LSD Preload,5,80,1
+Volkswagen Polo GTI R5,Gear 1,short,long,1
+Volkswagen Polo GTI R5,Gear 2,short,long,1
+Volkswagen Polo GTI R5,Gear 3,short,long,1
+Volkswagen Polo GTI R5,Gear 4,short,long,1
+Volkswagen Polo GTI R5,Gear 5,short,long,1
+Volkswagen Polo GTI R5,Gear 6,short,long,1
+Volkswagen Polo GTI R5,Final Drive,0.100,0.300,1
+Volkswagen Polo GTI R5,Front Slow Bump,-5,5,1
+Volkswagen Polo GTI R5,Front Fast Bump,-5,5,1
+Volkswagen Polo GTI R5,Front Bump Division,0.20,0.40,1
+Volkswagen Polo GTI R5,Front Slow Rebound,-5,5,1
+Volkswagen Polo GTI R5,Rear Slow Bump,-5,5,1
+Volkswagen Polo GTI R5,Rear Fast Bump,-5,5,1
+Volkswagen Polo GTI R5,Rear Bump Division,0.20,0.40,1
+Volkswagen Polo GTI R5,Rear Slow Rebound,-5,5,1
+Volkswagen Polo GTI R5,Front Ride Height,50,120,1
+Volkswagen Polo GTI R5,Front Spring Rate,60,160,1
+Volkswagen Polo GTI R5,Front Anti-Roll Bar,5,25,1
+Volkswagen Polo GTI R5,Rear Ride Height,50,120,1
+Volkswagen Polo GTI R5,Rear Spring Rate,60,160,1
+Volkswagen Polo GTI R5,Rear Anti-Roll Bar,5,25,1
+
+Subaru WRX Rally2,Front Toe,-1.0,1.0,1
+Subaru WRX Rally2,Front Camber,-3.0,1.5,1
+Subaru WRX Rally2,Rear Toe,-1.0,1.0,1
+Subaru WRX Rally2,Rear Camber,-3.0,1.5,1
+Subaru WRX Rally2,Braking Force,2000,3500,1
+Subaru WRX Rally2,Brake Bias,45,65,1
+Subaru WRX Rally2,Handbrake Force,1500,3500,1
+Subaru WRX Rally2,Front LSD Driving Lock,10,80,1
+Subaru WRX Rally2,Front LSD Braking Lock,5,60,1
+Subaru WRX Rally2,Front LSD Preload,5,80,1
+Subaru WRX Rally2,Center Diff Torque Split,30,50,0
+Subaru WRX Rally2,Rear LSD Driving Lock,10,80,1
+Subaru WRX Rally2,Rear LSD Braking Lock,5,60,1
+Subaru WRX Rally2,Rear LSD Preload,5,80,1
+Subaru WRX Rally2,Gear 1,short,long,1
+Subaru WRX Rally2,Gear 2,short,long,1
+Subaru WRX Rally2,Gear 3,short,long,1
+Subaru WRX Rally2,Gear 4,short,long,1
+Subaru WRX Rally2,Gear 5,short,long,1
+Subaru WRX Rally2,Gear 6,short,long,1
+Subaru WRX Rally2,Final Drive,0.100,0.300,1
+Subaru WRX Rally2,Front Slow Bump,-5,5,1
+Subaru WRX Rally2,Front Fast Bump,-5,5,1
+Subaru WRX Rally2,Front Bump Division,0.20,0.40,1
+Subaru WRX Rally2,Front Slow Rebound,-5,5,1
+Subaru WRX Rally2,Rear Slow Bump,-5,5,1
+Subaru WRX Rally2,Rear Fast Bump,-5,5,1
+Subaru WRX Rally2,Rear Bump Division,0.20,0.40,1
+Subaru WRX Rally2,Rear Slow Rebound,-5,5,1
+Subaru WRX Rally2,Front Ride Height,50,120,1
+Subaru WRX Rally2,Front Spring Rate,60,160,1
+Subaru WRX Rally2,Front Anti-Roll Bar,5,25,1
+Subaru WRX Rally2,Rear Ride Height,50,120,1
+Subaru WRX Rally2,Rear Spring Rate,60,160,1
+Subaru WRX Rally2,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Ford Fiesta Rally3,Front Toe,-1.0,1.0,1
+Ford Fiesta Rally3,Front Camber,-3.0,1.5,1
+Ford Fiesta Rally3,Rear Toe,-1.0,1.0,1
+Ford Fiesta Rally3,Rear Camber,-3.0,1.5,1
+Ford Fiesta Rally3,Braking Force,2000,3500,1
+Ford Fiesta Rally3,Brake Bias,45,65,1
+Ford Fiesta Rally3,Handbrake Force,1500,3500,1
+Ford Fiesta Rally3,Front LSD Driving Lock,10,80,1
+Ford Fiesta Rally3,Front LSD Braking Lock,5,60,1
+Ford Fiesta Rally3,Front LSD Preload,5,80,1
+Ford Fiesta Rally3,Center Diff Torque Split,30,50,0
+Ford Fiesta Rally3,Rear LSD Driving Lock,10,80,1
+Ford Fiesta Rally3,Rear LSD Braking Lock,5,60,1
+Ford Fiesta Rally3,Rear LSD Preload,5,80,1
+Ford Fiesta Rally3,Gear 1,short,long,1
+Ford Fiesta Rally3,Gear 2,short,long,1
+Ford Fiesta Rally3,Gear 3,short,long,1
+Ford Fiesta Rally3,Gear 4,short,long,1
+Ford Fiesta Rally3,Gear 5,short,long,1
+Ford Fiesta Rally3,Gear 6,short,long,1
+Ford Fiesta Rally3,Final Drive,0.100,0.300,1
+Ford Fiesta Rally3,Front Slow Bump,-5,5,1
+Ford Fiesta Rally3,Front Fast Bump,-5,5,1
+Ford Fiesta Rally3,Front Bump Division,0.20,0.40,1
+Ford Fiesta Rally3,Front Slow Rebound,-5,5,1
+Ford Fiesta Rally3,Rear Slow Bump,-5,5,1
+Ford Fiesta Rally3,Rear Fast Bump,-5,5,1
+Ford Fiesta Rally3,Rear Bump Division,0.20,0.40,1
+Ford Fiesta Rally3,Rear Slow Rebound,-5,5,1
+Ford Fiesta Rally3,Front Ride Height,50,120,1
+Ford Fiesta Rally3,Front Spring Rate,60,160,1
+Ford Fiesta Rally3,Front Anti-Roll Bar,5,25,1
+Ford Fiesta Rally3,Rear Ride Height,50,120,1
+Ford Fiesta Rally3,Rear Spring Rate,60,160,1
+Ford Fiesta Rally3,Rear Anti-Roll Bar,5,25,1
+
+Renault Clio Rally3,Front Toe,-1.0,1.0,1
+Renault Clio Rally3,Front Camber,-3.0,1.5,1
+Renault Clio Rally3,Rear Toe,-1.0,1.0,1
+Renault Clio Rally3,Rear Camber,-3.0,1.5,1
+Renault Clio Rally3,Braking Force,2000,3500,1
+Renault Clio Rally3,Brake Bias,45,65,1
+Renault Clio Rally3,Handbrake Force,1500,3500,1
+Renault Clio Rally3,Front LSD Driving Lock,10,80,1
+Renault Clio Rally3,Front LSD Braking Lock,5,60,1
+Renault Clio Rally3,Front LSD Preload,5,80,1
+Renault Clio Rally3,Center Diff Torque Split,30,50,0
+Renault Clio Rally3,Rear LSD Driving Lock,10,80,1
+Renault Clio Rally3,Rear LSD Braking Lock,5,60,1
+Renault Clio Rally3,Rear LSD Preload,5,80,1
+Renault Clio Rally3,Gear 1,short,long,1
+Renault Clio Rally3,Gear 2,short,long,1
+Renault Clio Rally3,Gear 3,short,long,1
+Renault Clio Rally3,Gear 4,short,long,1
+Renault Clio Rally3,Gear 5,short,long,1
+Renault Clio Rally3,Gear 6,short,long,1
+Renault Clio Rally3,Final Drive,0.100,0.300,1
+Renault Clio Rally3,Front Slow Bump,-5,5,1
+Renault Clio Rally3,Front Fast Bump,-5,5,1
+Renault Clio Rally3,Front Bump Division,0.20,0.40,1
+Renault Clio Rally3,Front Slow Rebound,-5,5,1
+Renault Clio Rally3,Rear Slow Bump,-5,5,1
+Renault Clio Rally3,Rear Fast Bump,-5,5,1
+Renault Clio Rally3,Rear Bump Division,0.20,0.40,1
+Renault Clio Rally3,Rear Slow Rebound,-5,5,1
+Renault Clio Rally3,Front Ride Height,50,120,1
+Renault Clio Rally3,Front Spring Rate,60,160,1
+Renault Clio Rally3,Front Anti-Roll Bar,5,25,1
+Renault Clio Rally3,Rear Ride Height,50,120,1
+Renault Clio Rally3,Rear Spring Rate,60,160,1
+Renault Clio Rally3,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Peugeot 208 Rally4,Front Toe,-1.0,1.0,1
+Peugeot 208 Rally4,Front Camber,-3.0,1.5,1
+Peugeot 208 Rally4,Rear Toe,-1.0,1.0,1
+Peugeot 208 Rally4,Rear Camber,-3.0,1.5,1
+Peugeot 208 Rally4,Braking Force,2000,3500,1
+Peugeot 208 Rally4,Brake Bias,45,65,1
+Peugeot 208 Rally4,Handbrake Force,1500,3500,1
+Peugeot 208 Rally4,Front LSD Driving Lock,10,80,1
+Peugeot 208 Rally4,Front LSD Braking Lock,5,60,1
+Peugeot 208 Rally4,Front LSD Preload,5,80,1
+Peugeot 208 Rally4,Center Diff Torque Split,30,50,0
+Peugeot 208 Rally4,Rear LSD Driving Lock,10,80,0
+Peugeot 208 Rally4,Rear LSD Braking Lock,5,60,0
+Peugeot 208 Rally4,Rear LSD Preload,5,80,0
+Peugeot 208 Rally4,Gear 1,short,long,1
+Peugeot 208 Rally4,Gear 2,short,long,1
+Peugeot 208 Rally4,Gear 3,short,long,1
+Peugeot 208 Rally4,Gear 4,short,long,1
+Peugeot 208 Rally4,Gear 5,short,long,1
+Peugeot 208 Rally4,Gear 6,short,long,0
+Peugeot 208 Rally4,Final Drive,0.100,0.300,1
+Peugeot 208 Rally4,Front Slow Bump,-5,5,1
+Peugeot 208 Rally4,Front Fast Bump,-5,5,1
+Peugeot 208 Rally4,Front Bump Division,0.20,0.40,1
+Peugeot 208 Rally4,Front Slow Rebound,-5,5,1
+Peugeot 208 Rally4,Rear Slow Bump,-5,5,1
+Peugeot 208 Rally4,Rear Fast Bump,-5,5,1
+Peugeot 208 Rally4,Rear Bump Division,0.20,0.40,1
+Peugeot 208 Rally4,Rear Slow Rebound,-5,5,1
+Peugeot 208 Rally4,Front Ride Height,50,120,1
+Peugeot 208 Rally4,Front Spring Rate,60,160,1
+Peugeot 208 Rally4,Front Anti-Roll Bar,5,25,1
+Peugeot 208 Rally4,Rear Ride Height,50,120,1
+Peugeot 208 Rally4,Rear Spring Rate,60,160,1
+Peugeot 208 Rally4,Rear Anti-Roll Bar,5,25,1
+
+Opel Corsa Rally4,Front Toe,-1.0,1.0,1
+Opel Corsa Rally4,Front Camber,-3.0,1.5,1
+Opel Corsa Rally4,Rear Toe,-1.0,1.0,1
+Opel Corsa Rally4,Rear Camber,-3.0,1.5,1
+Opel Corsa Rally4,Braking Force,2000,3500,1
+Opel Corsa Rally4,Brake Bias,45,65,1
+Opel Corsa Rally4,Handbrake Force,1500,3500,1
+Opel Corsa Rally4,Front LSD Driving Lock,10,80,1
+Opel Corsa Rally4,Front LSD Braking Lock,5,60,1
+Opel Corsa Rally4,Front LSD Preload,5,80,1
+Opel Corsa Rally4,Center Diff Torque Split,30,50,0
+Opel Corsa Rally4,Rear LSD Driving Lock,10,80,0
+Opel Corsa Rally4,Rear LSD Braking Lock,5,60,0
+Opel Corsa Rally4,Rear LSD Preload,5,80,0
+Opel Corsa Rally4,Gear 1,short,long,1
+Opel Corsa Rally4,Gear 2,short,long,1
+Opel Corsa Rally4,Gear 3,short,long,1
+Opel Corsa Rally4,Gear 4,short,long,1
+Opel Corsa Rally4,Gear 5,short,long,1
+Opel Corsa Rally4,Gear 6,short,long,0
+Opel Corsa Rally4,Final Drive,0.100,0.300,1
+Opel Corsa Rally4,Front Slow Bump,-5,5,1
+Opel Corsa Rally4,Front Fast Bump,-5,5,1
+Opel Corsa Rally4,Front Bump Division,0.20,0.40,1
+Opel Corsa Rally4,Front Slow Rebound,-5,5,1
+Opel Corsa Rally4,Rear Slow Bump,-5,5,1
+Opel Corsa Rally4,Rear Fast Bump,-5,5,1
+Opel Corsa Rally4,Rear Bump Division,0.20,0.40,1
+Opel Corsa Rally4,Rear Slow Rebound,-5,5,1
+Opel Corsa Rally4,Front Ride Height,50,120,1
+Opel Corsa Rally4,Front Spring Rate,60,160,1
+Opel Corsa Rally4,Front Anti-Roll Bar,5,25,1
+Opel Corsa Rally4,Rear Ride Height,50,120,1
+Opel Corsa Rally4,Rear Spring Rate,60,160,1
+Opel Corsa Rally4,Rear Anti-Roll Bar,5,25,1
+
+Renault Clio Rally4,Front Toe,-1.0,1.0,1
+Renault Clio Rally4,Front Camber,-3.0,1.5,1
+Renault Clio Rally4,Rear Toe,-1.0,1.0,1
+Renault Clio Rally4,Rear Camber,-3.0,1.5,1
+Renault Clio Rally4,Braking Force,2000,3500,1
+Renault Clio Rally4,Brake Bias,45,65,1
+Renault Clio Rally4,Handbrake Force,1500,3500,1
+Renault Clio Rally4,Front LSD Driving Lock,10,80,1
+Renault Clio Rally4,Front LSD Braking Lock,5,60,1
+Renault Clio Rally4,Front LSD Preload,5,80,1
+Renault Clio Rally4,Center Diff Torque Split,30,50,0
+Renault Clio Rally4,Rear LSD Driving Lock,10,80,0
+Renault Clio Rally4,Rear LSD Braking Lock,5,60,0
+Renault Clio Rally4,Rear LSD Preload,5,80,0
+Renault Clio Rally4,Gear 1,short,long,1
+Renault Clio Rally4,Gear 2,short,long,1
+Renault Clio Rally4,Gear 3,short,long,1
+Renault Clio Rally4,Gear 4,short,long,1
+Renault Clio Rally4,Gear 5,short,long,1
+Renault Clio Rally4,Gear 6,short,long,0
+Renault Clio Rally4,Final Drive,0.100,0.300,1
+Renault Clio Rally4,Front Slow Bump,-5,5,1
+Renault Clio Rally4,Front Fast Bump,-5,5,1
+Renault Clio Rally4,Front Bump Division,0.20,0.40,1
+Renault Clio Rally4,Front Slow Rebound,-5,5,1
+Renault Clio Rally4,Rear Slow Bump,-5,5,1
+Renault Clio Rally4,Rear Fast Bump,-5,5,1
+Renault Clio Rally4,Rear Bump Division,0.20,0.40,1
+Renault Clio Rally4,Rear Slow Rebound,-5,5,1
+Renault Clio Rally4,Front Ride Height,50,120,1
+Renault Clio Rally4,Front Spring Rate,60,160,1
+Renault Clio Rally4,Front Anti-Roll Bar,5,25,1
+Renault Clio Rally4,Rear Ride Height,50,120,1
+Renault Clio Rally4,Rear Spring Rate,60,160,1
+Renault Clio Rally4,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Ford Fiesta Rally5,Front Toe,-1.0,1.0,1
+Ford Fiesta Rally5,Front Camber,-3.0,1.5,1
+Ford Fiesta Rally5,Rear Toe,-1.0,1.0,1
+Ford Fiesta Rally5,Rear Camber,-3.0,1.5,1
+Ford Fiesta Rally5,Braking Force,2000,3500,1
+Ford Fiesta Rally5,Brake Bias,45,65,1
+Ford Fiesta Rally5,Handbrake Force,1500,3500,1
+Ford Fiesta Rally5,Front LSD Driving Lock,10,80,1
+Ford Fiesta Rally5,Front LSD Braking Lock,5,60,1
+Ford Fiesta Rally5,Front LSD Preload,5,80,1
+Ford Fiesta Rally5,Center Diff Torque Split,30,50,0
+Ford Fiesta Rally5,Rear LSD Driving Lock,10,80,0
+Ford Fiesta Rally5,Rear LSD Braking Lock,5,60,0
+Ford Fiesta Rally5,Rear LSD Preload,5,80,0
+Ford Fiesta Rally5,Gear 1,short,long,1
+Ford Fiesta Rally5,Gear 2,short,long,1
+Ford Fiesta Rally5,Gear 3,short,long,1
+Ford Fiesta Rally5,Gear 4,short,long,1
+Ford Fiesta Rally5,Gear 5,short,long,1
+Ford Fiesta Rally5,Gear 6,short,long,0
+Ford Fiesta Rally5,Final Drive,0.100,0.300,1
+Ford Fiesta Rally5,Front Slow Bump,-5,5,1
+Ford Fiesta Rally5,Front Fast Bump,-5,5,1
+Ford Fiesta Rally5,Front Bump Division,0.20,0.40,1
+Ford Fiesta Rally5,Front Slow Rebound,-5,5,1
+Ford Fiesta Rally5,Rear Slow Bump,-5,5,1
+Ford Fiesta Rally5,Rear Fast Bump,-5,5,1
+Ford Fiesta Rally5,Rear Bump Division,0.20,0.40,1
+Ford Fiesta Rally5,Rear Slow Rebound,-5,5,1
+Ford Fiesta Rally5,Front Ride Height,50,120,1
+Ford Fiesta Rally5,Front Spring Rate,60,160,1
+Ford Fiesta Rally5,Front Anti-Roll Bar,5,25,1
+Ford Fiesta Rally5,Rear Ride Height,50,120,1
+Ford Fiesta Rally5,Rear Spring Rate,60,160,1
+Ford Fiesta Rally5,Rear Anti-Roll Bar,5,25,1
+
+Renault Clio Rally5,Front Toe,-1.0,1.0,1
+Renault Clio Rally5,Front Camber,-3.0,1.5,1
+Renault Clio Rally5,Rear Toe,-1.0,1.0,1
+Renault Clio Rally5,Rear Camber,-3.0,1.5,1
+Renault Clio Rally5,Braking Force,2000,3500,1
+Renault Clio Rally5,Brake Bias,45,65,1
+Renault Clio Rally5,Handbrake Force,1500,3500,1
+Renault Clio Rally5,Front LSD Driving Lock,10,80,1
+Renault Clio Rally5,Front LSD Braking Lock,5,60,1
+Renault Clio Rally5,Front LSD Preload,5,80,1
+Renault Clio Rally5,Center Diff Torque Split,30,50,0
+Renault Clio Rally5,Rear LSD Driving Lock,10,80,0
+Renault Clio Rally5,Rear LSD Braking Lock,5,60,0
+Renault Clio Rally5,Rear LSD Preload,5,80,0
+Renault Clio Rally5,Gear 1,short,long,1
+Renault Clio Rally5,Gear 2,short,long,1
+Renault Clio Rally5,Gear 3,short,long,1
+Renault Clio Rally5,Gear 4,short,long,1
+Renault Clio Rally5,Gear 5,short,long,1
+Renault Clio Rally5,Gear 6,short,long,0
+Renault Clio Rally5,Final Drive,0.100,0.300,1
+Renault Clio Rally5,Front Slow Bump,-5,5,1
+Renault Clio Rally5,Front Fast Bump,-5,5,1
+Renault Clio Rally5,Front Bump Division,0.20,0.40,1
+Renault Clio Rally5,Front Slow Rebound,-5,5,1
+Renault Clio Rally5,Rear Slow Bump,-5,5,1
+Renault Clio Rally5,Rear Fast Bump,-5,5,1
+Renault Clio Rally5,Rear Bump Division,0.20,0.40,1
+Renault Clio Rally5,Rear Slow Rebound,-5,5,1
+Renault Clio Rally5,Front Ride Height,50,120,1
+Renault Clio Rally5,Front Spring Rate,60,160,1
+Renault Clio Rally5,Front Anti-Roll Bar,5,25,1
+Renault Clio Rally5,Rear Ride Height,50,120,1
+Renault Clio Rally5,Rear Spring Rate,60,160,1
+Renault Clio Rally5,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Subaru WRX STI NR4,Front Toe,-1.0,1.0,1
+Subaru WRX STI NR4,Front Camber,-3.0,1.5,1
+Subaru WRX STI NR4,Rear Toe,-1.0,1.0,1
+Subaru WRX STI NR4,Rear Camber,-3.0,1.5,1
+Subaru WRX STI NR4,Braking Force,2000,3500,1
+Subaru WRX STI NR4,Brake Bias,45,65,1
+Subaru WRX STI NR4,Handbrake Force,1500,3500,1
+Subaru WRX STI NR4,Front LSD Driving Lock,10,80,1
+Subaru WRX STI NR4,Front LSD Braking Lock,5,60,1
+Subaru WRX STI NR4,Front LSD Preload,5,80,1
+Subaru WRX STI NR4,Center Diff Torque Split,30,50,0
+Subaru WRX STI NR4,Rear LSD Driving Lock,10,80,1
+Subaru WRX STI NR4,Rear LSD Braking Lock,5,60,1
+Subaru WRX STI NR4,Rear LSD Preload,5,80,1
+Subaru WRX STI NR4,Gear 1,short,long,1
+Subaru WRX STI NR4,Gear 2,short,long,1
+Subaru WRX STI NR4,Gear 3,short,long,1
+Subaru WRX STI NR4,Gear 4,short,long,1
+Subaru WRX STI NR4,Gear 5,short,long,1
+Subaru WRX STI NR4,Gear 6,short,long,1
+Subaru WRX STI NR4,Final Drive,0.100,0.300,1
+Subaru WRX STI NR4,Front Slow Bump,-5,5,1
+Subaru WRX STI NR4,Front Fast Bump,-5,5,1
+Subaru WRX STI NR4,Front Bump Division,0.20,0.40,1
+Subaru WRX STI NR4,Front Slow Rebound,-5,5,1
+Subaru WRX STI NR4,Rear Slow Bump,-5,5,1
+Subaru WRX STI NR4,Rear Fast Bump,-5,5,1
+Subaru WRX STI NR4,Rear Bump Division,0.20,0.40,1
+Subaru WRX STI NR4,Rear Slow Rebound,-5,5,1
+Subaru WRX STI NR4,Front Ride Height,50,120,1
+Subaru WRX STI NR4,Front Spring Rate,60,160,1
+Subaru WRX STI NR4,Front Anti-Roll Bar,5,25,1
+Subaru WRX STI NR4,Rear Ride Height,50,120,1
+Subaru WRX STI NR4,Rear Spring Rate,60,160,1
+Subaru WRX STI NR4,Rear Anti-Roll Bar,5,25,1
+
+Mitsubishi Lancer Evolution X NR4,Front Toe,-1.0,1.0,1
+Mitsubishi Lancer Evolution X NR4,Front Camber,-3.0,1.5,1
+Mitsubishi Lancer Evolution X NR4,Rear Toe,-1.0,1.0,1
+Mitsubishi Lancer Evolution X NR4,Rear Camber,-3.0,1.5,1
+Mitsubishi Lancer Evolution X NR4,Braking Force,2000,3500,1
+Mitsubishi Lancer Evolution X NR4,Brake Bias,45,65,1
+Mitsubishi Lancer Evolution X NR4,Handbrake Force,1500,3500,1
+Mitsubishi Lancer Evolution X NR4,Front LSD Driving Lock,10,80,1
+Mitsubishi Lancer Evolution X NR4,Front LSD Braking Lock,5,60,1
+Mitsubishi Lancer Evolution X NR4,Front LSD Preload,5,80,1
+Mitsubishi Lancer Evolution X NR4,Center Diff Torque Split,30,50,0
+Mitsubishi Lancer Evolution X NR4,Rear LSD Driving Lock,10,80,1
+Mitsubishi Lancer Evolution X NR4,Rear LSD Braking Lock,5,60,1
+Mitsubishi Lancer Evolution X NR4,Rear LSD Preload,5,80,1
+Mitsubishi Lancer Evolution X NR4,Gear 1,short,long,1
+Mitsubishi Lancer Evolution X NR4,Gear 2,short,long,1
+Mitsubishi Lancer Evolution X NR4,Gear 3,short,long,1
+Mitsubishi Lancer Evolution X NR4,Gear 4,short,long,1
+Mitsubishi Lancer Evolution X NR4,Gear 5,short,long,1
+Mitsubishi Lancer Evolution X NR4,Gear 6,short,long,1
+Mitsubishi Lancer Evolution X NR4,Final Drive,0.100,0.300,1
+Mitsubishi Lancer Evolution X NR4,Front Slow Bump,-5,5,1
+Mitsubishi Lancer Evolution X NR4,Front Fast Bump,-5,5,1
+Mitsubishi Lancer Evolution X NR4,Front Bump Division,0.20,0.40,1
+Mitsubishi Lancer Evolution X NR4,Front Slow Rebound,-5,5,1
+Mitsubishi Lancer Evolution X NR4,Rear Slow Bump,-5,5,1
+Mitsubishi Lancer Evolution X NR4,Rear Fast Bump,-5,5,1
+Mitsubishi Lancer Evolution X NR4,Rear Bump Division,0.20,0.40,1
+Mitsubishi Lancer Evolution X NR4,Rear Slow Rebound,-5,5,1
+Mitsubishi Lancer Evolution X NR4,Front Ride Height,50,120,1
+Mitsubishi Lancer Evolution X NR4,Front Spring Rate,60,160,1
+Mitsubishi Lancer Evolution X NR4,Front Anti-Roll Bar,5,25,1
+Mitsubishi Lancer Evolution X NR4,Rear Ride Height,50,120,1
+Mitsubishi Lancer Evolution X NR4,Rear Spring Rate,60,160,1
+Mitsubishi Lancer Evolution X NR4,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Ford Fiesta S2000,Front Toe,-1.0,1.0,1
+Ford Fiesta S2000,Front Camber,-3.0,1.5,1
+Ford Fiesta S2000,Rear Toe,-1.0,1.0,1
+Ford Fiesta S2000,Rear Camber,-3.0,1.5,1
+Ford Fiesta S2000,Braking Force,2000,3500,1
+Ford Fiesta S2000,Brake Bias,45,65,1
+Ford Fiesta S2000,Handbrake Force,1500,3500,1
+Ford Fiesta S2000,Front LSD Driving Lock,10,80,1
+Ford Fiesta S2000,Front LSD Braking Lock,5,60,1
+Ford Fiesta S2000,Front LSD Preload,5,80,1
+Ford Fiesta S2000,Center Diff Torque Split,30,50,0
+Ford Fiesta S2000,Rear LSD Driving Lock,10,80,1
+Ford Fiesta S2000,Rear LSD Braking Lock,5,60,1
+Ford Fiesta S2000,Rear LSD Preload,5,80,1
+Ford Fiesta S2000,Gear 1,short,long,1
+Ford Fiesta S2000,Gear 2,short,long,1
+Ford Fiesta S2000,Gear 3,short,long,1
+Ford Fiesta S2000,Gear 4,short,long,1
+Ford Fiesta S2000,Gear 5,short,long,1
+Ford Fiesta S2000,Gear 6,short,long,1
+Ford Fiesta S2000,Final Drive,0.100,0.300,1
+Ford Fiesta S2000,Front Slow Bump,-5,5,1
+Ford Fiesta S2000,Front Fast Bump,-5,5,1
+Ford Fiesta S2000,Front Bump Division,0.20,0.40,1
+Ford Fiesta S2000,Front Slow Rebound,-5,5,1
+Ford Fiesta S2000,Rear Slow Bump,-5,5,1
+Ford Fiesta S2000,Rear Fast Bump,-5,5,1
+Ford Fiesta S2000,Rear Bump Division,0.20,0.40,1
+Ford Fiesta S2000,Rear Slow Rebound,-5,5,1
+Ford Fiesta S2000,Front Ride Height,50,120,1
+Ford Fiesta S2000,Front Spring Rate,60,160,1
+Ford Fiesta S2000,Front Anti-Roll Bar,5,25,1
+Ford Fiesta S2000,Rear Ride Height,50,120,1
+Ford Fiesta S2000,Rear Spring Rate,60,160,1
+Ford Fiesta S2000,Rear Anti-Roll Bar,5,25,1
+
+Peugeot 207 S2000,Front Toe,-1.0,1.0,1
+Peugeot 207 S2000,Front Camber,-3.0,1.5,1
+Peugeot 207 S2000,Rear Toe,-1.0,1.0,1
+Peugeot 207 S2000,Rear Camber,-3.0,1.5,1
+Peugeot 207 S2000,Braking Force,2000,3500,1
+Peugeot 207 S2000,Brake Bias,45,65,1
+Peugeot 207 S2000,Handbrake Force,1500,3500,1
+Peugeot 207 S2000,Front LSD Driving Lock,10,80,1
+Peugeot 207 S2000,Front LSD Braking Lock,5,60,1
+Peugeot 207 S2000,Front LSD Preload,5,80,1
+Peugeot 207 S2000,Center Diff Torque Split,30,50,0
+Peugeot 207 S2000,Rear LSD Driving Lock,10,80,1
+Peugeot 207 S2000,Rear LSD Braking Lock,5,60,1
+Peugeot 207 S2000,Rear LSD Preload,5,80,1
+Peugeot 207 S2000,Gear 1,short,long,1
+Peugeot 207 S2000,Gear 2,short,long,1
+Peugeot 207 S2000,Gear 3,short,long,1
+Peugeot 207 S2000,Gear 4,short,long,1
+Peugeot 207 S2000,Gear 5,short,long,1
+Peugeot 207 S2000,Gear 6,short,long,1
+Peugeot 207 S2000,Final Drive,0.100,0.300,1
+Peugeot 207 S2000,Front Slow Bump,-5,5,1
+Peugeot 207 S2000,Front Fast Bump,-5,5,1
+Peugeot 207 S2000,Front Bump Division,0.20,0.40,1
+Peugeot 207 S2000,Front Slow Rebound,-5,5,1
+Peugeot 207 S2000,Rear Slow Bump,-5,5,1
+Peugeot 207 S2000,Rear Fast Bump,-5,5,1
+Peugeot 207 S2000,Rear Bump Division,0.20,0.40,1
+Peugeot 207 S2000,Rear Slow Rebound,-5,5,1
+Peugeot 207 S2000,Front Ride Height,50,120,1
+Peugeot 207 S2000,Front Spring Rate,60,160,1
+Peugeot 207 S2000,Front Anti-Roll Bar,5,25,1
+Peugeot 207 S2000,Rear Ride Height,50,120,1
+Peugeot 207 S2000,Rear Spring Rate,60,160,1
+Peugeot 207 S2000,Rear Anti-Roll Bar,5,25,1
+
+Škoda Fabia S2000,Front Toe,-1.0,1.0,1
+Škoda Fabia S2000,Front Camber,-3.0,1.5,1
+Škoda Fabia S2000,Rear Toe,-1.0,1.0,1
+Škoda Fabia S2000,Rear Camber,-3.0,1.5,1
+Škoda Fabia S2000,Braking Force,2000,3500,1
+Škoda Fabia S2000,Brake Bias,45,65,1
+Škoda Fabia S2000,Handbrake Force,1500,3500,1
+Škoda Fabia S2000,Front LSD Driving Lock,10,80,1
+Škoda Fabia S2000,Front LSD Braking Lock,5,60,1
+Škoda Fabia S2000,Front LSD Preload,5,80,1
+Škoda Fabia S2000,Center Diff Torque Split,30,50,0
+Škoda Fabia S2000,Rear LSD Driving Lock,10,80,1
+Škoda Fabia S2000,Rear LSD Braking Lock,5,60,1
+Škoda Fabia S2000,Rear LSD Preload,5,80,1
+Škoda Fabia S2000,Gear 1,short,long,1
+Škoda Fabia S2000,Gear 2,short,long,1
+Škoda Fabia S2000,Gear 3,short,long,1
+Škoda Fabia S2000,Gear 4,short,long,1
+Škoda Fabia S2000,Gear 5,short,long,1
+Škoda Fabia S2000,Gear 6,short,long,1
+Škoda Fabia S2000,Final Drive,0.100,0.300,1
+Škoda Fabia S2000,Front Slow Bump,-5,5,1
+Škoda Fabia S2000,Front Fast Bump,-5,5,1
+Škoda Fabia S2000,Front Bump Division,0.20,0.40,1
+Škoda Fabia S2000,Front Slow Rebound,-5,5,1
+Škoda Fabia S2000,Rear Slow Bump,-5,5,1
+Škoda Fabia S2000,Rear Fast Bump,-5,5,1
+Škoda Fabia S2000,Rear Bump Division,0.20,0.40,1
+Škoda Fabia S2000,Rear Slow Rebound,-5,5,1
+Škoda Fabia S2000,Front Ride Height,50,120,1
+Škoda Fabia S2000,Front Spring Rate,60,160,1
+Škoda Fabia S2000,Front Anti-Roll Bar,5,25,1
+Škoda Fabia S2000,Rear Ride Height,50,120,1
+Škoda Fabia S2000,Rear Spring Rate,60,160,1
+Škoda Fabia S2000,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Subaru Impreza Group A,Front Toe,-1.0,1.0,1
+Subaru Impreza Group A,Front Camber,-3.0,1.5,1
+Subaru Impreza Group A,Rear Toe,-1.0,1.0,1
+Subaru Impreza Group A,Rear Camber,-3.0,1.5,1
+Subaru Impreza Group A,Braking Force,2000,3500,1
+Subaru Impreza Group A,Brake Bias,45,65,1
+Subaru Impreza Group A,Handbrake Force,1500,3500,1
+Subaru Impreza Group A,Front LSD Driving Lock,10,80,1
+Subaru Impreza Group A,Front LSD Braking Lock,5,60,1
+Subaru Impreza Group A,Front LSD Preload,5,80,1
+Subaru Impreza Group A,Center Diff Torque Split,30,50,0
+Subaru Impreza Group A,Rear LSD Driving Lock,10,80,1
+Subaru Impreza Group A,Rear LSD Braking Lock,5,60,1
+Subaru Impreza Group A,Rear LSD Preload,5,80,1
+Subaru Impreza Group A,Gear 1,short,long,1
+Subaru Impreza Group A,Gear 2,short,long,1
+Subaru Impreza Group A,Gear 3,short,long,1
+Subaru Impreza Group A,Gear 4,short,long,1
+Subaru Impreza Group A,Gear 5,short,long,1
+Subaru Impreza Group A,Gear 6,short,long,1
+Subaru Impreza Group A,Final Drive,0.100,0.300,1
+Subaru Impreza Group A,Front Slow Bump,-5,5,1
+Subaru Impreza Group A,Front Fast Bump,-5,5,1
+Subaru Impreza Group A,Front Bump Division,0.20,0.40,1
+Subaru Impreza Group A,Front Slow Rebound,-5,5,1
+Subaru Impreza Group A,Rear Slow Bump,-5,5,1
+Subaru Impreza Group A,Rear Fast Bump,-5,5,1
+Subaru Impreza Group A,Rear Bump Division,0.20,0.40,1
+Subaru Impreza Group A,Rear Slow Rebound,-5,5,1
+Subaru Impreza Group A,Front Ride Height,50,120,1
+Subaru Impreza Group A,Front Spring Rate,60,160,1
+Subaru Impreza Group A,Front Anti-Roll Bar,5,25,1
+Subaru Impreza Group A,Rear Ride Height,50,120,1
+Subaru Impreza Group A,Rear Spring Rate,60,160,1
+Subaru Impreza Group A,Rear Anti-Roll Bar,5,25,1
+
+Mitsubishi Lancer Evolution VI Group A,Front Toe,-1.0,1.0,1
+Mitsubishi Lancer Evolution VI Group A,Front Camber,-3.0,1.5,1
+Mitsubishi Lancer Evolution VI Group A,Rear Toe,-1.0,1.0,1
+Mitsubishi Lancer Evolution VI Group A,Rear Camber,-3.0,1.5,1
+Mitsubishi Lancer Evolution VI Group A,Braking Force,2000,3500,1
+Mitsubishi Lancer Evolution VI Group A,Brake Bias,45,65,1
+Mitsubishi Lancer Evolution VI Group A,Handbrake Force,1500,3500,1
+Mitsubishi Lancer Evolution VI Group A,Front LSD Driving Lock,10,80,1
+Mitsubishi Lancer Evolution VI Group A,Front LSD Braking Lock,5,60,1
+Mitsubishi Lancer Evolution VI Group A,Front LSD Preload,5,80,1
+Mitsubishi Lancer Evolution VI Group A,Center Diff Torque Split,30,50,0
+Mitsubishi Lancer Evolution VI Group A,Rear LSD Driving Lock,10,80,1
+Mitsubishi Lancer Evolution VI Group A,Rear LSD Braking Lock,5,60,1
+Mitsubishi Lancer Evolution VI Group A,Rear LSD Preload,5,80,1
+Mitsubishi Lancer Evolution VI Group A,Gear 1,short,long,1
+Mitsubishi Lancer Evolution VI Group A,Gear 2,short,long,1
+Mitsubishi Lancer Evolution VI Group A,Gear 3,short,long,1
+Mitsubishi Lancer Evolution VI Group A,Gear 4,short,long,1
+Mitsubishi Lancer Evolution VI Group A,Gear 5,short,long,1
+Mitsubishi Lancer Evolution VI Group A,Gear 6,short,long,1
+Mitsubishi Lancer Evolution VI Group A,Final Drive,0.100,0.300,1
+Mitsubishi Lancer Evolution VI Group A,Front Slow Bump,-5,5,1
+Mitsubishi Lancer Evolution VI Group A,Front Fast Bump,-5,5,1
+Mitsubishi Lancer Evolution VI Group A,Front Bump Division,0.20,0.40,1
+Mitsubishi Lancer Evolution VI Group A,Front Slow Rebound,-5,5,1
+Mitsubishi Lancer Evolution VI Group A,Rear Slow Bump,-5,5,1
+Mitsubishi Lancer Evolution VI Group A,Rear Fast Bump,-5,5,1
+Mitsubishi Lancer Evolution VI Group A,Rear Bump Division,0.20,0.40,1
+Mitsubishi Lancer Evolution VI Group A,Rear Slow Rebound,-5,5,1
+Mitsubishi Lancer Evolution VI Group A,Front Ride Height,50,120,1
+Mitsubishi Lancer Evolution VI Group A,Front Spring Rate,60,160,1
+Mitsubishi Lancer Evolution VI Group A,Front Anti-Roll Bar,5,25,1
+Mitsubishi Lancer Evolution VI Group A,Rear Ride Height,50,120,1
+Mitsubishi Lancer Evolution VI Group A,Rear Spring Rate,60,160,1
+Mitsubishi Lancer Evolution VI Group A,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Audi Quattro S1 E2,Front Toe,-1.0,1.0,1
+Audi Quattro S1 E2,Front Camber,-3.0,1.5,1
+Audi Quattro S1 E2,Rear Toe,-1.0,1.0,1
+Audi Quattro S1 E2,Rear Camber,-3.0,1.5,1
+Audi Quattro S1 E2,Braking Force,2000,3500,1
+Audi Quattro S1 E2,Brake Bias,45,65,1
+Audi Quattro S1 E2,Handbrake Force,1500,3500,1
+Audi Quattro S1 E2,Front LSD Driving Lock,10,80,1
+Audi Quattro S1 E2,Front LSD Braking Lock,5,60,1
+Audi Quattro S1 E2,Front LSD Preload,5,80,1
+Audi Quattro S1 E2,Center Diff Torque Split,30,50,0
+Audi Quattro S1 E2,Rear LSD Driving Lock,10,80,1
+Audi Quattro S1 E2,Rear LSD Braking Lock,5,60,1
+Audi Quattro S1 E2,Rear LSD Preload,5,80,1
+Audi Quattro S1 E2,Gear 1,short,long,1
+Audi Quattro S1 E2,Gear 2,short,long,1
+Audi Quattro S1 E2,Gear 3,short,long,1
+Audi Quattro S1 E2,Gear 4,short,long,1
+Audi Quattro S1 E2,Gear 5,short,long,1
+Audi Quattro S1 E2,Gear 6,short,long,0
+Audi Quattro S1 E2,Final Drive,0.100,0.300,1
+Audi Quattro S1 E2,Front Slow Bump,-5,5,1
+Audi Quattro S1 E2,Front Fast Bump,-5,5,1
+Audi Quattro S1 E2,Front Bump Division,0.20,0.40,1
+Audi Quattro S1 E2,Front Slow Rebound,-5,5,1
+Audi Quattro S1 E2,Rear Slow Bump,-5,5,1
+Audi Quattro S1 E2,Rear Fast Bump,-5,5,1
+Audi Quattro S1 E2,Rear Bump Division,0.20,0.40,1
+Audi Quattro S1 E2,Rear Slow Rebound,-5,5,1
+Audi Quattro S1 E2,Front Ride Height,50,120,1
+Audi Quattro S1 E2,Front Spring Rate,60,160,1
+Audi Quattro S1 E2,Front Anti-Roll Bar,5,25,1
+Audi Quattro S1 E2,Rear Ride Height,50,120,1
+Audi Quattro S1 E2,Rear Spring Rate,60,160,1
+Audi Quattro S1 E2,Rear Anti-Roll Bar,5,25,1
+
+Lancia Delta S4,Front Toe,-1.0,1.0,1
+Lancia Delta S4,Front Camber,-3.0,1.5,1
+Lancia Delta S4,Rear Toe,-1.0,1.0,1
+Lancia Delta S4,Rear Camber,-3.0,1.5,1
+Lancia Delta S4,Braking Force,2000,3500,1
+Lancia Delta S4,Brake Bias,45,65,1
+Lancia Delta S4,Handbrake Force,1500,3500,1
+Lancia Delta S4,Front LSD Driving Lock,10,80,1
+Lancia Delta S4,Front LSD Braking Lock,5,60,1
+Lancia Delta S4,Front LSD Preload,5,80,1
+Lancia Delta S4,Center Diff Torque Split,30,50,0
+Lancia Delta S4,Rear LSD Driving Lock,10,80,1
+Lancia Delta S4,Rear LSD Braking Lock,5,60,1
+Lancia Delta S4,Rear LSD Preload,5,80,1
+Lancia Delta S4,Gear 1,short,long,1
+Lancia Delta S4,Gear 2,short,long,1
+Lancia Delta S4,Gear 3,short,long,1
+Lancia Delta S4,Gear 4,short,long,1
+Lancia Delta S4,Gear 5,short,long,1
+Lancia Delta S4,Gear 6,short,long,0
+Lancia Delta S4,Final Drive,0.100,0.300,1
+Lancia Delta S4,Front Slow Bump,-5,5,1
+Lancia Delta S4,Front Fast Bump,-5,5,1
+Lancia Delta S4,Front Bump Division,0.20,0.40,1
+Lancia Delta S4,Front Slow Rebound,-5,5,1
+Lancia Delta S4,Rear Slow Bump,-5,5,1
+Lancia Delta S4,Rear Fast Bump,-5,5,1
+Lancia Delta S4,Rear Bump Division,0.20,0.40,1
+Lancia Delta S4,Rear Slow Rebound,-5,5,1
+Lancia Delta S4,Front Ride Height,50,120,1
+Lancia Delta S4,Front Spring Rate,60,160,1
+Lancia Delta S4,Front Anti-Roll Bar,5,25,1
+Lancia Delta S4,Rear Ride Height,50,120,1
+Lancia Delta S4,Rear Spring Rate,60,160,1
+Lancia Delta S4,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Lancia 037,Front Toe,-1.0,1.0,1
+Lancia 037,Front Camber,-3.0,1.5,1
+Lancia 037,Rear Toe,-1.0,1.0,1
+Lancia 037,Rear Camber,-3.0,1.5,1
+Lancia 037,Braking Force,2000,3500,1
+Lancia 037,Brake Bias,45,65,1
+Lancia 037,Handbrake Force,1500,3500,1
+Lancia 037,Front LSD Driving Lock,10,80,0
+Lancia 037,Front LSD Braking Lock,5,60,0
+Lancia 037,Front LSD Preload,5,80,0
+Lancia 037,Center Diff Torque Split,30,50,0
+Lancia 037,Rear LSD Driving Lock,10,80,1
+Lancia 037,Rear LSD Braking Lock,5,60,1
+Lancia 037,Rear LSD Preload,5,80,1
+Lancia 037,Gear 1,short,long,1
+Lancia 037,Gear 2,short,long,1
+Lancia 037,Gear 3,short,long,1
+Lancia 037,Gear 4,short,long,1
+Lancia 037,Gear 5,short,long,1
+Lancia 037,Gear 6,short,long,0
+Lancia 037,Final Drive,0.100,0.300,1
+Lancia 037,Front Slow Bump,-5,5,1
+Lancia 037,Front Fast Bump,-5,5,1
+Lancia 037,Front Bump Division,0.20,0.40,1
+Lancia 037,Front Slow Rebound,-5,5,1
+Lancia 037,Rear Slow Bump,-5,5,1
+Lancia 037,Rear Fast Bump,-5,5,1
+Lancia 037,Rear Bump Division,0.20,0.40,1
+Lancia 037,Rear Slow Rebound,-5,5,1
+Lancia 037,Front Ride Height,50,120,1
+Lancia 037,Front Spring Rate,60,160,1
+Lancia 037,Front Anti-Roll Bar,5,25,1
+Lancia 037,Rear Ride Height,50,120,1
+Lancia 037,Rear Spring Rate,60,160,1
+Lancia 037,Rear Anti-Roll Bar,5,25,1
+
+Opel Manta 400,Front Toe,-1.0,1.0,1
+Opel Manta 400,Front Camber,-3.0,1.5,1
+Opel Manta 400,Rear Toe,-1.0,1.0,1
+Opel Manta 400,Rear Camber,-3.0,1.5,1
+Opel Manta 400,Braking Force,2000,3500,1
+Opel Manta 400,Brake Bias,45,65,1
+Opel Manta 400,Handbrake Force,1500,3500,1
+Opel Manta 400,Front LSD Driving Lock,10,80,0
+Opel Manta 400,Front LSD Braking Lock,5,60,0
+Opel Manta 400,Front LSD Preload,5,80,0
+Opel Manta 400,Center Diff Torque Split,30,50,0
+Opel Manta 400,Rear LSD Driving Lock,10,80,1
+Opel Manta 400,Rear LSD Braking Lock,5,60,1
+Opel Manta 400,Rear LSD Preload,5,80,1
+Opel Manta 400,Gear 1,short,long,1
+Opel Manta 400,Gear 2,short,long,1
+Opel Manta 400,Gear 3,short,long,1
+Opel Manta 400,Gear 4,short,long,1
+Opel Manta 400,Gear 5,short,long,1
+Opel Manta 400,Gear 6,short,long,0
+Opel Manta 400,Final Drive,0.100,0.300,1
+Opel Manta 400,Front Slow Bump,-5,5,1
+Opel Manta 400,Front Fast Bump,-5,5,1
+Opel Manta 400,Front Bump Division,0.20,0.40,1
+Opel Manta 400,Front Slow Rebound,-5,5,1
+Opel Manta 400,Rear Slow Bump,-5,5,1
+Opel Manta 400,Rear Fast Bump,-5,5,1
+Opel Manta 400,Rear Bump Division,0.20,0.40,1
+Opel Manta 400,Rear Slow Rebound,-5,5,1
+Opel Manta 400,Front Ride Height,50,120,1
+Opel Manta 400,Front Spring Rate,60,160,1
+Opel Manta 400,Front Anti-Roll Bar,5,25,1
+Opel Manta 400,Rear Ride Height,50,120,1
+Opel Manta 400,Rear Spring Rate,60,160,1
+Opel Manta 400,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Mini Cooper S,Front Toe,-1.0,1.0,1
+Mini Cooper S,Front Camber,-3.0,1.5,1
+Mini Cooper S,Rear Toe,-1.0,1.0,1
+Mini Cooper S,Rear Camber,-3.0,1.5,1
+Mini Cooper S,Braking Force,2000,3500,1
+Mini Cooper S,Brake Bias,45,65,1
+Mini Cooper S,Handbrake Force,1500,3500,1
+Mini Cooper S,Front LSD Driving Lock,10,80,1
+Mini Cooper S,Front LSD Braking Lock,5,60,1
+Mini Cooper S,Front LSD Preload,5,80,1
+Mini Cooper S,Center Diff Torque Split,30,50,0
+Mini Cooper S,Rear LSD Driving Lock,10,80,0
+Mini Cooper S,Rear LSD Braking Lock,5,60,0
+Mini Cooper S,Rear LSD Preload,5,80,0
+Mini Cooper S,Gear 1,short,long,1
+Mini Cooper S,Gear 2,short,long,1
+Mini Cooper S,Gear 3,short,long,1
+Mini Cooper S,Gear 4,short,long,1
+Mini Cooper S,Gear 5,short,long,1
+Mini Cooper S,Gear 6,short,long,0
+Mini Cooper S,Final Drive,0.100,0.300,1
+Mini Cooper S,Front Slow Bump,-5,5,1
+Mini Cooper S,Front Fast Bump,-5,5,1
+Mini Cooper S,Front Bump Division,0.20,0.40,1
+Mini Cooper S,Front Slow Rebound,-5,5,1
+Mini Cooper S,Rear Slow Bump,-5,5,1
+Mini Cooper S,Rear Fast Bump,-5,5,1
+Mini Cooper S,Rear Bump Division,0.20,0.40,1
+Mini Cooper S,Rear Slow Rebound,-5,5,1
+Mini Cooper S,Front Ride Height,50,120,1
+Mini Cooper S,Front Spring Rate,60,160,1
+Mini Cooper S,Front Anti-Roll Bar,5,25,1
+Mini Cooper S,Rear Ride Height,50,120,1
+Mini Cooper S,Rear Spring Rate,60,160,1
+Mini Cooper S,Rear Anti-Roll Bar,5,25,1
+
+Citroën DS21,Front Toe,-1.0,1.0,1
+Citroën DS21,Front Camber,-3.0,1.5,1
+Citroën DS21,Rear Toe,-1.0,1.0,1
+Citroën DS21,Rear Camber,-3.0,1.5,1
+Citroën DS21,Braking Force,2000,3500,1
+Citroën DS21,Brake Bias,45,65,1
+Citroën DS21,Handbrake Force,1500,3500,1
+Citroën DS21,Front LSD Driving Lock,10,80,1
+Citroën DS21,Front LSD Braking Lock,5,60,1
+Citroën DS21,Front LSD Preload,5,80,1
+Citroën DS21,Center Diff Torque Split,30,50,0
+Citroën DS21,Rear LSD Driving Lock,10,80,0
+Citroën DS21,Rear LSD Braking Lock,5,60,0
+Citroën DS21,Rear LSD Preload,5,80,0
+Citroën DS21,Gear 1,short,long,1
+Citroën DS21,Gear 2,short,long,1
+Citroën DS21,Gear 3,short,long,1
+Citroën DS21,Gear 4,short,long,1
+Citroën DS21,Gear 5,short,long,1
+Citroën DS21,Gear 6,short,long,0
+Citroën DS21,Final Drive,0.100,0.300,1
+Citroën DS21,Front Slow Bump,-5,5,1
+Citroën DS21,Front Fast Bump,-5,5,1
+Citroën DS21,Front Bump Division,0.20,0.40,1
+Citroën DS21,Front Slow Rebound,-5,5,1
+Citroën DS21,Rear Slow Bump,-5,5,1
+Citroën DS21,Rear Fast Bump,-5,5,1
+Citroën DS21,Rear Bump Division,0.20,0.40,1
+Citroën DS21,Rear Slow Rebound,-5,5,1
+Citroën DS21,Front Ride Height,50,120,1
+Citroën DS21,Front Spring Rate,60,160,1
+Citroën DS21,Front Anti-Roll Bar,5,25,1
+Citroën DS21,Rear Ride Height,50,120,1
+Citroën DS21,Rear Spring Rate,60,160,1
+Citroën DS21,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Ford Escort Mk2,Front Toe,-1.0,1.0,1
+Ford Escort Mk2,Front Camber,-3.0,1.5,1
+Ford Escort Mk2,Rear Toe,-1.0,1.0,1
+Ford Escort Mk2,Rear Camber,-3.0,1.5,1
+Ford Escort Mk2,Braking Force,2000,3500,1
+Ford Escort Mk2,Brake Bias,45,65,1
+Ford Escort Mk2,Handbrake Force,1500,3500,1
+Ford Escort Mk2,Front LSD Driving Lock,10,80,0
+Ford Escort Mk2,Front LSD Braking Lock,5,60,0
+Ford Escort Mk2,Front LSD Preload,5,80,0
+Ford Escort Mk2,Center Diff Torque Split,30,50,0
+Ford Escort Mk2,Rear LSD Driving Lock,10,80,1
+Ford Escort Mk2,Rear LSD Braking Lock,5,60,1
+Ford Escort Mk2,Rear LSD Preload,5,80,1
+Ford Escort Mk2,Gear 1,short,long,1
+Ford Escort Mk2,Gear 2,short,long,1
+Ford Escort Mk2,Gear 3,short,long,1
+Ford Escort Mk2,Gear 4,short,long,1
+Ford Escort Mk2,Gear 5,short,long,1
+Ford Escort Mk2,Gear 6,short,long,0
+Ford Escort Mk2,Final Drive,0.100,0.300,1
+Ford Escort Mk2,Front Slow Bump,-5,5,1
+Ford Escort Mk2,Front Fast Bump,-5,5,1
+Ford Escort Mk2,Front Bump Division,0.20,0.40,1
+Ford Escort Mk2,Front Slow Rebound,-5,5,1
+Ford Escort Mk2,Rear Slow Bump,-5,5,1
+Ford Escort Mk2,Rear Fast Bump,-5,5,1
+Ford Escort Mk2,Rear Bump Division,0.20,0.40,1
+Ford Escort Mk2,Rear Slow Rebound,-5,5,1
+Ford Escort Mk2,Front Ride Height,50,120,1
+Ford Escort Mk2,Front Spring Rate,60,160,1
+Ford Escort Mk2,Front Anti-Roll Bar,5,25,1
+Ford Escort Mk2,Rear Ride Height,50,120,1
+Ford Escort Mk2,Rear Spring Rate,60,160,1
+Ford Escort Mk2,Rear Anti-Roll Bar,5,25,1
+
+Opel Kadett C GT/E,Front Toe,-1.0,1.0,1
+Opel Kadett C GT/E,Front Camber,-3.0,1.5,1
+Opel Kadett C GT/E,Rear Toe,-1.0,1.0,1
+Opel Kadett C GT/E,Rear Camber,-3.0,1.5,1
+Opel Kadett C GT/E,Braking Force,2000,3500,1
+Opel Kadett C GT/E,Brake Bias,45,65,1
+Opel Kadett C GT/E,Handbrake Force,1500,3500,1
+Opel Kadett C GT/E,Front LSD Driving Lock,10,80,0
+Opel Kadett C GT/E,Front LSD Braking Lock,5,60,0
+Opel Kadett C GT/E,Front LSD Preload,5,80,0
+Opel Kadett C GT/E,Center Diff Torque Split,30,50,0
+Opel Kadett C GT/E,Rear LSD Driving Lock,10,80,1
+Opel Kadett C GT/E,Rear LSD Braking Lock,5,60,1
+Opel Kadett C GT/E,Rear LSD Preload,5,80,1
+Opel Kadett C GT/E,Gear 1,short,long,1
+Opel Kadett C GT/E,Gear 2,short,long,1
+Opel Kadett C GT/E,Gear 3,short,long,1
+Opel Kadett C GT/E,Gear 4,short,long,1
+Opel Kadett C GT/E,Gear 5,short,long,1
+Opel Kadett C GT/E,Gear 6,short,long,0
+Opel Kadett C GT/E,Final Drive,0.100,0.300,1
+Opel Kadett C GT/E,Front Slow Bump,-5,5,1
+Opel Kadett C GT/E,Front Fast Bump,-5,5,1
+Opel Kadett C GT/E,Front Bump Division,0.20,0.40,1
+Opel Kadett C GT/E,Front Slow Rebound,-5,5,1
+Opel Kadett C GT/E,Rear Slow Bump,-5,5,1
+Opel Kadett C GT/E,Rear Fast Bump,-5,5,1
+Opel Kadett C GT/E,Rear Bump Division,0.20,0.40,1
+Opel Kadett C GT/E,Rear Slow Rebound,-5,5,1
+Opel Kadett C GT/E,Front Ride Height,50,120,1
+Opel Kadett C GT/E,Front Spring Rate,60,160,1
+Opel Kadett C GT/E,Front Anti-Roll Bar,5,25,1
+Opel Kadett C GT/E,Rear Ride Height,50,120,1
+Opel Kadett C GT/E,Rear Spring Rate,60,160,1
+Opel Kadett C GT/E,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Volkswagen Golf GTI 16V,Front Toe,-1.0,1.0,1
+Volkswagen Golf GTI 16V,Front Camber,-3.0,1.5,1
+Volkswagen Golf GTI 16V,Rear Toe,-1.0,1.0,1
+Volkswagen Golf GTI 16V,Rear Camber,-3.0,1.5,1
+Volkswagen Golf GTI 16V,Braking Force,2000,3500,1
+Volkswagen Golf GTI 16V,Brake Bias,45,65,1
+Volkswagen Golf GTI 16V,Handbrake Force,1500,3500,1
+Volkswagen Golf GTI 16V,Front LSD Driving Lock,10,80,1
+Volkswagen Golf GTI 16V,Front LSD Braking Lock,5,60,1
+Volkswagen Golf GTI 16V,Front LSD Preload,5,80,1
+Volkswagen Golf GTI 16V,Center Diff Torque Split,30,50,0
+Volkswagen Golf GTI 16V,Rear LSD Driving Lock,10,80,0
+Volkswagen Golf GTI 16V,Rear LSD Braking Lock,5,60,0
+Volkswagen Golf GTI 16V,Rear LSD Preload,5,80,0
+Volkswagen Golf GTI 16V,Gear 1,short,long,1
+Volkswagen Golf GTI 16V,Gear 2,short,long,1
+Volkswagen Golf GTI 16V,Gear 3,short,long,1
+Volkswagen Golf GTI 16V,Gear 4,short,long,1
+Volkswagen Golf GTI 16V,Gear 5,short,long,1
+Volkswagen Golf GTI 16V,Gear 6,short,long,0
+Volkswagen Golf GTI 16V,Final Drive,0.100,0.300,1
+Volkswagen Golf GTI 16V,Front Slow Bump,-5,5,1
+Volkswagen Golf GTI 16V,Front Fast Bump,-5,5,1
+Volkswagen Golf GTI 16V,Front Bump Division,0.20,0.40,1
+Volkswagen Golf GTI 16V,Front Slow Rebound,-5,5,1
+Volkswagen Golf GTI 16V,Rear Slow Bump,-5,5,1
+Volkswagen Golf GTI 16V,Rear Fast Bump,-5,5,1
+Volkswagen Golf GTI 16V,Rear Bump Division,0.20,0.40,1
+Volkswagen Golf GTI 16V,Rear Slow Rebound,-5,5,1
+Volkswagen Golf GTI 16V,Front Ride Height,50,120,1
+Volkswagen Golf GTI 16V,Front Spring Rate,60,160,1
+Volkswagen Golf GTI 16V,Front Anti-Roll Bar,5,25,1
+Volkswagen Golf GTI 16V,Rear Ride Height,50,120,1
+Volkswagen Golf GTI 16V,Rear Spring Rate,60,160,1
+Volkswagen Golf GTI 16V,Rear Anti-Roll Bar,5,25,1
+
+Peugeot 205 GTI,Front Toe,-1.0,1.0,1
+Peugeot 205 GTI,Front Camber,-3.0,1.5,1
+Peugeot 205 GTI,Rear Toe,-1.0,1.0,1
+Peugeot 205 GTI,Rear Camber,-3.0,1.5,1
+Peugeot 205 GTI,Braking Force,2000,3500,1
+Peugeot 205 GTI,Brake Bias,45,65,1
+Peugeot 205 GTI,Handbrake Force,1500,3500,1
+Peugeot 205 GTI,Front LSD Driving Lock,10,80,1
+Peugeot 205 GTI,Front LSD Braking Lock,5,60,1
+Peugeot 205 GTI,Front LSD Preload,5,80,1
+Peugeot 205 GTI,Center Diff Torque Split,30,50,0
+Peugeot 205 GTI,Rear LSD Driving Lock,10,80,0
+Peugeot 205 GTI,Rear LSD Braking Lock,5,60,0
+Peugeot 205 GTI,Rear LSD Preload,5,80,0
+Peugeot 205 GTI,Gear 1,short,long,1
+Peugeot 205 GTI,Gear 2,short,long,1
+Peugeot 205 GTI,Gear 3,short,long,1
+Peugeot 205 GTI,Gear 4,short,long,1
+Peugeot 205 GTI,Gear 5,short,long,1
+Peugeot 205 GTI,Gear 6,short,long,0
+Peugeot 205 GTI,Final Drive,0.100,0.300,1
+Peugeot 205 GTI,Front Slow Bump,-5,5,1
+Peugeot 205 GTI,Front Fast Bump,-5,5,1
+Peugeot 205 GTI,Front Bump Division,0.20,0.40,1
+Peugeot 205 GTI,Front Slow Rebound,-5,5,1
+Peugeot 205 GTI,Rear Slow Bump,-5,5,1
+Peugeot 205 GTI,Rear Fast Bump,-5,5,1
+Peugeot 205 GTI,Rear Bump Division,0.20,0.40,1
+Peugeot 205 GTI,Rear Slow Rebound,-5,5,1
+Peugeot 205 GTI,Front Ride Height,50,120,1
+Peugeot 205 GTI,Front Spring Rate,60,160,1
+Peugeot 205 GTI,Front Anti-Roll Bar,5,25,1
+Peugeot 205 GTI,Rear Ride Height,50,120,1
+Peugeot 205 GTI,Rear Spring Rate,60,160,1
+Peugeot 205 GTI,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Ford Escort Mk2 H2,Front Toe,-1.0,1.0,1
+Ford Escort Mk2 H2,Front Camber,-3.0,1.5,1
+Ford Escort Mk2 H2,Rear Toe,-1.0,1.0,1
+Ford Escort Mk2 H2,Rear Camber,-3.0,1.5,1
+Ford Escort Mk2 H2,Braking Force,2000,3500,1
+Ford Escort Mk2 H2,Brake Bias,45,65,1
+Ford Escort Mk2 H2,Handbrake Force,1500,3500,1
+Ford Escort Mk2 H2,Front LSD Driving Lock,10,80,0
+Ford Escort Mk2 H2,Front LSD Braking Lock,5,60,0
+Ford Escort Mk2 H2,Front LSD Preload,5,80,0
+Ford Escort Mk2 H2,Center Diff Torque Split,30,50,0
+Ford Escort Mk2 H2,Rear LSD Driving Lock,10,80,1
+Ford Escort Mk2 H2,Rear LSD Braking Lock,5,60,1
+Ford Escort Mk2 H2,Rear LSD Preload,5,80,1
+Ford Escort Mk2 H2,Gear 1,short,long,1
+Ford Escort Mk2 H2,Gear 2,short,long,1
+Ford Escort Mk2 H2,Gear 3,short,long,1
+Ford Escort Mk2 H2,Gear 4,short,long,1
+Ford Escort Mk2 H2,Gear 5,short,long,1
+Ford Escort Mk2 H2,Gear 6,short,long,0
+Ford Escort Mk2 H2,Final Drive,0.100,0.300,1
+Ford Escort Mk2 H2,Front Slow Bump,-5,5,1
+Ford Escort Mk2 H2,Front Fast Bump,-5,5,1
+Ford Escort Mk2 H2,Front Bump Division,0.20,0.40,1
+Ford Escort Mk2 H2,Front Slow Rebound,-5,5,1
+Ford Escort Mk2 H2,Rear Slow Bump,-5,5,1
+Ford Escort Mk2 H2,Rear Fast Bump,-5,5,1
+Ford Escort Mk2 H2,Rear Bump Division,0.20,0.40,1
+Ford Escort Mk2 H2,Rear Slow Rebound,-5,5,1
+Ford Escort Mk2 H2,Front Ride Height,50,120,1
+Ford Escort Mk2 H2,Front Spring Rate,60,160,1
+Ford Escort Mk2 H2,Front Anti-Roll Bar,5,25,1
+Ford Escort Mk2 H2,Rear Ride Height,50,120,1
+Ford Escort Mk2 H2,Rear Spring Rate,60,160,1
+Ford Escort Mk2 H2,Rear Anti-Roll Bar,5,25,1
+
+Opel Ascona 400,Front Toe,-1.0,1.0,1
+Opel Ascona 400,Front Camber,-3.0,1.5,1
+Opel Ascona 400,Rear Toe,-1.0,1.0,1
+Opel Ascona 400,Rear Camber,-3.0,1.5,1
+Opel Ascona 400,Braking Force,2000,3500,1
+Opel Ascona 400,Brake Bias,45,65,1
+Opel Ascona 400,Handbrake Force,1500,3500,1
+Opel Ascona 400,Front LSD Driving Lock,10,80,0
+Opel Ascona 400,Front LSD Braking Lock,5,60,0
+Opel Ascona 400,Front LSD Preload,5,80,0
+Opel Ascona 400,Center Diff Torque Split,30,50,0
+Opel Ascona 400,Rear LSD Driving Lock,10,80,1
+Opel Ascona 400,Rear LSD Braking Lock,5,60,1
+Opel Ascona 400,Rear LSD Preload,5,80,1
+Opel Ascona 400,Gear 1,short,long,1
+Opel Ascona 400,Gear 2,short,long,1
+Opel Ascona 400,Gear 3,short,long,1
+Opel Ascona 400,Gear 4,short,long,1
+Opel Ascona 400,Gear 5,short,long,1
+Opel Ascona 400,Gear 6,short,long,0
+Opel Ascona 400,Final Drive,0.100,0.300,1
+Opel Ascona 400,Front Slow Bump,-5,5,1
+Opel Ascona 400,Front Fast Bump,-5,5,1
+Opel Ascona 400,Front Bump Division,0.20,0.40,1
+Opel Ascona 400,Front Slow Rebound,-5,5,1
+Opel Ascona 400,Rear Slow Bump,-5,5,1
+Opel Ascona 400,Rear Fast Bump,-5,5,1
+Opel Ascona 400,Rear Bump Division,0.20,0.40,1
+Opel Ascona 400,Rear Slow Rebound,-5,5,1
+Opel Ascona 400,Front Ride Height,50,120,1
+Opel Ascona 400,Front Spring Rate,60,160,1
+Opel Ascona 400,Front Anti-Roll Bar,5,25,1
+Opel Ascona 400,Rear Ride Height,50,120,1
+Opel Ascona 400,Rear Spring Rate,60,160,1
+Opel Ascona 400,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+BMW M3 E30,Front Toe,-1.0,1.0,1
+BMW M3 E30,Front Camber,-3.0,1.5,1
+BMW M3 E30,Rear Toe,-1.0,1.0,1
+BMW M3 E30,Rear Camber,-3.0,1.5,1
+BMW M3 E30,Braking Force,2000,3500,1
+BMW M3 E30,Brake Bias,45,65,1
+BMW M3 E30,Handbrake Force,1500,3500,1
+BMW M3 E30,Front LSD Driving Lock,10,80,0
+BMW M3 E30,Front LSD Braking Lock,5,60,0
+BMW M3 E30,Front LSD Preload,5,80,0
+BMW M3 E30,Center Diff Torque Split,30,50,0
+BMW M3 E30,Rear LSD Driving Lock,10,80,1
+BMW M3 E30,Rear LSD Braking Lock,5,60,1
+BMW M3 E30,Rear LSD Preload,5,80,1
+BMW M3 E30,Gear 1,short,long,1
+BMW M3 E30,Gear 2,short,long,1
+BMW M3 E30,Gear 3,short,long,1
+BMW M3 E30,Gear 4,short,long,1
+BMW M3 E30,Gear 5,short,long,1
+BMW M3 E30,Gear 6,short,long,0
+BMW M3 E30,Final Drive,0.100,0.300,1
+BMW M3 E30,Front Slow Bump,-5,5,1
+BMW M3 E30,Front Fast Bump,-5,5,1
+BMW M3 E30,Front Bump Division,0.20,0.40,1
+BMW M3 E30,Front Slow Rebound,-5,5,1
+BMW M3 E30,Rear Slow Bump,-5,5,1
+BMW M3 E30,Rear Fast Bump,-5,5,1
+BMW M3 E30,Rear Bump Division,0.20,0.40,1
+BMW M3 E30,Rear Slow Rebound,-5,5,1
+BMW M3 E30,Front Ride Height,50,120,1
+BMW M3 E30,Front Spring Rate,60,160,1
+BMW M3 E30,Front Anti-Roll Bar,5,25,1
+BMW M3 E30,Rear Ride Height,50,120,1
+BMW M3 E30,Rear Spring Rate,60,160,1
+BMW M3 E30,Rear Anti-Roll Bar,5,25,1
+
+Ford Sierra RS500 Cosworth,Front Toe,-1.0,1.0,1
+Ford Sierra RS500 Cosworth,Front Camber,-3.0,1.5,1
+Ford Sierra RS500 Cosworth,Rear Toe,-1.0,1.0,1
+Ford Sierra RS500 Cosworth,Rear Camber,-3.0,1.5,1
+Ford Sierra RS500 Cosworth,Braking Force,2000,3500,1
+Ford Sierra RS500 Cosworth,Brake Bias,45,65,1
+Ford Sierra RS500 Cosworth,Handbrake Force,1500,3500,1
+Ford Sierra RS500 Cosworth,Front LSD Driving Lock,10,80,0
+Ford Sierra RS500 Cosworth,Front LSD Braking Lock,5,60,0
+Ford Sierra RS500 Cosworth,Front LSD Preload,5,80,0
+Ford Sierra RS500 Cosworth,Center Diff Torque Split,30,50,0
+Ford Sierra RS500 Cosworth,Rear LSD Driving Lock,10,80,1
+Ford Sierra RS500 Cosworth,Rear LSD Braking Lock,5,60,1
+Ford Sierra RS500 Cosworth,Rear LSD Preload,5,80,1
+Ford Sierra RS500 Cosworth,Gear 1,short,long,1
+Ford Sierra RS500 Cosworth,Gear 2,short,long,1
+Ford Sierra RS500 Cosworth,Gear 3,short,long,1
+Ford Sierra RS500 Cosworth,Gear 4,short,long,1
+Ford Sierra RS500 Cosworth,Gear 5,short,long,1
+Ford Sierra RS500 Cosworth,Gear 6,short,long,0
+Ford Sierra RS500 Cosworth,Final Drive,0.100,0.300,1
+Ford Sierra RS500 Cosworth,Front Slow Bump,-5,5,1
+Ford Sierra RS500 Cosworth,Front Fast Bump,-5,5,1
+Ford Sierra RS500 Cosworth,Front Bump Division,0.20,0.40,1
+Ford Sierra RS500 Cosworth,Front Slow Rebound,-5,5,1
+Ford Sierra RS500 Cosworth,Rear Slow Bump,-5,5,1
+Ford Sierra RS500 Cosworth,Rear Fast Bump,-5,5,1
+Ford Sierra RS500 Cosworth,Rear Bump Division,0.20,0.40,1
+Ford Sierra RS500 Cosworth,Rear Slow Rebound,-5,5,1
+Ford Sierra RS500 Cosworth,Front Ride Height,50,120,1
+Ford Sierra RS500 Cosworth,Front Spring Rate,60,160,1
+Ford Sierra RS500 Cosworth,Front Anti-Roll Bar,5,25,1
+Ford Sierra RS500 Cosworth,Rear Ride Height,50,120,1
+Ford Sierra RS500 Cosworth,Rear Spring Rate,60,160,1
+Ford Sierra RS500 Cosworth,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Subaru Impreza WRC 2001,Front Toe,-1.0,1.0,1
+Subaru Impreza WRC 2001,Front Camber,-3.0,1.5,1
+Subaru Impreza WRC 2001,Rear Toe,-1.0,1.0,1
+Subaru Impreza WRC 2001,Rear Camber,-3.0,1.5,1
+Subaru Impreza WRC 2001,Braking Force,2000,3500,1
+Subaru Impreza WRC 2001,Brake Bias,45,65,1
+Subaru Impreza WRC 2001,Handbrake Force,1500,3500,1
+Subaru Impreza WRC 2001,Front LSD Driving Lock,10,80,1
+Subaru Impreza WRC 2001,Front LSD Braking Lock,5,60,1
+Subaru Impreza WRC 2001,Front LSD Preload,5,80,1
+Subaru Impreza WRC 2001,Center Diff Torque Split,30,50,0
+Subaru Impreza WRC 2001,Rear LSD Driving Lock,10,80,1
+Subaru Impreza WRC 2001,Rear LSD Braking Lock,5,60,1
+Subaru Impreza WRC 2001,Rear LSD Preload,5,80,1
+Subaru Impreza WRC 2001,Gear 1,short,long,1
+Subaru Impreza WRC 2001,Gear 2,short,long,1
+Subaru Impreza WRC 2001,Gear 3,short,long,1
+Subaru Impreza WRC 2001,Gear 4,short,long,1
+Subaru Impreza WRC 2001,Gear 5,short,long,1
+Subaru Impreza WRC 2001,Gear 6,short,long,1
+Subaru Impreza WRC 2001,Final Drive,0.100,0.300,1
+Subaru Impreza WRC 2001,Front Slow Bump,-5,5,1
+Subaru Impreza WRC 2001,Front Fast Bump,-5,5,1
+Subaru Impreza WRC 2001,Front Bump Division,0.20,0.40,1
+Subaru Impreza WRC 2001,Front Slow Rebound,-5,5,1
+Subaru Impreza WRC 2001,Rear Slow Bump,-5,5,1
+Subaru Impreza WRC 2001,Rear Fast Bump,-5,5,1
+Subaru Impreza WRC 2001,Rear Bump Division,0.20,0.40,1
+Subaru Impreza WRC 2001,Rear Slow Rebound,-5,5,1
+Subaru Impreza WRC 2001,Front Ride Height,50,120,1
+Subaru Impreza WRC 2001,Front Spring Rate,60,160,1
+Subaru Impreza WRC 2001,Front Anti-Roll Bar,5,25,1
+Subaru Impreza WRC 2001,Rear Ride Height,50,120,1
+Subaru Impreza WRC 2001,Rear Spring Rate,60,160,1
+Subaru Impreza WRC 2001,Rear Anti-Roll Bar,5,25,1
+
+Ford Focus RS WRC 2001,Front Toe,-1.0,1.0,1
+Ford Focus RS WRC 2001,Front Camber,-3.0,1.5,1
+Ford Focus RS WRC 2001,Rear Toe,-1.0,1.0,1
+Ford Focus RS WRC 2001,Rear Camber,-3.0,1.5,1
+Ford Focus RS WRC 2001,Braking Force,2000,3500,1
+Ford Focus RS WRC 2001,Brake Bias,45,65,1
+Ford Focus RS WRC 2001,Handbrake Force,1500,3500,1
+Ford Focus RS WRC 2001,Front LSD Driving Lock,10,80,1
+Ford Focus RS WRC 2001,Front LSD Braking Lock,5,60,1
+Ford Focus RS WRC 2001,Front LSD Preload,5,80,1
+Ford Focus RS WRC 2001,Center Diff Torque Split,30,50,0
+Ford Focus RS WRC 2001,Rear LSD Driving Lock,10,80,1
+Ford Focus RS WRC 2001,Rear LSD Braking Lock,5,60,1
+Ford Focus RS WRC 2001,Rear LSD Preload,5,80,1
+Ford Focus RS WRC 2001,Gear 1,short,long,1
+Ford Focus RS WRC 2001,Gear 2,short,long,1
+Ford Focus RS WRC 2001,Gear 3,short,long,1
+Ford Focus RS WRC 2001,Gear 4,short,long,1
+Ford Focus RS WRC 2001,Gear 5,short,long,1
+Ford Focus RS WRC 2001,Gear 6,short,long,1
+Ford Focus RS WRC 2001,Final Drive,0.100,0.300,1
+Ford Focus RS WRC 2001,Front Slow Bump,-5,5,1
+Ford Focus RS WRC 2001,Front Fast Bump,-5,5,1
+Ford Focus RS WRC 2001,Front Bump Division,0.20,0.40,1
+Ford Focus RS WRC 2001,Front Slow Rebound,-5,5,1
+Ford Focus RS WRC 2001,Rear Slow Bump,-5,5,1
+Ford Focus RS WRC 2001,Rear Fast Bump,-5,5,1
+Ford Focus RS WRC 2001,Rear Bump Division,0.20,0.40,1
+Ford Focus RS WRC 2001,Rear Slow Rebound,-5,5,1
+Ford Focus RS WRC 2001,Front Ride Height,50,120,1
+Ford Focus RS WRC 2001,Front Spring Rate,60,160,1
+Ford Focus RS WRC 2001,Front Anti-Roll Bar,5,25,1
+Ford Focus RS WRC 2001,Rear Ride Height,50,120,1
+Ford Focus RS WRC 2001,Rear Spring Rate,60,160,1
+Ford Focus RS WRC 2001,Rear Anti-Roll Bar,5,25,1
+
+Citroën Xsara WRC,Front Toe,-1.0,1.0,1
+Citroën Xsara WRC,Front Camber,-3.0,1.5,1
+Citroën Xsara WRC,Rear Toe,-1.0,1.0,1
+Citroën Xsara WRC,Rear Camber,-3.0,1.5,1
+Citroën Xsara WRC,Braking Force,2000,3500,1
+Citroën Xsara WRC,Brake Bias,45,65,1
+Citroën Xsara WRC,Handbrake Force,1500,3500,1
+Citroën Xsara WRC,Front LSD Driving Lock,10,80,1
+Citroën Xsara WRC,Front LSD Braking Lock,5,60,1
+Citroën Xsara WRC,Front LSD Preload,5,80,1
+Citroën Xsara WRC,Center Diff Torque Split,30,50,0
+Citroën Xsara WRC,Rear LSD Driving Lock,10,80,1
+Citroën Xsara WRC,Rear LSD Braking Lock,5,60,1
+Citroën Xsara WRC,Rear LSD Preload,5,80,1
+Citroën Xsara WRC,Gear 1,short,long,1
+Citroën Xsara WRC,Gear 2,short,long,1
+Citroën Xsara WRC,Gear 3,short,long,1
+Citroën Xsara WRC,Gear 4,short,long,1
+Citroën Xsara WRC,Gear 5,short,long,1
+Citroën Xsara WRC,Gear 6,short,long,1
+Citroën Xsara WRC,Final Drive,0.100,0.300,1
+Citroën Xsara WRC,Front Slow Bump,-5,5,1
+Citroën Xsara WRC,Front Fast Bump,-5,5,1
+Citroën Xsara WRC,Front Bump Division,0.20,0.40,1
+Citroën Xsara WRC,Front Slow Rebound,-5,5,1
+Citroën Xsara WRC,Rear Slow Bump,-5,5,1
+Citroën Xsara WRC,Rear Fast Bump,-5,5,1
+Citroën Xsara WRC,Rear Bump Division,0.20,0.40,1
+Citroën Xsara WRC,Rear Slow Rebound,-5,5,1
+Citroën Xsara WRC,Front Ride Height,50,120,1
+Citroën Xsara WRC,Front Spring Rate,60,160,1
+Citroën Xsara WRC,Front Anti-Roll Bar,5,25,1
+Citroën Xsara WRC,Rear Ride Height,50,120,1
+Citroën Xsara WRC,Rear Spring Rate,60,160,1
+Citroën Xsara WRC,Rear Anti-Roll Bar,5,25,1
+
+Peugeot 206 WRC,Front Toe,-1.0,1.0,1
+Peugeot 206 WRC,Front Camber,-3.0,1.5,1
+Peugeot 206 WRC,Rear Toe,-1.0,1.0,1
+Peugeot 206 WRC,Rear Camber,-3.0,1.5,1
+Peugeot 206 WRC,Braking Force,2000,3500,1
+Peugeot 206 WRC,Brake Bias,45,65,1
+Peugeot 206 WRC,Handbrake Force,1500,3500,1
+Peugeot 206 WRC,Front LSD Driving Lock,10,80,1
+Peugeot 206 WRC,Front LSD Braking Lock,5,60,1
+Peugeot 206 WRC,Front LSD Preload,5,80,1
+Peugeot 206 WRC,Center Diff Torque Split,30,50,0
+Peugeot 206 WRC,Rear LSD Driving Lock,10,80,1
+Peugeot 206 WRC,Rear LSD Braking Lock,5,60,1
+Peugeot 206 WRC,Rear LSD Preload,5,80,1
+Peugeot 206 WRC,Gear 1,short,long,1
+Peugeot 206 WRC,Gear 2,short,long,1
+Peugeot 206 WRC,Gear 3,short,long,1
+Peugeot 206 WRC,Gear 4,short,long,1
+Peugeot 206 WRC,Gear 5,short,long,1
+Peugeot 206 WRC,Gear 6,short,long,1
+Peugeot 206 WRC,Final Drive,0.100,0.300,1
+Peugeot 206 WRC,Front Slow Bump,-5,5,1
+Peugeot 206 WRC,Front Fast Bump,-5,5,1
+Peugeot 206 WRC,Front Bump Division,0.20,0.40,1
+Peugeot 206 WRC,Front Slow Rebound,-5,5,1
+Peugeot 206 WRC,Rear Slow Bump,-5,5,1
+Peugeot 206 WRC,Rear Fast Bump,-5,5,1
+Peugeot 206 WRC,Rear Bump Division,0.20,0.40,1
+Peugeot 206 WRC,Rear Slow Rebound,-5,5,1
+Peugeot 206 WRC,Front Ride Height,50,120,1
+Peugeot 206 WRC,Front Spring Rate,60,160,1
+Peugeot 206 WRC,Front Anti-Roll Bar,5,25,1
+Peugeot 206 WRC,Rear Ride Height,50,120,1
+Peugeot 206 WRC,Rear Spring Rate,60,160,1
+Peugeot 206 WRC,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Ford Fiesta RS WRC,Front Toe,-1.0,1.0,1
+Ford Fiesta RS WRC,Front Camber,-3.0,1.5,1
+Ford Fiesta RS WRC,Rear Toe,-1.0,1.0,1
+Ford Fiesta RS WRC,Rear Camber,-3.0,1.5,1
+Ford Fiesta RS WRC,Braking Force,2000,3500,1
+Ford Fiesta RS WRC,Brake Bias,45,65,1
+Ford Fiesta RS WRC,Handbrake Force,1500,3500,1
+Ford Fiesta RS WRC,Front LSD Driving Lock,10,80,1
+Ford Fiesta RS WRC,Front LSD Braking Lock,5,60,1
+Ford Fiesta RS WRC,Front LSD Preload,5,80,1
+Ford Fiesta RS WRC,Center Diff Torque Split,30,50,0
+Ford Fiesta RS WRC,Rear LSD Driving Lock,10,80,1
+Ford Fiesta RS WRC,Rear LSD Braking Lock,5,60,1
+Ford Fiesta RS WRC,Rear LSD Preload,5,80,1
+Ford Fiesta RS WRC,Gear 1,short,long,1
+Ford Fiesta RS WRC,Gear 2,short,long,1
+Ford Fiesta RS WRC,Gear 3,short,long,1
+Ford Fiesta RS WRC,Gear 4,short,long,1
+Ford Fiesta RS WRC,Gear 5,short,long,1
+Ford Fiesta RS WRC,Gear 6,short,long,1
+Ford Fiesta RS WRC,Final Drive,0.100,0.300,1
+Ford Fiesta RS WRC,Front Slow Bump,-5,5,1
+Ford Fiesta RS WRC,Front Fast Bump,-5,5,1
+Ford Fiesta RS WRC,Front Bump Division,0.20,0.40,1
+Ford Fiesta RS WRC,Front Slow Rebound,-5,5,1
+Ford Fiesta RS WRC,Rear Slow Bump,-5,5,1
+Ford Fiesta RS WRC,Rear Fast Bump,-5,5,1
+Ford Fiesta RS WRC,Rear Bump Division,0.20,0.40,1
+Ford Fiesta RS WRC,Rear Slow Rebound,-5,5,1
+Ford Fiesta RS WRC,Front Ride Height,50,120,1
+Ford Fiesta RS WRC,Front Spring Rate,60,160,1
+Ford Fiesta RS WRC,Front Anti-Roll Bar,5,25,1
+Ford Fiesta RS WRC,Rear Ride Height,50,120,1
+Ford Fiesta RS WRC,Rear Spring Rate,60,160,1
+Ford Fiesta RS WRC,Rear Anti-Roll Bar,5,25,1
+
+Volkswagen Polo R WRC,Front Toe,-1.0,1.0,1
+Volkswagen Polo R WRC,Front Camber,-3.0,1.5,1
+Volkswagen Polo R WRC,Rear Toe,-1.0,1.0,1
+Volkswagen Polo R WRC,Rear Camber,-3.0,1.5,1
+Volkswagen Polo R WRC,Braking Force,2000,3500,1
+Volkswagen Polo R WRC,Brake Bias,45,65,1
+Volkswagen Polo R WRC,Handbrake Force,1500,3500,1
+Volkswagen Polo R WRC,Front LSD Driving Lock,10,80,1
+Volkswagen Polo R WRC,Front LSD Braking Lock,5,60,1
+Volkswagen Polo R WRC,Front LSD Preload,5,80,1
+Volkswagen Polo R WRC,Center Diff Torque Split,30,50,0
+Volkswagen Polo R WRC,Rear LSD Driving Lock,10,80,1
+Volkswagen Polo R WRC,Rear LSD Braking Lock,5,60,1
+Volkswagen Polo R WRC,Rear LSD Preload,5,80,1
+Volkswagen Polo R WRC,Gear 1,short,long,1
+Volkswagen Polo R WRC,Gear 2,short,long,1
+Volkswagen Polo R WRC,Gear 3,short,long,1
+Volkswagen Polo R WRC,Gear 4,short,long,1
+Volkswagen Polo R WRC,Gear 5,short,long,1
+Volkswagen Polo R WRC,Gear 6,short,long,1
+Volkswagen Polo R WRC,Final Drive,0.100,0.300,1
+Volkswagen Polo R WRC,Front Slow Bump,-5,5,1
+Volkswagen Polo R WRC,Front Fast Bump,-5,5,1
+Volkswagen Polo R WRC,Front Bump Division,0.20,0.40,1
+Volkswagen Polo R WRC,Front Slow Rebound,-5,5,1
+Volkswagen Polo R WRC,Rear Slow Bump,-5,5,1
+Volkswagen Polo R WRC,Rear Fast Bump,-5,5,1
+Volkswagen Polo R WRC,Rear Bump Division,0.20,0.40,1
+Volkswagen Polo R WRC,Rear Slow Rebound,-5,5,1
+Volkswagen Polo R WRC,Front Ride Height,50,120,1
+Volkswagen Polo R WRC,Front Spring Rate,60,160,1
+Volkswagen Polo R WRC,Front Anti-Roll Bar,5,25,1
+Volkswagen Polo R WRC,Rear Ride Height,50,120,1
+Volkswagen Polo R WRC,Rear Spring Rate,60,160,1
+Volkswagen Polo R WRC,Rear Anti-Roll Bar,5,25,1
+
+Hyundai i20 WRC 2016,Front Toe,-1.0,1.0,1
+Hyundai i20 WRC 2016,Front Camber,-3.0,1.5,1
+Hyundai i20 WRC 2016,Rear Toe,-1.0,1.0,1
+Hyundai i20 WRC 2016,Rear Camber,-3.0,1.5,1
+Hyundai i20 WRC 2016,Braking Force,2000,3500,1
+Hyundai i20 WRC 2016,Brake Bias,45,65,1
+Hyundai i20 WRC 2016,Handbrake Force,1500,3500,1
+Hyundai i20 WRC 2016,Front LSD Driving Lock,10,80,1
+Hyundai i20 WRC 2016,Front LSD Braking Lock,5,60,1
+Hyundai i20 WRC 2016,Front LSD Preload,5,80,1
+Hyundai i20 WRC 2016,Center Diff Torque Split,30,50,0
+Hyundai i20 WRC 2016,Rear LSD Driving Lock,10,80,1
+Hyundai i20 WRC 2016,Rear LSD Braking Lock,5,60,1
+Hyundai i20 WRC 2016,Rear LSD Preload,5,80,1
+Hyundai i20 WRC 2016,Gear 1,short,long,1
+Hyundai i20 WRC 2016,Gear 2,short,long,1
+Hyundai i20 WRC 2016,Gear 3,short,long,1
+Hyundai i20 WRC 2016,Gear 4,short,long,1
+Hyundai i20 WRC 2016,Gear 5,short,long,1
+Hyundai i20 WRC 2016,Gear 6,short,long,1
+Hyundai i20 WRC 2016,Final Drive,0.100,0.300,1
+Hyundai i20 WRC 2016,Front Slow Bump,-5,5,1
+Hyundai i20 WRC 2016,Front Fast Bump,-5,5,1
+Hyundai i20 WRC 2016,Front Bump Division,0.20,0.40,1
+Hyundai i20 WRC 2016,Front Slow Rebound,-5,5,1
+Hyundai i20 WRC 2016,Rear Slow Bump,-5,5,1
+Hyundai i20 WRC 2016,Rear Fast Bump,-5,5,1
+Hyundai i20 WRC 2016,Rear Bump Division,0.20,0.40,1
+Hyundai i20 WRC 2016,Rear Slow Rebound,-5,5,1
+Hyundai i20 WRC 2016,Front Ride Height,50,120,1
+Hyundai i20 WRC 2016,Front Spring Rate,60,160,1
+Hyundai i20 WRC 2016,Front Anti-Roll Bar,5,25,1
+Hyundai i20 WRC 2016,Rear Ride Height,50,120,1
+Hyundai i20 WRC 2016,Rear Spring Rate,60,160,1
+Hyundai i20 WRC 2016,Rear Anti-Roll Bar,5,25,1
+
+car_name,slider_name,min_value,max_value,has_slider
+Ford Fiesta WRC 2017,Front Toe,-1.0,1.0,1
+Ford Fiesta WRC 2017,Front Camber,-3.0,1.5,1
+Ford Fiesta WRC 2017,Rear Toe,-1.0,1.0,1
+Ford Fiesta WRC 2017,Rear Camber,-3.0,1.5,1
+Ford Fiesta WRC 2017,Braking Force,2000,3500,1
+Ford Fiesta WRC 2017,Brake Bias,45,65,1
+Ford Fiesta WRC 2017,Handbrake Force,1500,3500,1
+Ford Fiesta WRC 2017,Front LSD Driving Lock,10,80,1
+Ford Fiesta WRC 2017,Front LSD Braking Lock,5,60,1
+Ford Fiesta WRC 2017,Front LSD Preload,5,80,1
+Ford Fiesta WRC 2017,Center Diff Torque Split,30,50,0
+Ford Fiesta WRC 2017,Rear LSD Driving Lock,10,80,1
+Ford Fiesta WRC 2017,Rear LSD Braking Lock,5,60,1
+Ford Fiesta WRC 2017,Rear LSD Preload,5,80,1
+Ford Fiesta WRC 2017,Gear 1,short,long,1
+Ford Fiesta WRC 2017,Gear 2,short,long,1
+Ford Fiesta WRC 2017,Gear 3,short,long,1
+Ford Fiesta WRC 2017,Gear 4,short,long,1
+Ford Fiesta WRC 2017,Gear 5,short,long,1
+Ford Fiesta WRC 2017,Gear 6,short,long,1
+Ford Fiesta WRC 2017,Final Drive,0.100,0.300,1
+Ford Fiesta WRC 2017,Front Slow Bump,-5,5,1
+Ford Fiesta WRC 2017,Front Fast Bump,-5,5,1
+Ford Fiesta WRC 2017,Front Bump Division,0.20,0.40,1
+Ford Fiesta WRC 2017,Front Slow Rebound,-5,5,1
+Ford Fiesta WRC 2017,Rear Slow Bump,-5,5,1
+Ford Fiesta WRC 2017,Rear Fast Bump,-5,5,1
+Ford Fiesta WRC 2017,Rear Bump Division,0.20,0.40,1
+Ford Fiesta WRC 2017,Rear Slow Rebound,-5,5,1
+Ford Fiesta WRC 2017,Front Ride Height,50,120,1
+Ford Fiesta WRC 2017,Front Spring Rate,60,160,1
+Ford Fiesta WRC 2017,Front Anti-Roll Bar,5,25,1
+Ford Fiesta WRC 2017,Rear Ride Height,50,120,1
+Ford Fiesta WRC 2017,Rear Spring Rate,60,160,1
+Ford Fiesta WRC 2017,Rear Anti-Roll Bar,5,25,1
+
+Toyota Yaris WRC,Front Toe,-1.0,1.0,1
+Toyota Yaris WRC,Front Camber,-3.0,1.5,1
+Toyota Yaris WRC,Rear Toe,-1.0,1.0,1
+Toyota Yaris WRC,Rear Camber,-3.0,1.5,1
+Toyota Yaris WRC,Braking Force,2000,3500,1
+Toyota Yaris WRC,Brake Bias,45,65,1
+Toyota Yaris WRC,Handbrake Force,1500,3500,1
+Toyota Yaris WRC,Front LSD Driving Lock,10,80,1
+Toyota Yaris WRC,Front LSD Braking Lock,5,60,1
+Toyota Yaris WRC,Front LSD Preload,5,80,1
+Toyota Yaris WRC,Center Diff Torque Split,30,50,0
+Toyota Yaris WRC,Rear LSD Driving Lock,10,80,1
+Toyota Yaris WRC,Rear LSD Braking Lock,5,60,1
+Toyota Yaris WRC,Rear LSD Preload,5,80,1
+Toyota Yaris WRC,Gear 1,short,long,1
+Toyota Yaris WRC,Gear 2,short,long,1
+Toyota Yaris WRC,Gear 3,short,long,1
+Toyota Yaris WRC,Gear 4,short,long,1
+Toyota Yaris WRC,Gear 5,short,long,1
+Toyota Yaris WRC,Gear 6,short,long,1
+Toyota Yaris WRC,Final Drive,0.100,0.300,1
+Toyota Yaris WRC,Front Slow Bump,-5,5,1
+Toyota Yaris WRC,Front Fast Bump,-5,5,1
+Toyota Yaris WRC,Front Bump Division,0.20,0.40,1
+Toyota Yaris WRC,Front Slow Rebound,-5,5,1
+Toyota Yaris WRC,Rear Slow Bump,-5,5,1
+Toyota Yaris WRC,Rear Fast Bump,-5,5,1
+Toyota Yaris WRC,Rear Bump Division,0.20,0.40,1
+Toyota Yaris WRC,Rear Slow Rebound,-5,5,1
+Toyota Yaris WRC,Front Ride Height,50,120,1
+Toyota Yaris WRC,Front Spring Rate,60,160,1
+Toyota Yaris WRC,Front Anti-Roll Bar,5,25,1
+Toyota Yaris WRC,Rear Ride Height,50,120,1
+Toyota Yaris WRC,Rear Spring Rate,60,160,1
+Toyota Yaris WRC,Rear Anti-Roll Bar,5,25,1
+
+Hyundai i20 Coupe WRC,Front Toe,-1.0,1.0,1
+Hyundai i20 Coupe WRC,Front Camber,-3.0,1.5,1
+Hyundai i20 Coupe WRC,Rear Toe,-1.0,1.0,1
+Hyundai i20 Coupe WRC,Rear Camber,-3.0,1.5,1
+Hyundai i20 Coupe WRC,Braking Force,2000,3500,1
+Hyundai i20 Coupe WRC,Brake Bias,45,65,1
+Hyundai i20 Coupe WRC,Handbrake Force,1500,3500,1
+Hyundai i20 Coupe WRC,Front LSD Driving Lock,10,80,1
+Hyundai i20 Coupe WRC,Front LSD Braking Lock,5,60,1
+Hyundai i20 Coupe WRC,Front LSD Preload,5,80,1
+Hyundai i20 Coupe WRC,Center Diff Torque Split,30,50,0
+Hyundai i20 Coupe WRC,Rear LSD Driving Lock,10,80,1
+Hyundai i20 Coupe WRC,Rear LSD Braking Lock,5,60,1
+Hyundai i20 Coupe WRC,Rear LSD Preload,5,80,1
+Hyundai i20 Coupe WRC,Gear 1,short,long,1
+Hyundai i20 Coupe WRC,Gear 2,short,long,1
+Hyundai i20 Coupe WRC,Gear 3,short,long,1
+Hyundai i20 Coupe WRC,Gear 4,short,long,1
+Hyundai i20 Coupe WRC,Gear 5,short,long,1
+Hyundai i20 Coupe WRC,Gear 6,short,long,1
+Hyundai i20 Coupe WRC,Final Drive,0.100,0.300,1
+Hyundai i20 Coupe WRC,Front Slow Bump,-5,5,1
+Hyundai i20 Coupe WRC,Front Fast Bump,-5,5,1
+Hyundai i20 Coupe WRC,Front Bump Division,0.20,0.40,1
+Hyundai i20 Coupe WRC,Front Slow Rebound,-5,5,1
+Hyundai i20 Coupe WRC,Rear Slow Bump,-5,5,1
+Hyundai i20 Coupe WRC,Rear Fast Bump,-5,5,1
+Hyundai i20 Coupe WRC,Rear Bump Division,0.20,0.40,1
+Hyundai i20 Coupe WRC,Rear Slow Rebound,-5,5,1
+Hyundai i20 Coupe WRC,Front Ride Height,50,120,1
+Hyundai i20 Coupe WRC,Front Spring Rate,60,160,1
+Hyundai i20 Coupe WRC,Front Anti-Roll Bar,5,25,1
+Hyundai i20 Coupe WRC,Rear Ride Height,50,120,1
+Hyundai i20 Coupe WRC,Rear Spring Rate,60,160,1
+Hyundai i20 Coupe WRC,Rear Anti-Roll Bar,5,25,1
