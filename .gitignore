@@ -1,0 +1,65 @@
+# -------------------------
+# Python / Flask
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.db
+*.sqlite3
+# Chroma langchain ollama
+chroma_langchain_db
+# Virtual environments
+venv/
+.env/
+.env.bak/
+.venv/
+
+# Flask instance folder (runtime configs, secrets)
+instance/
+*.env
+
+# -------------------------
+# Web Project (HTML/CSS/JS)
+# -------------------------
+# Build artifacts
+dist/
+build/
+public/build/
+public/.cache/
+
+# Node / package managers (if added later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -------------------------
+# Game Assets
+# -------------------------
+# Generated images, temp exports, or cached sprites
+Game/cache/
+Game/temp/
+Game/generated/
+
+# -------------------------
+# IDE / Editor
+# -------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# -------------------------
+# OS Files
+# -------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+logs/
