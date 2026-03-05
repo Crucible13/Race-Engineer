@@ -155,7 +155,26 @@
       display: flex;
       gap: 8px;
     }
+    /* Fade + highlight animation */
+    @keyframes rowPop {
+      0% {
+        background-color: rgba(0, 198, 179, 0.45);
+        transform: translateY(4px);
+        opacity: 0;
+      }
+      40% {
+        background-color: rgba(0, 198, 179, 0.45);
+        opacity: 1;
+      }
+      100% {
+        background-color: transparent;
+        transform: translateY(0);
+      }
+    }
 
+    .row-animate {
+      animation: rowPop 1.2s ease-out;
+    }
     input[type="text"],
     select,
     textarea {
@@ -183,15 +202,28 @@
       min-height: 90px;
       resize: vertical;
     }
-
+    
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       margin-top: 2px;
     }
+    #rawout {
+      max-height: 120px;
+      overflow-y: auto;
+      pointer-events: auto;
+      position: relative;
+      z-index: 1;
+    }
+    #surface-group,
+    #weather-group {
+      position: relative;
+      z-index: 10;
+    }
 
     .pill-toggle {
+      pointer-events: auto;
       padding: 4px 10px;
       border-radius: 999px;
       font-size: 11px;

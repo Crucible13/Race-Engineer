@@ -98,6 +98,10 @@
           <label class="field-label" for="issues">Handling notes</label>
           <textarea id="issues" name="issues" placeholder="Pushes mid‑corner, nervous over crests, boggy in 2nd, locks fronts on downhill braking…"></textarea>
         </div>
+        <div class="field-group">
+          <label class="field-label" for="rawout">Engineer: </label>
+          <p id="rawout" name="rawout"></p>
+        </div>
 
         <div class="run-row">
           <button type="submit" class="btn-primary">Generate Setup</button>
@@ -193,8 +197,10 @@
     });
   }
 
+document.addEventListener("DOMContentLoaded", () => {
   setupPillGroup('surface-group', 'surface-input');
   setupPillGroup('weather-group', 'weather-input');
+});
 
   // tabs
   const tabButtons = document.querySelectorAll('.tab-btn');
@@ -215,103 +221,138 @@
       }
     });
   });
+  // get explanation from setup response
+let currentSection = null;
 
-  // form submit -> POST to your Flask route
-  const form = document.getElementById('job-form');
-  const setupMeta = document.getElementById('setup-meta');
-  const lastStageLabel = document.getElementById('last-stage-label');
-  const setupTableBody = document.querySelector('#setup-table tbody');
-  const tweakPack = document.getElementById('tweak-pack');
+function animateRow(row) {
+    row.classList.add("row-animate");
+    setTimeout(() => row.classList.remove("row-animate"), 1200);
+}
 
-  form.addEventListener('submit', async (e) => {
+function processStreamLine(line, table, tweaks) {
+    if (!line) return;
+
+    // SECTION HEADER
+    if (/^[A-Za-z ]+$/.test(line) && line.length < 30) {
+        currentSection = line;
+
+        const sectionRow = document.createElement("tr");
+        sectionRow.classList.add("section-row");
+        sectionRow.innerHTML = `
+            <td colspan="3"><span class="section-badge">${currentSection}</span></td>
+        `;
+        animateRow(sectionRow);
+        table.appendChild(sectionRow);
+        return;
+    }
+
+    // BULLET ROWS
+    if (line.startsWith("-") || line.startsWith("•") || line.startsWith("*")) {
+        const clean = line.replace(/^[-•*]\s*/, "");
+
+        let item = clean;
+        let value = "";
+
+        if (clean.includes(":")) [item, value] = clean.split(":");
+        else if (clean.includes("=")) [item, value] = clean.split("=");
+        else if (clean.includes("—")) [item, value] = clean.split("—");
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${currentSection || ""}</td>
+            <td>${item.trim()}</td>
+            <td>${value.trim()}</td>
+        `;
+        animateRow(row);
+        table.appendChild(row);
+        return;
+    }
+
+    // TWEAK PACK
+    if (line.toLowerCase().includes("click") || line.toLowerCase().includes("tweak")) {
+        const li = document.createElement("li");
+        li.textContent = line;
+        animateRow(li);
+        tweaks.appendChild(li);
+    }
+}
+
+function extractExplanation(text) {
+    const lines = text.split("\n");
+    const out = [];
+
+    for (const line of lines) {
+        if (/^[A-Za-z ]+$/.test(line.trim()) && line.trim().length < 30) break;
+        out.push(line);
+    }
+
+    return out.join("\n").trim();
+}
+
+async function streamSetup(prompt) {
+    const table = document.getElementById("setup-table").querySelector("tbody");
+    const tweaks = document.getElementById("tweak-pack").querySelector(".tweak-list");
+    const engOut = document.getElementById("rawout");
+
+    table.innerHTML = "";
+    tweaks.innerHTML = "";
+    engOut.textContent = "";
+
+    const response = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: prompt })
+    });
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+
+    let buffer = "";
+    let fullText = "";
+
+    while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value);
+        fullText += chunk;
+        buffer += chunk;
+
+        // Split into complete lines
+        let lines = buffer.split("\n");
+        buffer = lines.pop(); // keep partial line
+
+        for (const line of lines) {
+            processStreamLine(line.trim(), table, tweaks);
+        }
+
+        // Update explanation live
+        engOut.textContent = extractExplanation(fullText);
+    }
+}
+
+
+  document.getElementById("job-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
+    const car = document.getElementById("car").value;
+    const rally = document.getElementById("rally").value;
+    const stage = document.getElementById("stage").value;
+    const surface = document.getElementById("surface-input").value;
+    const weather = document.getElementById("weather-input").value;
+    const issues = document.getElementById("issues").value;
 
-    // Update header label
-    const rally = payload.rally || '—';
-    const stage = payload.stage || '—';
-    lastStageLabel.textContent = `${rally} · ${stage}`;
+    const prompt = `
+Car: ${car}
+Rally: ${rally}
+Stage: ${stage}
+Surface: ${surface}
+Weather: ${weather}
+Handling notes: ${issues}
 
-    setupMeta.textContent = 'Working up setup…';
-
-    try {
-      const res = await fetch('/api/generate_setup', { // adjust route name if needed
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) {
-        throw new Error('HTTP ' + res.status);
-      }
-
-      const data = await res.json();
-      // Expect your Flask backend to return something like:
-      // { setup_rows: [{section, item, value}], tweaks: ["+2 clicks rear ARB", …], meta: "Golf Karoutes dry, a little pushy" }
-
-      // Update meta
-      setupMeta.textContent = data.meta || 'Setup ready';
-
-      // Rebuild table body
-      if (Array.isArray(data.setup_rows) && data.setup_rows.length) {
-        setupTableBody.innerHTML = '';
-
-        let lastSection = null;
-        data.setup_rows.forEach(row => {
-          if (row.section && row.section !== lastSection) {
-            const sTr = document.createElement('tr');
-            sTr.className = 'section-row';
-            const sTd = document.createElement('td');
-            sTd.colSpan = 3;
-            sTd.innerHTML = `<span class="section-badge">${row.section}</span>`;
-            sTr.appendChild(sTd);
-            setupTableBody.appendChild(sTr);
-            lastSection = row.section;
-          }
-
-          const tr = document.createElement('tr');
-          const tdSection = document.createElement('td');
-          const tdItem = document.createElement('td');
-          const tdValue = document.createElement('td');
-
-          tdSection.textContent = row.section || '';
-          tdItem.textContent = row.item || '';
-
-          // allow simple styling hints from backend: "value_class": "value-soft" / "value-warn" / "value-danger"
-          if (row.value_class) {
-            tdValue.classList.add(row.value_class);
-          }
-          tdValue.textContent = row.value || '';
-
-          tr.appendChild(tdSection);
-          tr.appendChild(tdItem);
-          tr.appendChild(tdValue);
-          setupTableBody.appendChild(tr);
-        });
-      }
-
-      // Update tweak pack
-      if (Array.isArray(data.tweaks) && data.tweaks.length) {
-        tweakPack.innerHTML = '<div class="tweak-pack-title">Service tweaks</div>';
-        const ul = document.createElement('ul');
-        ul.className = 'tweak-list';
-        data.tweaks.forEach(t => {
-          const li = document.createElement('li');
-          li.textContent = t;
-          ul.appendChild(li);
-        });
-        tweakPack.appendChild(ul);
-      } else {
-        tweakPack.innerHTML = '<div class="tweak-pack-title">Service tweaks</div><ul class="tweak-list"><li>No extra tweaks returned.</li></ul>';
-      }
-
-    } catch (err) {
-      console.error(err);
-      setupMeta.textContent = 'Error generating setup';
-      tweakPack.innerHTML = '<div class="tweak-pack-title">Service tweaks</div><ul class="tweak-list"><li>Request failed. Check backend or network.</li></ul>';
-    }
+Give me a full setup.
+    `;
+    streamSetup(prompt);
   });
 </script>
 </body>
