@@ -127,7 +127,65 @@
     }
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
+    .field-group {
+      margin-bottom: 12px;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 2px;
+    }
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 7px 8px;
+      border-radius: 6px;
+      border: 1px solid #272d3f;
+      background: #111420;
+      color: var(--text);
+      font-size: 13px;
+      font-family: var(--font-main);
+      outline: none;
+      transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+    .pill-toggle {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid #2b3145;
+      background: #121521;
+      color: var(--muted);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.12s ease;
+    }
 
+    .pill-toggle.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+      box-shadow: 0 0 10px rgba(0, 198, 179, 0.45);
+    }
+
+    .pill-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .field-label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .field-row {
+      display: flex;
+      gap: 8px;
+    }
     input[type="number"]:focus,
     select:focus {
       border-color: var(--accent);

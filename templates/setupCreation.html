@@ -19,6 +19,7 @@
       </div>
     </div>
     <div class="top-bar-right">
+      <a type="submit" class="btn-primary" href="/" style="text-decoration:none;">Back</a>
       <span class="status-pill">
         <span class="status-dot"></span> Setup Editor
       </span>
@@ -220,7 +221,62 @@
           <input type="number" name="steering_lock" step="1" placeholder="26">
         </div>
       </div>
+      <div class="field-group">
+          <label class="field-label" for="car">Car</label>
+          <select id="car" name="car" required>
+            <option value="">Select car…</option>
+            <option value="Fiesta Rally3 Evo">Ford Fiesta Rally3 Evo</option>
+            <option value="Fiesta H2 RWD">Ford Fiesta H2 RWD</option>
+            <option value="Escort MK2 H2 RWD">Ford Escort MK2 H2 RWD</option>
+            <option value="Golf GTI H2 FWD">VW Golf GTI H2 FWD</option>
+            <option value="Polo FWD">VW Polo FWD</option>
+            <!-- Add more as you like -->
+          </select>
+        </div>
 
+        <div class="field-group">
+          <div class="field-row">
+            <div style="flex: 1;">
+              <label class="field-label" for="rally">Rally</label>
+              <select id="rally" name="rally">
+                <option value="">Select rally…</option>
+                <option value="Secto Finland">Secto Finland</option>
+                <option value="Rally Pacifico">Rally Pacifico</option>
+                <option value="Mediterraneo">Mediterraneo</option>
+                <option value="Monte Carlo">Monte Carlo</option>
+                <option value="Greece">Greece</option>
+                <option value="Sweden">Sweden</option>
+              </select>
+              <div style="flex: 1;">
+                <label class="field-label" for="stage">Stage</label>
+                <input id="stage" name="stage" type="text" placeholder="e.g. Lahdenkylä, Gunung, Karoutes…">
+              </div>
+              <div class="field-group">
+          <span class="field-label">Surface</span>
+          <div class="pill-row" id="surface-group">
+            <div class="pill-toggle active" data-value="gravel">Gravel</div>
+            <div class="pill-toggle" data-value="tarmac">Tarmac</div>
+            <div class="pill-toggle" data-value="snow">Snow</div>
+            <div class="pill-toggle" data-value="mixed">Mixed</div>
+          </div>
+          <input type="hidden" name="surface" id="surface-input" value="gravel">
+        </div>
+
+        <div class="field-group">
+          <span class="field-label">Weather</span>
+          <div class="pill-row" id="weather-group">
+            <div class="pill-toggle active" data-value="dry">Dry</div>
+            <div class="pill-toggle" data-value="damp">Damp</div>
+            <div class="pill-toggle" data-value="wet">Wet</div>
+            <div class="pill-toggle" data-value="flooded">Flooded</div>
+          </div>
+          <input type="hidden" name="weather" id="weather-input" value="dry">
+        </div>
+            </div>
+          </div>
+        </div>
+
+        
       <!-- BRAKES + TYRES (full-width) -->
       <div class="panel panel-wide">
         <div class="wide-inner">
@@ -282,4 +338,20 @@
   </form>
 </div>
 </body>
+<script>
+  function setupPillGroup(groupId, hiddenInputId) {
+    const group = document.getElementById(groupId);
+    const hidden = document.getElementById(hiddenInputId);
+    group.addEventListener('click', (e) => {
+      const pill = e.target.closest('.pill-toggle');
+      if (!pill) return;
+      [...group.querySelectorAll('.pill-toggle')].forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      hidden.value = pill.dataset.value;
+    });
+  }
+
+  setupPillGroup('surface-group', 'surface-input');
+  setupPillGroup('weather-group', 'weather-input');
+</script>
 </html>
