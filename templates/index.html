@@ -104,7 +104,7 @@
         </div>
 
         <div class="run-row">
-          <button type="submit" class="btn-primary">Generate Setup</button>
+          <button type="submit" class="btn-primary">Run</button>
         </div>
       </form>
     </section>
@@ -230,6 +230,7 @@ function animateRow(row) {
 }
 
 function processStreamLine(line, table, tweaks) {
+    
     if (!line) return;
 
     // SECTION HEADER
@@ -275,6 +276,7 @@ function processStreamLine(line, table, tweaks) {
         animateRow(li);
         tweaks.appendChild(li);
     }
+    
 }
 
 function extractExplanation(text) {
@@ -334,7 +336,7 @@ async function streamSetup(prompt) {
 
   document.getElementById("job-form").addEventListener("submit", async (e) => {
     e.preventDefault();
-
+    
     const car = document.getElementById("car").value;
     const rally = document.getElementById("rally").value;
     const stage = document.getElementById("stage").value;
