@@ -40,15 +40,10 @@
       <form id="job-form">
         <div class="field-group">
           <label class="field-label" for="car">Car</label>
-          <select id="car" name="car" required>
-            <option value="">Select car…</option>
-            <option value="Fiesta Rally3 Evo">Ford Fiesta Rally3 Evo</option>
-            <option value="Fiesta H2 RWD">Ford Fiesta H2 RWD</option>
-            <option value="Escort MK2 H2 RWD">Ford Escort MK2 H2 RWD</option>
-            <option value="Golf GTI H2 FWD">VW Golf GTI H2 FWD</option>
-            <option value="Polo FWD">VW Polo FWD</option>
-            <!-- Add more as you like -->
-          </select>
+
+          <input list="car-list" id="car" name="car" required placeholder="Type or select a car…">
+
+          <datalist id="car-list"></datalist>
         </div>
 
         <div class="field-group">
@@ -184,6 +179,19 @@
 </div>
 
 <script>
+  async function loadCars() {
+    const res = await fetch("/cars");
+    const data = await res.json();
+    const list = document.getElementById("car-list");
+
+    data.cars.forEach(car => {
+        const opt = document.createElement("option");
+        opt.value = car;
+        list.appendChild(opt);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", loadCars);
   // pill toggles
   function setupPillGroup(groupId, hiddenInputId) {
     const group = document.getElementById(groupId);
@@ -200,6 +208,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   setupPillGroup('surface-group', 'surface-input');
   setupPillGroup('weather-group', 'weather-input');
+  
 });
 
   // tabs
@@ -330,13 +339,20 @@ async function streamSetup(prompt) {
 
         // Update explanation live
         engOut.textContent = extractExplanation(fullText);
+        const meta = document.getElementById("setup-meta");
+        meta.textContent = "Generated";
     }
 }
 
 
   document.getElementById("job-form").addEventListener("submit", async (e) => {
     e.preventDefault();
-    
+
+    const meta = document.getElementById("setup-meta");
+    meta.textContent = "Generating setup…";
+    const tableBody = document.querySelector("#setup-table tbody");
+    tableBody.innerHTML = "";
+
     const car = document.getElementById("car").value;
     const rally = document.getElementById("rally").value;
     const stage = document.getElementById("stage").value;
@@ -345,15 +361,15 @@ async function streamSetup(prompt) {
     const issues = document.getElementById("issues").value;
 
     const prompt = `
-Car: ${car}
-Rally: ${rally}
-Stage: ${stage}
-Surface: ${surface}
-Weather: ${weather}
-Handling notes: ${issues}
+      Car: ${car}
+      Rally: ${rally}
+      Stage: ${stage}
+      Surface: ${surface}
+      Weather: ${weather}
+      Handling notes: ${issues}
 
-Give me a full setup.
-    `;
+      Give me a full setup.
+          `;
     streamSetup(prompt);
   });
 </script>

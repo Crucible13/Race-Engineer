@@ -176,6 +176,8 @@
       animation: rowPop 1.2s ease-out;
     }
     input[type="text"],
+    datalist,
+    input,
     select,
     textarea {
       width: 100%;
@@ -191,6 +193,8 @@
     }
 
     input[type="text"]:focus,
+    input:focus,
+    select:focus,
     select:focus,
     textarea:focus {
       border-color: var(--accent);
@@ -210,7 +214,8 @@
       margin-top: 2px;
     }
     #rawout {
-      max-height: 120px;
+      height: fit-content;
+      min-height: 120px;
       overflow-y: auto;
       pointer-events: auto;
       position: relative;

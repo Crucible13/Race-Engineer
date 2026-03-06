@@ -8,6 +8,7 @@ from vector import (
     car_retriever,
     car_list_retriever,
     stage_list_retriever,
+    retrieve_tuning_for_setup
 )
 
 #define app
@@ -146,11 +147,12 @@ STRICT RULES:
 3. If a car lacks a category entirely, omit the whole category.
 4. If a car lacks a specific item, omit that item.
 5. Output ONLY the categories and items that exist for the detected car.
-6. If the user requests only specific items, output ONLY those items.
+6. If the user requests only specific items in the setup do not continue looking to give a full setup and only output those specific items, even if the car has more items that exist in {eng_data}.
 7. If the user does NOT specify categories, output a full setup with values for EVERY category that improves handling on that stage.
 8. Make sure slider values fall with in the categories ranges.
 9. Make sure to format the output exactly to the format rules.
 10. Gear ratios range from 0.200 to 1.200 and can not exceed 1.200 and final drive can at a minimum be .100 and at a maximum .300
+11. Do not reccomend a Tyre
 
 OUTPUT FORMAT RULES (MANDATORY)
 You must output the setup in a format that the frontend parser can read.
@@ -184,6 +186,7 @@ You must output the setup in a format that the frontend parser can read.
    • Do NOT output anything except section headers and bullet rows.
 
 Your output must ONLY contain:
+   - a few sentence why of the recommended adjustments based on stage traits and the user’s stated issues
    - Section headers
    - Bullet rows with item/value pairs
 
@@ -327,6 +330,51 @@ def chat():
         all_docs.extend(stage_retriever.invoke(detected_stage))
 
     eng_docs = all_docs
+    if intent == "setup":
+        detected_car, detected_stage = fuzzy_detect_car_and_stage(user_input)
+
+    all_docs = []
+
+    if detected_car:
+        all_docs.extend(car_retriever.invoke(detected_car))
+
+    if detected_stage:
+        stage_docs = stage_retriever.invoke(detected_stage)
+        all_docs.extend(stage_docs)
+
+        # Extract stage profile from metadata
+        stage_profile = None
+        for d in stage_docs:
+            if "stage_profile" in d.metadata:
+                stage_profile = d.metadata["stage_profile"]
+                break
+    else:
+        stage_profile = None
+
+    # Retrieve tuning docs
+    issues = user_input
+    surface = None
+    weather = None
+
+    # Try to extract surface/weather from user text
+    for s in ["gravel", "tarmac", "snow", "mixed"]:
+        if s in user_input.lower():
+            surface = s
+
+    for w in ["dry", "damp", "wet", "flooded"]:
+        if w in user_input.lower():
+            weather = w
+
+    tuning_docs = retrieve_tuning_for_setup(
+        symptom=issues,
+        surface=surface,
+        weather=weather,
+        stage_profile=stage_profile
+    )
+
+    all_docs.extend(tuning_docs)
+
+    eng_docs = all_docs
 
     setup_context = user_input
     if detected_car:
@@ -353,9 +401,14 @@ def chat():
         for chunk in result:
             if "message" in chunk and "content" in chunk["message"]:
                 yield chunk["message"]["content"]
-
+    
     return Response(stream_with_context(generate()), mimetype="text/plain")
 
+@app.route("/cars")
+def get_cars():
+    docs = car_list_retriever.invoke("")
+    cars = sorted([d.metadata["car_name"] for d in docs])
+    return jsonify({"cars": cars})
 
 @app.route("/")
 def mainScreen():
