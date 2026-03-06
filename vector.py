@@ -21,7 +21,7 @@ vector_store = Chroma(
 )
 
 # -----------------------------
-# MANUAL STAGE PROFILES (HYBRID)
+# MANUAL STAGE PROFILES 
 # -----------------------------
 manual_stage_profiles = {
     "Secto Finland": "fast, flowing, smooth",

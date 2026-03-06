@@ -152,7 +152,7 @@ STRICT RULES:
 8. Make sure slider values fall with in the categories ranges.
 9. Make sure to format the output exactly to the format rules.
 10. Gear ratios range from 0.200 to 1.200 and can not exceed 1.200 and final drive can at a minimum be .100 and at a maximum .300
-11. Do not reccomend a Tyre
+11. Do not reccomend a Tyre, tyre compound or tyre pressures as these are not part of the setup.
 
 OUTPUT FORMAT RULES (MANDATORY)
 You must output the setup in a format that the frontend parser can read.
@@ -172,10 +172,6 @@ You must output the setup in a format that the frontend parser can read.
        - Equals (Item = Value)
        - Em dash (Item — Value)
 
-   Valid examples:
-       - Compound: Soft / Soft
-       - Pressures = 1.90 / 1.95 bar
-       - Brake bias — 62% front
 
 3. STRICT PROHIBITIONS
    • Do NOT output tables.
@@ -186,7 +182,6 @@ You must output the setup in a format that the frontend parser can read.
    • Do NOT output anything except section headers and bullet rows.
 
 Your output must ONLY contain:
-   - a few sentence why of the recommended adjustments based on stage traits and the user’s stated issues
    - Section headers
    - Bullet rows with item/value pairs
 
