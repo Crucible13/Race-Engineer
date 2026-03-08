@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EA WRC Race Engineer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+  <!-- Top bar -->
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <div class="logo-dot"></div>
+      <div>
+        <div class="top-title">EA WRC Race Engineer</div>
+        <div class="top-subtitle">Desktop cockpit · Engineering view</div>
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <a type="submit" class="btn-primary" href="/setupCreation" style="text-decoration:none;">Create Setup</a>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>Connected</span>
+      </div>
+      <div class="top-meta">
+        Last stage: <span id="last-stage-label">–</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main grid -->
+  <main class="main-grid">
+    <!-- Left: job card -->
+    <section class="panel">
+      <div class="panel-header">
+        <div class="panel-title">Job card</div>
+        <div class="panel-subtitle">Driver input</div>
+      </div>
+
+      <form id="job-form">
+        <div class="field-group">
+          <label class="field-label" for="car">Car</label>
+
+          <input list="car-list" id="car" name="car" required placeholder="Type or select a car…">
+
+          <datalist id="car-list"></datalist>
+        </div>
+
+        <div class="field-group">
+          <div class="field-row">
+            <div style="flex: 1;">
+              <label class="field-label" for="rally">Rally</label>
+              <select id="rally" name="rally">
+                <option value="">Select rally…</option>
+                <option value="Agon By AOC Rally Pacifico">Agon By AOC Rally Pacifico</option>
+                <option value="Bio Bío Rally Chile">Bio Bío Rally Chile</option>
+                <option value="Central European Rally">Central European Rally</option>
+                <option value="Croatia Rally">Croatia Rally</option>
+                <option value="EKO Acropolis Rally Greece">EKO Acropolis Rally Greece</option>
+                <option value="Fanatec Rally Oceania">Fanatec Rally Oceania</option>
+                <option value="Forum8 Rally Japan">Forum8 Rally Japan</option>
+                <option value="Guanajuato Rally México">Guanajuato Rally México</option>
+                <option value="ORLEN 80th Rally Poland">ORLEN 80th Rally Poland</option>
+                <option value="Rallye Monte Carlo">Rallye Monte Carlo</option>
+                <option value="Rally Estonia">Rally Estonia</option>
+                <option value="Rally Iberia">Rally Iberia</option>
+                <option value="Rally Italia Sardegna">Rally Italia Sardegna</option>
+                <option value="Rally Mediterraneo">Rally Mediterraneo</option>
+                <option value="Rally Scandia">Rally Scandia</option>
+                <option value="Rally Sweden">Rally Sweden</option>
+                <option value="Safari Rally Kenya">Safari Rally Kenya</option>
+                <option value="Secto Rally Finland">Secto Rally Finland</option>
+                <option value="Tet Rally Latvia">Tet Rally Latvia</option>
+                <option value="Vodafone Rally De Portugal">Vodafone Rally De Portugal</option>
+              </select>
+            </div>
+            <div style="flex: 1;">
+              <label class="field-label" for="stage">Stage</label>
+              <input id="stage" name="stage" type="text" placeholder="e.g. Lahdenkylä, Gunung, Karoutes…">
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <span class="field-label">Surface</span>
+          <div class="pill-row" id="surface-group">
+            <div class="pill-toggle active" data-value="gravel">Gravel</div>
+            <div class="pill-toggle" data-value="tarmac">Tarmac</div>
+            <div class="pill-toggle" data-value="snow">Snow</div>
+            <div class="pill-toggle" data-value="mixed">Mixed</div>
+          </div>
+          <input type="hidden" name="surface" id="surface-input" value="gravel">
+        </div>
+
+        <div class="field-group">
+          <span class="field-label">Weather</span>
+          <div class="pill-row" id="weather-group">
+            <div class="pill-toggle active" data-value="dry">Dry</div>
+            <div class="pill-toggle" data-value="damp">Damp</div>
+            <div class="pill-toggle" data-value="wet">Wet</div>
+            <div class="pill-toggle" data-value="flooded">Flooded</div>
+          </div>
+          <input type="hidden" name="weather" id="weather-input" value="dry">
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="issues">Handling notes</label>
+          <textarea id="issues" name="issues" placeholder="Pushes mid‑corner, nervous over crests, boggy in 2nd, locks fronts on downhill braking…"></textarea>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="rawout">Engineer: </label>
+          <p id="rawout" name="rawout"></p>
+        </div>
+
+        <div class="run-row">
+          <button type="submit" class="btn-primary">Run</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Right: setup output -->
+    <section class="panel">
+      <div class="panel-header">
+        <div class="panel-title">Setup sheet</div>
+        <div class="panel-subtitle" id="setup-meta">Awaiting run…</div>
+      </div>
+
+      <div class="tab-row">
+        <button class="tab-btn active" type="button" data-tab="grid">Setup grid</button>
+        <button class="tab-btn" type="button" data-tab="tweaks">Tweak pack</button>
+      </div>
+
+      <!-- Setup grid -->
+      <div id="tab-grid">
+        <div class="setup-table-wrapper">
+          <table class="setup-table" id="setup-table">
+            <thead>
+            <tr>
+              <th style="width: 28%;">Section</th>
+              <th style="width: 44%;">Item</th>
+              <th style="width: 28%;">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Example placeholder rows; your JS will overwrite these with AI output -->
+            <tr class="section-row">
+              <td colspan="3">
+                <span class="section-badge">Tyres</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Tyres</td>
+              <td>Compound (front / rear)</td>
+              <td class="value-soft">Soft / Soft</td>
+            </tr>
+            <tr>
+              <td>Tyres</td>
+              <td>Pressures (front / rear)</td>
+              <td>1.90 / 1.95 bar</td>
+            </tr>
+            <tr class="section-row">
+              <td colspan="3">
+                <span class="section-badge">Brakes</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Brakes</td>
+              <td>Brake force</td>
+              <td>70%</td>
+            </tr>
+            <tr>
+              <td>Brakes</td>
+              <td>Brake bias</td>
+              <td>62% front</td>
+            </tr>
+            <!-- Add sections: Diff, Suspension, Alignment, Aero, Gearing -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tweak pack -->
+      <div id="tab-tweaks" style="display:none;">
+        <div class="tweak-pack" id="tweak-pack">
+          <div class="tweak-pack-title">Service tweaks</div>
+          <ul class="tweak-list">
+            <li>Waiting for a run. You’ll see targeted “+/− clicks from current” notes here.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  async function loadCars() {
+    const res = await fetch("/cars");
+    const data = await res.json();
+    const list = document.getElementById("car-list");
+
+    data.cars.forEach(car => {
+        const opt = document.createElement("option");
+        opt.value = car;
+        list.appendChild(opt);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", loadCars);
+  // pill toggles
+  function setupPillGroup(groupId, hiddenInputId) {
+    const group = document.getElementById(groupId);
+    const hidden = document.getElementById(hiddenInputId);
+    group.addEventListener('click', (e) => {
+      const pill = e.target.closest('.pill-toggle');
+      if (!pill) return;
+      [...group.querySelectorAll('.pill-toggle')].forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      hidden.value = pill.dataset.value;
+    });
+  }
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupPillGroup('surface-group', 'surface-input');
+  setupPillGroup('weather-group', 'weather-input');
+  
+});
+
+  // tabs
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabGrid = document.getElementById('tab-grid');
+  const tabTweaks = document.getElementById('tab-tweaks');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+      if (tab === 'grid') {
+        tabGrid.style.display = '';
+        tabTweaks.style.display = 'none';
+      } else {
+        tabGrid.style.display = 'none';
+        tabTweaks.style.display = '';
+      }
+    });
+  });
+  // get explanation from setup response
+let currentSection = null;
+
+function animateRow(row) {
+    row.classList.add("row-animate");
+    setTimeout(() => row.classList.remove("row-animate"), 1200);
+}
+
+function processStreamLine(line, table, tweaks) {
+    
+    if (!line) return;
+
+    // SECTION HEADER
+    if (/^[A-Za-z ]+$/.test(line) && line.length < 30) {
+        currentSection = line;
+
+        const sectionRow = document.createElement("tr");
+        sectionRow.classList.add("section-row");
+        sectionRow.innerHTML = `
+            <td colspan="3"><span class="section-badge">${currentSection}</span></td>
+        `;
+        animateRow(sectionRow);
+        table.appendChild(sectionRow);
+        return;
+    }
+
+    // BULLET ROWS
+    if (line.startsWith("-") || line.startsWith("•") || line.startsWith("*")) {
+        const clean = line.replace(/^[-•*]\s*/, "");
+
+        let item = clean;
+        let value = "";
+
+        if (clean.includes(":")) [item, value] = clean.split(":");
+        else if (clean.includes("=")) [item, value] = clean.split("=");
+        else if (clean.includes("—")) [item, value] = clean.split("—");
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${currentSection || ""}</td>
+            <td>${item.trim()}</td>
+            <td>${value.trim()}</td>
+        `;
+        animateRow(row);
+        table.appendChild(row);
+        return;
+    }
+
+    // TWEAK PACK
+    if (line.toLowerCase().includes("click") || line.toLowerCase().includes("tweak")) {
+        const li = document.createElement("li");
+        li.textContent = line;
+        animateRow(li);
+        tweaks.appendChild(li);
+    }
+    
+}
+
+function extractExplanation(text) {
+    const lines = text.split("\n");
+    const out = [];
+
+    for (const line of lines) {
+        if (/^[A-Za-z ]+$/.test(line.trim()) && line.trim().length < 30) break;
+        out.push(line);
+    }
+
+    return out.join("\n").trim();
+}
+
+async function streamSetup(prompt) {
+    const table = document.getElementById("setup-table").querySelector("tbody");
+    const tweaks = document.getElementById("tweak-pack").querySelector(".tweak-list");
+    const engOut = document.getElementById("rawout");
+
+    table.innerHTML = "";
+    tweaks.innerHTML = "";
+    engOut.textContent = "";
+
+    const response = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: prompt })
+    });
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+
+    let buffer = "";
+    let fullText = "";
+
+    while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value);
+        fullText += chunk;
+        buffer += chunk;
+
+        // Split into complete lines
+        let lines = buffer.split("\n");
+        buffer = lines.pop(); // keep partial line
+
+        for (const line of lines) {
+            processStreamLine(line.trim(), table, tweaks);
+        }
+
+        // Update explanation live
+        engOut.textContent = extractExplanation(fullText);
+        const meta = document.getElementById("setup-meta");
+        meta.textContent = "Generated";
+    }
+}
+
+
+  document.getElementById("job-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const meta = document.getElementById("setup-meta");
+    meta.textContent = "Generating setup…";
+    const tableBody = document.querySelector("#setup-table tbody");
+    tableBody.innerHTML = "";
+
+    const car = document.getElementById("car").value;
+    const rally = document.getElementById("rally").value;
+    const stage = document.getElementById("stage").value;
+    const surface = document.getElementById("surface-input").value;
+    const weather = document.getElementById("weather-input").value;
+    const issues = document.getElementById("issues").value;
+
+    const prompt = `
+      Car: ${car}
+      Rally: ${rally}
+      Stage: ${stage}
+      Surface: ${surface}
+      Weather: ${weather}
+      Handling notes: ${issues}
+
+      Give me a full setup.
+          `;
+    streamSetup(prompt);
+  });
+</script>
+</body>
+</html>
