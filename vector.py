@@ -7,21 +7,33 @@ import os
 import pandas as pd
 
 # -----------------------------
-# EMBEDDINGS + VECTOR STORE
+# EMBEDDINGS + VECTOR STORES
 # -----------------------------
 embeddings = OllamaEmbeddings(model="mxbai-embed-large")
 
 DB_LOCATION = "./chroma_langchain_db"
 add_documents = not os.path.exists(DB_LOCATION)
 
-vector_store = Chroma(
-    collection_name="eng_data",
+car_identity_store = Chroma(
+    collection_name="car_identity",
+    persist_directory=DB_LOCATION,
+    embedding_function=embeddings,
+)
+
+stage_identity_store = Chroma(
+    collection_name="stage_identity",
+    persist_directory=DB_LOCATION,
+    embedding_function=embeddings,
+)
+
+tuning_store = Chroma(
+    collection_name="tuning_docs",
     persist_directory=DB_LOCATION,
     embedding_function=embeddings,
 )
 
 # -----------------------------
-# MANUAL STAGE PROFILES 
+# MANUAL STAGE PROFILES
 # -----------------------------
 manual_stage_profiles = {
     "Secto Finland": "fast, flowing, smooth",
@@ -29,7 +41,7 @@ manual_stage_profiles = {
     "Mediterraneo": "tarmac, abrasive, technical",
     "Monte Carlo": "technical, narrow, icy-risk",
     "Greece": "rough, rocky, technical",
-    "Sweden": "fast, snow,"
+    "Sweden": "fast, snow,",
 }
 
 
@@ -98,12 +110,19 @@ def merge_auto_manual_profile(auto_profile: str, manual_profile: str | None) -> 
     return ", ".join(merged)
 
 
-# -----------------------------
-# TUNING DATA → DOCUMENTS
-# -----------------------------
-tuning_df = pd.read_csv("vectorData/tuning_suggestions.csv")
+def add_in_batches(store: Chroma, docs: list[Document], batch_size: int = 5000):
+    for i in range(0, len(docs), batch_size):
+        batch = docs[i:i + batch_size]
+        print(f"Adding batch {i // batch_size + 1} to {store._collection.name} ({len(batch)} docs)...")
+        store.add_documents(batch)
 
+
+# -----------------------------
+# TUNING DATA → TUNING DOCS
+# -----------------------------
 tuning_docs: list[Document] = []
+
+tuning_df = pd.read_csv("vectorData/tuning_suggestions.csv")
 for row in tuning_df.itertuples(index=False):
     doc = Document(
         page_content=(
@@ -127,8 +146,33 @@ for row in tuning_df.itertuples(index=False):
     )
     tuning_docs.append(doc)
 
+setup_df = pd.read_csv("vectorData/wrc_setups.csv")
+for row in setup_df.itertuples(index=False):
+    doc = Document(
+        page_content=(
+            f"Car: {row.Car}. "
+            f"Class: {row.Class}. "
+            f"Rally: {row.Rally}. "
+            f"Stage: {row.Stage}. "
+            f"Section: {row.Section}. "
+            f"Adjustment: {row.Adjustment}. "
+            f"Value: {row.Value}."
+        ),
+        metadata={
+            "doc_type": "tuning_setup",
+            "car": row.Car,
+            "car_class": row.Class,
+            "rally": row.Rally,
+            "stage": row.Stage,
+            "section": row.Section,
+            "adjustment": row.Adjustment,
+            "value": row.Value,
+        },
+    )
+    tuning_docs.append(doc)
+
 # -----------------------------
-# STAGE DATA → IDENTITY DOCS
+# STAGE DATA → STAGE IDENTITY DOCS
 # -----------------------------
 stage_df = pd.read_csv("vectorData/wrc_stages.csv")
 unique_stages = stage_df["stage_name"].unique()
@@ -141,7 +185,6 @@ for stage_name in unique_stages:
 
     auto_profile = build_auto_stage_profile(row)
 
-    # Try to get rally name if present, else None
     rally_name = None
     if "rally" in stage_df.columns:
         rally_name = str(row.get("rally", "")).strip() or None
@@ -175,7 +218,7 @@ for stage_name in unique_stages:
     stage_identity_docs.append(doc)
 
 # -----------------------------
-# CAR DATA → IDENTITY DOCS
+# CAR DATA → CAR IDENTITY DOCS
 # -----------------------------
 car_df = pd.read_csv("vectorData/car_settings.csv")
 
@@ -217,136 +260,32 @@ for car in unique_cars:
     car_identity_docs.append(doc)
 
 # -----------------------------
-# BULK STAGE + CAR DOCS
-# -----------------------------
-documents: list[Document] = []
-ids: list[str] = []
-
-if add_documents:
-    # Stage documents (per row)
-    for i, row in stage_df.iterrows():
-        auto_profile = build_auto_stage_profile(row)
-
-        rally_name = None
-        if "rally" in stage_df.columns:
-            rally_name = str(row.get("rally", "")).strip() or None
-
-        manual_profile = manual_stage_profiles.get(rally_name, None) if rally_name else None
-        merged_profile = merge_auto_manual_profile(auto_profile, manual_profile)
-
-        document = Document(
-            page_content=(
-                f"Stage: {row['stage_name']}, "
-                f"Surface: {row['surface']}, "
-                f"Length: {row['distance_km']} km, "
-                f"Average Speed: {row['avg_speed_kph']} km/h, "
-                f"Corner Density: {row['corner_density']}, "
-                f"Stage Profile: {merged_profile}"
-            ),
-            metadata={
-                "stage_name": row["stage_name"],
-                "country": row.get("country", "Unknown"),
-                "surface": row["surface"],
-                "distance_km": row["distance_km"],
-                "avg_speed_kph": row["avg_speed_kph"],
-                "corner_density": row["corner_density"],
-                "stage_profile": merged_profile,
-                "rally": rally_name,
-            },
-            id=f"stage-{i}",
-        )
-        ids.append(f"stage-{i}")
-        documents.append(document)
-
-    # Car documents (per slider row)
-    for i, row in car_df.iterrows():
-        document = Document(
-            page_content=(
-                f"Car Name: {row['car_name']}, "
-                f"Slider: {row['slider_name']}, "
-                f"Minimum: {row['min_value']}, "
-                f"Maximum: {row['max_value']}, "
-                f"Has adjustment: {row['has_slider']}"
-            ),
-            metadata={
-                "car_name": row["car_name"],
-                "slider_name": row["slider_name"],
-                "has_slider": row["has_slider"],
-                "min_value": row["min_value"],
-                "max_value": row["max_value"],
-            },
-            id=f"car-{i}",
-        )
-        ids.append(f"car-{i}")
-        documents.append(document)
-
-# -----------------------------
-# ADD DOCUMENTS TO VECTOR STORE
+# PERSIST DOCUMENTS (ONE-TIME)
 # -----------------------------
 if add_documents:
-    vector_store.add_documents(tuning_docs)
-    vector_store.add_documents(stage_identity_docs)
-    vector_store.add_documents(car_identity_docs)
-    vector_store.add_documents(documents=documents, ids=ids)
+    print("Populating Chroma collections...")
 
-# -----------------------------
-# RETRIEVERS
-# -----------------------------
-car_retriever = vector_store.as_retriever(
-    search_kwargs={"k": 200, "filter": {"car_name": {"$contains": ""}}}
-)
+    if car_identity_docs:
+        add_in_batches(car_identity_store, car_identity_docs, batch_size=5000)
 
-stage_retriever = vector_store.as_retriever(
-    search_kwargs={"k": 200, "filter": {"stage_name": {"$contains": ""}}}
-)
+    if stage_identity_docs:
+        add_in_batches(stage_identity_store, stage_identity_docs, batch_size=5000)
 
-car_list_retriever = vector_store.as_retriever(
-    search_kwargs={
-        "k": 100,
-        "filter": {"doc_type": {"$in": ["car_identity"]}},
-    }
-)
+    if tuning_docs:
+        add_in_batches(tuning_store, tuning_docs, batch_size=5000)
 
-stage_list_retriever = vector_store.as_retriever(
-    search_kwargs={
-        "k": 100,
-        "filter": {"doc_type": {"$in": ["stage_identity"]}},
-    }
-)
+    print("Chroma collections populated.")
 
-tuning_retriever = vector_store.as_retriever(
-    search_kwargs={
-        "k": 20,
-        "filter": {"doc_type": "tuning"},
-    }
-)
-
-# -----------------------------
-# SETUP-FOCUSED TUNING RETRIEVAL
-# -----------------------------
-def retrieve_tuning_for_setup(
-    symptom: str,
-    surface: str | None = None,
-    weather: str | None = None,
-    stage_profile: str | None = None,
-):
-    """
-    Retrieve tuning suggestions for a setup-focused question.
-
-    symptom: driver feedback text (e.g. 'pushes mid-corner')
-    surface: gravel / tarmac / snow / mixed
-    weather: dry / damp / wet / flooded
-    stage_profile: merged profile string (e.g. 'fast, flowing, rough')
-    """
-    query_parts = [f"Driver feedback: {symptom}"]
-
-    if surface:
-        query_parts.append(f"Surface: {surface}")
-    if weather:
-        query_parts.append(f"Weather: {weather}")
-    if stage_profile:
-        query_parts.append(f"Stage profile: {stage_profile}")
-
-    query = " | ".join(query_parts)
-
-    return tuning_retriever.invoke(query)
+car_identity_retriever = car_identity_store.as_retriever(search_kwargs={"k": 1})
+stage_identity_retriever = stage_identity_store.as_retriever(search_kwargs={"k": 1})
+car_list_retriever = car_identity_store.as_retriever(search_kwargs={"k": 100})
+stage_list_retriever = stage_identity_store.as_retriever(search_kwargs={"k": 100})
+tuning_retriever = tuning_store.as_retriever(search_kwargs={"k": 3})
+__all__ = [
+    "car_identity_store",
+    "stage_identity_store",
+    "tuning_store",
+    "manual_stage_profiles",
+    "build_auto_stage_profile",
+    "merge_auto_manual_profile",
+]

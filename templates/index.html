@@ -145,21 +145,6 @@
             <!-- Example placeholder rows; your JS will overwrite these with AI output -->
             <tr class="section-row">
               <td colspan="3">
-                <span class="section-badge">Tyres</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Tyres</td>
-              <td>Compound (front / rear)</td>
-              <td class="value-soft">Soft / Soft</td>
-            </tr>
-            <tr>
-              <td>Tyres</td>
-              <td>Pressures (front / rear)</td>
-              <td>1.90 / 1.95 bar</td>
-            </tr>
-            <tr class="section-row">
-              <td colspan="3">
                 <span class="section-badge">Brakes</span>
               </td>
             </tr>
@@ -193,19 +178,47 @@
 </div>
 
 <script>
-  async function loadCars() {
-    const res = await fetch("/cars");
-    const data = await res.json();
-    const list = document.getElementById("car-list");
+  setTimeout(() => {
+  try {
+    if (window.tabs) {
+      window.tabs._listeners = {};
+      window.tabs.on = function (event, handler) {
+        this._listeners[event] = handler;
+      };
+      window.tabs.emit = function (event, data) {
+        const fn = this._listeners[event];
+        if (fn) fn(data);
+        // If no listener, silently ignore (prevents vendor.js error)
+      };
+      console.log("Patched vendor tab bus");
+    }
+  } catch (e) {
+    console.warn("Failed to patch vendor tab bus", e);
+  }
+}, 0);
+
+  async function loadCarList() {
+  try {
+    const response = await fetch("/cars");
+    const data = await response.json();
+
+    const datalist = document.getElementById("car-list");
+    datalist.innerHTML = ""; // clear existing options
 
     data.cars.forEach(car => {
-        const opt = document.createElement("option");
-        opt.value = car;
-        list.appendChild(opt);
+      const option = document.createElement("option");
+      option.value = car;
+      datalist.appendChild(option);
     });
+
+  } catch (err) {
+    console.error("Failed to load car list:", err);
+  }
 }
 
-document.addEventListener("DOMContentLoaded", loadCars);
+// Load on page startup
+document.addEventListener("DOMContentLoaded", loadCarList);
+
   // pill toggles
   function setupPillGroup(groupId, hiddenInputId) {
     const group = document.getElementById(groupId);
@@ -244,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  // get explanation from setup response
+ 
 let currentSection = null;
 
 function animateRow(row) {
@@ -271,25 +284,31 @@ function processStreamLine(line, table, tweaks) {
     }
 
     // BULLET ROWS
-    if (line.startsWith("-") || line.startsWith("•") || line.startsWith("*")) {
-        const clean = line.replace(/^[-•*]\s*/, "");
+  if (line.startsWith("-") || line.startsWith("•") || line.startsWith("*")) {
+      let clean = line.replace(/^[-•*]\s*/, "");
 
-        let item = clean;
-        let value = "";
+      // Normalize em dash → hyphen
+      clean = clean.replace(/—/g, "-");
 
-        if (clean.includes(":")) [item, value] = clean.split(":");
-        else if (clean.includes("=")) [item, value] = clean.split("=");
-        else if (clean.includes("—")) [item, value] = clean.split("—");
+      let item = clean;
+      let value = "";
 
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${currentSection || ""}</td>
-            <td>${item.trim()}</td>
-            <td>${value.trim()}</td>
-        `;
-        animateRow(row);
-        table.appendChild(row);
-        return;
+      // Split on the FIRST hyphen only
+      const parts = clean.split("-");
+      if (parts.length > 1) {
+          item = parts[0].trim();
+          value = parts.slice(1).join("-").trim();
+      }
+
+      const row = document.createElement("tr");
+      row.innerHTML = `
+          <td>${currentSection || ""}</td>
+          <td>${item}</td>
+          <td>${value}</td>
+      `;
+      animateRow(row);
+      table.appendChild(row);
+      return;
     }
 
     // TWEAK PACK
@@ -314,7 +333,7 @@ function extractExplanation(text) {
     return out.join("\n").trim();
 }
 
-async function streamSetup(prompt) {
+async function streamSetup(payload) {
     const table = document.getElementById("setup-table").querySelector("tbody");
     const tweaks = document.getElementById("tweak-pack").querySelector(".tweak-list");
     const engOut = document.getElementById("rawout");
@@ -324,10 +343,11 @@ async function streamSetup(prompt) {
     engOut.textContent = "";
 
     const response = await fetch("/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: prompt })
-    });
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
 
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
@@ -374,18 +394,19 @@ async function streamSetup(prompt) {
     const weather = document.getElementById("weather-input").value;
     const issues = document.getElementById("issues").value;
 
-    const prompt = `
-      Car: ${car}
-      Rally: ${rally}
-      Stage: ${stage}
-      Surface: ${surface}
-      Weather: ${weather}
-      Handling notes: ${issues}
-
-      Give me a full setup.
-          `;
-    streamSetup(prompt);
+    
+    streamSetup(
+      {
+        Car: car,
+        Rally: rally,
+        Stage: stage,
+        Surface: surface,
+        Weather: weather,
+        Issues: issues
+      }
+    );
   });
+
 </script>
 </body>
 </html>

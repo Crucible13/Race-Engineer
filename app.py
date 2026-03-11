@@ -1,31 +1,27 @@
 from flask import Flask, render_template, request, jsonify, stream_with_context, Response
 from langchain_ollama.llms import OllamaLLM
-from langchain_core.prompts import ChatPromptTemplate
 import ollama
-from rapidfuzz import process
+
 from vector import (
-    stage_retriever,
-    car_retriever,
+    stage_identity_retriever,
+    car_identity_retriever,
+    tuning_store,
     car_list_retriever,
-    stage_list_retriever,
-    retrieve_tuning_for_setup
 )
 
-#define app
+# -----------------------------
+# Flask + Ollama Setup
+# -----------------------------
 app = Flask(__name__)
-# initialize ollama client
 client = ollama.Client()
-
-# define model
 model = OllamaLLM(model="Race-Engineer-Model-1")
-
 template = """
 You are a Rally Engineer for EA SPORTS WRC. Use ONLY {eng_data}. Never invent cars, stages, sliders, values, or systems.
 
-Think internally and silently. Never reveal chain‑of‑thought. Output only the final answer.
+Think internally and silently. Never reveal chain‑of‑thought. Output only the final answer. dont tell what each change does just the adjustment and its value
 
 SETUPS:
-- Require car + stage; if one missing, ask only for the missing one.
+- Require car + stage; if stage missing, make it broad for the rally selected.
 - Use ONLY sliders that exist for that car in {eng_data}.
 - Use ONLY stage traits from {eng_data}.
 - If user requests specific items, output ONLY those items.
@@ -44,6 +40,9 @@ FORMAT:
 - Bullet rows use "-", "•", or "*".
 - Item/value pairs use ":", "=", or "—".
 - No tables, pipes, paragraphs, or numbered lists.
+- Never use em dashes (—). Use a normal hyphen (-) instead.
+
+You must NEVER include tyres, brake pad compounds, brake fluid, steering ratio, or global ranges in the final setup. These items are NOT adjustable sliders and must be ignored even if provided by the user.
 
 CATEGORIES AND ITEMS:
 
@@ -98,7 +97,7 @@ Toe −2.00–+2.00 (1.00)
 Camber −2.50–0.00 (0.982)
 Braking Force 1266–3798 (42.2)
 Brake Bias 30–90% (1%)
-Handbrake 1139.3–2827.3 (25)
+Handbrake Force 1139.3–2827.3 (25)
 F Drive Lock 0–37% (0.5%)
 F Brake Lock 0–37% (0.5%)
 F Preload 0–96.25 (1.5)
@@ -108,18 +107,19 @@ R Preload 0–100 (2.0)
 Gears 0.200–1.200 (0.02)
 Final Drive 0.100–0.300 (0.005)
 Slow/Fast Bump −5.00–+5.00 (0.20)
-Bump Div 0.00–1.30 (0.2)
+Bump Divison 0.00–1.30 (0.2)
 Ride Height 30–70 (1)
 Spring Rate 20–100 (1.5)
 ARB 0–66 (1)
 
+You must NEVER output global ranges in the final setup. They are only constraints for generating valid values.
 OUTPUT FORMAT RULES (MANDATORY)
 You must output the setup in a format that the frontend parser can read.
 
 1. SECTION HEADERS
    • A section header is a single line containing only the section name.
    • Example:
-       Tyres
+       Alignment
        Brakes
        Suspension
 
@@ -139,206 +139,105 @@ You must output the setup in a format that the frontend parser can read.
    • Do NOT output paragraphs.
    • Do NOT output numbered lists.
    • Do NOT output anything except section headers and bullet rows.
+   
+- If the user mentions any slider, system, or value not in this list or not present for that car in {eng_data}, you must ignore it completely and never approximate, rename, or replace it.
 
-Your output must ONLY contain:
+Your output must ONLY contain: (STRICTLY NO EXCEPTIONS)
    - Section headers
    - Bullet rows with item/value pairs
-
+   
+ignore everything not in {eng_data}. Never attempt to fill in missing values or invent items. If the user requests something not in {eng_data}, respond that you don't have that information.
 USER REQUEST
 {user_input}
 """
 
-prompt = ChatPromptTemplate.from_template(template)
-chain = prompt | model
+# -----------------------------
+# Tuning Retrieval
+# -----------------------------
+def retrieve_tuning_for_setup(car=None, surface=None, weather=None, stage_profile=None):
+    """Retrieve tuning documents from tuning_store using clean, deterministic keywords."""
+    query_parts = []
 
-########## helper functions #########
-def detect_intent(query: str) -> str:
-    """LLM-based intent classifier used only when rule-based logic doesn't decide."""
-    cls_prompt = f"""
-    Classify the user's intent using ONLY these labels:
-    - car
-    - stage
-    - car listing
-    - stage listing
-    - other
+    if car:
+        query_parts.append(str(car))
 
-    Classification rules:
-    • If the user asks to "list", "list all cars", "show all", "give all", "what cars", "all cars", classify as 'car listing'.
-    • If the user asks to "list", "show all", "give all", "what stages", "all stages", classify as 'stage listing'.
-    • If the user mentions a specific car name, classify as 'car'.
-    • If the user mentions a specific stage name, classify as 'stage'.
-    • Otherwise classify as 'other'.
+    if surface:
+        query_parts.append(str(surface))
 
-    User query:
-    "{query}"
-    """
-    return model.invoke(cls_prompt).strip().lower()
+    if weather:
+        query_parts.append(str(weather))
+
+    if stage_profile:
+        query_parts.append(str(stage_profile))
+
+    # Build clean query
+    query = " ".join(query_parts).strip()
+    if not query:
+        return []
+
+    # Retrieve only the top 3 most relevant tuning rows
+    retriever = tuning_store.as_retriever(search_kwargs={"k": 3})
+    return retriever.invoke(query)
 
 
-def fuzzy_detect_car_and_stage(user_text: str):
-    """Use rapidfuzz to detect car_name and stage_name from the user text."""
-    lower_q = user_text.lower()
-
-    # get all car identity docs
-    car_docs = car_list_retriever.invoke("")
-    car_names = [d.metadata["car_name"] for d in car_docs]
-
-    # get all stage identity docs
-    stage_docs = stage_list_retriever.invoke("")
-    stage_names = [d.metadata["stage_name"] for d in stage_docs]
-
-    detected_car = None
-    detected_stage = None
-
-    if car_names:
-        car_match = process.extractOne(
-            lower_q,
-            car_names,
-        )
-        if car_match and car_match[1] >= 55:
-            detected_car = car_match[0]
-
-    if stage_names:
-        stage_match = process.extractOne(
-            lower_q,
-            stage_names,
-        )
-        if stage_match and stage_match[1] >= 55:
-            detected_stage = stage_match[0]
-
-    return detected_car, detected_stage
-########## helper functions #########
-
-######## APP ROUTES ########
+# -----------------------------
+# SETUP-ONLY CHAT ENDPOINT
+# -----------------------------
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.get_json()
-    user_input = data.get("message", "")
-    lower_in = user_input.lower().strip()
 
-    # 1. Rule-based intent detection
-    if any(phrase in lower_in for phrase in [
-        "list all cars", "list cars", "all cars", "show all cars",
-        "give all cars", "what cars", "cars?"
-    ]):
-        intent = "car listing"
+    detected_car = data.get("Car")
+    detected_stage = data.get("Stage")
+    detected_rally = data.get("Rally")
+    issues = data.get("Issues")
+    surface = data.get("Surface")
+    weather = data.get("Weather")
 
-    elif any(phrase in lower_in for phrase in [
-        "list all stages", "list stages", "all stages", "show all stages",
-        "give all stages", "what stages", "stages?"
-    ]):
-        intent = "stage listing"
+    # -----------------------------
+    # Retrieve identity + tuning docs
+    # -----------------------------
+    car_docs = car_identity_retriever.invoke(detected_car)
+    stage_docs = stage_identity_retriever.invoke(detected_stage)
 
-    elif "setup" in lower_in or "tune" in lower_in or "adjust" in lower_in:
-        intent = "setup"
-
-    else:
-        intent = detect_intent(user_input).strip().lower()
-
-    # 2. Select retriever
-    detected_car = None
-    detected_stage = None
-
-    if intent == "setup":
-        detected_car, detected_stage = fuzzy_detect_car_and_stage(user_input)
-        retriever = stage_retriever
-
-    elif intent == "car":
-        retriever = car_retriever
-
-    elif intent == "stage":
-        retriever = stage_retriever
-
-    elif intent == "car listing":
-        retriever = car_list_retriever
-
-    elif intent == "stage listing":
-        retriever = stage_list_retriever
-
-    else:
-        retriever = car_retriever
-
-    eng_docs = retriever.invoke(user_input)
-
-    # 3. Fast paths
-    if intent == "car listing":
-        car_names = sorted([doc.metadata["car_name"] for doc in eng_docs])
-        numbered = "\n".join(f"{i+1}. {name}" for i, name in enumerate(car_names))
-        return jsonify({"response": numbered})
-
-    if intent == "stage listing":
-        stage_names = sorted([doc.metadata["stage_name"] for doc in eng_docs])
-        numbered = "\n".join(f"{i+1}. {name}" for i, name in enumerate(stage_names))
-        return jsonify({"response": numbered})
-
-    # 4. Setup enrichment
-    if intent == "setup":
-        detected_car, detected_stage = fuzzy_detect_car_and_stage(user_input)
-
-    all_docs = []
-
-    if detected_car:
-        all_docs.extend(car_retriever.invoke(detected_car))
-
-    if detected_stage:
-        all_docs.extend(stage_retriever.invoke(detected_stage))
-
-    eng_docs = all_docs
-    if intent == "setup":
-        detected_car, detected_stage = fuzzy_detect_car_and_stage(user_input)
-
-    all_docs = []
-
-    if detected_car:
-        all_docs.extend(car_retriever.invoke(detected_car))
-
-    if detected_stage:
-        stage_docs = stage_retriever.invoke(detected_stage)
-        all_docs.extend(stage_docs)
-
-        # Extract stage profile from metadata
-        stage_profile = None
-        for d in stage_docs:
-            if "stage_profile" in d.metadata:
-                stage_profile = d.metadata["stage_profile"]
-                break
-    else:
-        stage_profile = None
-
-    # Retrieve tuning docs
-    issues = user_input
-    surface = None
-    weather = None
-
-    # Try to extract surface/weather from user text
-    for s in ["gravel", "tarmac", "snow", "mixed"]:
-        if s in user_input.lower():
-            surface = s
-
-    for w in ["dry", "damp", "wet", "flooded"]:
-        if w in user_input.lower():
-            weather = w
+    stage_profile = None
+    for d in stage_docs:
+        if "stage_profile" in d.metadata:
+            stage_profile = d.metadata["stage_profile"]
+            break
 
     tuning_docs = retrieve_tuning_for_setup(
-        symptom=issues,
+        car=detected_car,
         surface=surface,
         weather=weather,
         stage_profile=stage_profile
     )
 
-    all_docs.extend(tuning_docs)
+    all_docs = car_docs + stage_docs + tuning_docs
 
-    eng_docs = all_docs
+    # -----------------------------
+    # Build ENG DATA
+    # -----------------------------
+    eng_text = "\n\n".join(doc.page_content for doc in all_docs)
+    print("=== ENG DATA ===")
+    print(eng_text)
+    print("================")
 
-    setup_context = user_input
-    if detected_car:
-        setup_context += f"\n\nDetected car: {detected_car}"
-    if detected_stage:
-        setup_context += f"\nDetected stage: {detected_stage}"
+    # -----------------------------
+    # Build setup context
+    # -----------------------------
+    setup_context = (
+        f"Car: {detected_car}\n"
+        f"Stage: {detected_stage}\n"
+        f"Rally: {detected_rally}\n"
+        f"Surface: {surface}\n"
+        f"Weather: {weather}\n"
+        f"Issues: {issues}"
+    )
 
-    eng_text = "\n\n".join([doc.page_content for doc in eng_docs])
-
-    # 5. STREAMING RESPONSE
+    # -----------------------------
+    # STREAMING RESPONSE
+    # -----------------------------
     def generate():
         result = client.chat(
             model="Race-Engineer-Model-1",
@@ -355,15 +254,11 @@ def chat():
         for chunk in result:
             if "message" in chunk and "content" in chunk["message"]:
                 yield chunk["message"]["content"]
-    
+
     return Response(stream_with_context(generate()), mimetype="text/plain")
 
-@app.route("/cars")
-def get_cars():
-    docs = car_list_retriever.invoke("")
-    cars = sorted([d.metadata["car_name"] for d in docs])
-    return jsonify({"cars": cars})
 
+#Routes
 @app.route("/")
 def mainScreen():
     return render_template("index.html")
@@ -371,6 +266,13 @@ def mainScreen():
 @app.route("/setupCreation")
 def setupCreation():
     return render_template("setupCreation.html")
+@app.route("/cars")
+def get_cars():
+    docs = car_list_retriever.invoke("")  
+    cars = sorted([d.metadata["car_name"] for d in docs])
+    return jsonify({"cars": cars})
+    
+
 
 if __name__ == "__main__":
     app.run(debug=True)
